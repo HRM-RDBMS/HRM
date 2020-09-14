@@ -1,0 +1,45 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    font-family: sans-serif;
+    color: black;
+    height: 622px;
+}
+
+h3 {
+    font-size: large;
+    height: 30px;
+    overflow: hidden;
+}
+
+.hom {
+    background-color:white;
+    overflow: hidden;
+    /*height: 78px;*/
+}
+
+    /* Style the links inside the navigation bar */
+    .hom a {
+        float: right;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        height: 16px;
+    }
+
+        /* Change the color of links on hover */
+        .hom a:hover {
+            background-color: none;
+            color: dodgerblue;
+        }
+
+
+        /* Add a color to the active/current link */
+        .hom a.active {
+            background-color: #4CAF50;
+            color: black;
+        }
