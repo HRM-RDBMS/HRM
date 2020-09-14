@@ -45,7 +45,7 @@
                                 <li><a href="Project_Details_Delete.aspx"><b>Delete Project</b></a></li> 
                            <li><a href="Project_Details_Edit.aspx"><b>Edit Project</b></a></li>          
                         <li><a href="Project_Details_Add.aspx"><b>Add Project</b></a></li> 
-                          <li><a href="mainindex.html"><b>Home</b></a></li>    
+                          <li><a href="main.html"><b>Home</b></a></li>    
                       
                         </ul>
                 </div>  

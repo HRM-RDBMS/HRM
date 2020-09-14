@@ -1,5 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FeedbackPage.aspx.cs" Inherits="formpages_FeedbackPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="FeedbackPage.aspx.cs" Inherits="Webfonts_FeedbackPage" %>
 <!DOCTYPE html>
+
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%--<head runat="server">--%>
    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>

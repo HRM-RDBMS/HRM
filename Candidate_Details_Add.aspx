@@ -37,7 +37,7 @@
                                 <li><a href="Candidate_Details_Delete.aspx"><b>Delete Profile</b></a></li> 
                            <li><a href="Candidate_Details_Edit.aspx"><b>Edit Profile</b></a></li>          
                         <li><a href="Candidate_Details_Add.aspx"><b>Registration</b></a></li> 
-                          <li><a href="mainindex.html"><b>Home</b></a></li>    
+                          <li><a href="main.html"><b>Home</b></a></li>    
                       
                         </ul>
                 </div>  
