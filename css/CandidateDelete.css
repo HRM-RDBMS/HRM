@@ -1,0 +1,196 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+section {
+    background-image: url(../images/img5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 1600px;
+    height: 1615px; /*1117px;*/
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    margin-top:4px;
+    margin-bottom:4px;
+}
+.search
+        {
+            background: url(http://localhost:15782/images/img4.png) no-repeat;
+            padding-left: 18px;
+            border:1px solid #ccc;
+        }
+ #main {  
+            width: 100%;  
+            margin: 0;  
+            height: 400px;  
+        }  
+  
+        #menubox {  
+            margin-top: 10px;  
+            height: 20px;  
+            /*background: rgba(255,255,255,0.4);*//*#666666;*/  
+            width: 100%;  
+        }  
+  
+        #menu {  
+            margin: 0;  
+            width: 150%;  
+        }  
+  
+        #menu ul {  
+            list-style:none;  
+        }  
+  
+        #menu ul li {  
+            float: right;  
+            position: relative;  
+        }  
+  
+        #menu ul li a {  
+            text-decoration: none;  
+            display:block;  
+            padding: 14px 50px 14px 50px;  
+            background: rgba(243, 89, 89, 0.50);/*#3300CC;*/  
+            color: #FFFFFF;  
+        }  
+  
+        #menu ul li a:hover {  
+            background: #003366;  
+        }  
+  
+        #menu ul li ul {  
+            position: absolute;  
+            display: none;  
+            top: 27px;  
+            width: 200px;  
+        }  
+  
+        #menu ul li ul li {  
+            position: relative;  
+            float: none;  
+        }  
+  
+        #menu ul li.home a {  
+            background: url(homeBg.png)left top no-repeat !important;  
+            padding: 14px 10px;  
+            margin-top: 12px;  
+            height: 34px;  
+            width: 180px;  
+            display: block;  
+        }  
+  
+        #menu ul li ul li a {  
+            border-bottom: 1px solid #666666;  
+            background: #b2a9b0;  
+            padding: 14px 10px;  
+        }  
+  
+        #menu ul li:hover ul {  
+            display: block;  
+        }  
+  
+        #menu ul li.home:hover a {  
+            background: url(home_hover.png) left top no-repeat !important;  
+        }  
+  
+        #menu ul li ul li ul {  
+            display: none !important;  
+            left: 100px;  
+            top: 0px;  
+            position: absolute;  
+            margin-left: 13px;  
+        }  
+  
+        #menu ul li ul li ul li {  
+            position: relative;  
+        }  
+  
+        #menu ul li ul li ul li a {}  
+  
+        #menu ul li ul li.vertical a {  
+            background: url(verticalBg.png) no-repeat !important;  
+            margin-left: -13px;  
+        }  
+  
+        #menu ul li ul li:hover ul {  
+            display: block !important;  
+        }  
+  
+        #menu ul li ul li.vertical:hover a {  
+            background: url(vertical.png) no-repeat !important;  
+        }  
+  
+        #menu ul li ul li ul li ul {  
+            visibility: hidden;  
+            position: absolute;  
+            left: 195px;  
+        }  
+  
+        #menu ul li ul li ul li:hover ul {  
+            visibility: visible;  
+        }  
+/*span{
+    font-size: 2vw;
+    font-family: 'Bitter', serif;
+    color: white;
+    display: block;
+}*/
+/*.inner1 a{
+    display:inline-block;
+    width: 60%;
+    height: 4%;
+    margin-bottom: 11%;
+    padding: 4% 4%;
+    font-family: 'Bitter', serif;
+    color: white;
+}*/
+h3{
+    font-size: 22px;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 8%;
+    margin-top: 3%;
+}
+.btn {
+	width: 40%;
+    height: 10%;
+    margin-bottom:9vh;
+    font-family: 'Crete Round', serif;
+    font-size: 1.3vw;
+    background-color: #12a312;
+    color: white;
+    border: 1px solid;
+    position:absolute;
+}
+.container {
+    width: 83vw;
+    height: 130vh;
+    /*background-image: url(Image/sunrise_4k_8k-5120x2880.jpg);*/
+    background-size: cover;
+    position: relative;
+    margin-top:100px;
+    margin-bottom:70px;
+    right:600px;
+}
+.container .inner2 {
+    width: 60%;
+    height: 1000px;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    top: 13px;
+    background-color:rgba(255,255,255,0.6);
+}
+/*input[type=text],input[type=password]{
+    width: 80%;
+    height: 10%;
+    margin-bottom: 3%;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #4b4040;
+}*/
+input[placeholder]{
+    font-size: 1.4vw;
+    padding-left: 3%;
+    font-family: 'Crete Round', serif;
+}
