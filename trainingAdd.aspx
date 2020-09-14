@@ -81,16 +81,17 @@
 </head>
 <body>
 <form id="form1" runat="server"> 
+    <center>
 <div class="hom">
     <a class="link" href="trainingDelete.aspx"><b>Delete Training</b></a>
         <a class="link" href="trainingEdit.aspx"><b>Edit Training</b></a>
         <a class="link" href="trainingAdd.aspx"><b>Add Training</b></a>
         <a class="link" href="comingsoon_02/soon/comingSoon.html"><b>Add Employee</b></a>
         <a class="link" href="trainingView.aspx"><b>View Trainings</b></a>
-        <a href="index.html"><b>Home</b></a></div>
+        <a href="main.html"><b>Home</b></a></div>
     <br />
-
-    <h3 align="center"style="color:darkorange"><b>Add Training Details</b></h3>
+        </center>
+    <h3 align="center"style="color:brown"><b>Add Training Details</b></h3>
 
     <table align="right" style="background-color: none; width: 1295px;height:641px">
              

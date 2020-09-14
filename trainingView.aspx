@@ -9,16 +9,18 @@
 </head>
 <body>
 <form id="form1" runat="server"> 
+    <center>
 <div class="hom">
+    
     <a class="link" href="trainingDelete.aspx"><b>Delete Training</b></a>
         <a class="link" href="trainingEdit.aspx"><b>Edit Training</b></a>
         <a class="link" href="trainingAdd.aspx"><b>Add Training</b></a>
         <a class="link" href="comingsoon_02/soon/comingSoon.html"><b>Add Employee</b></a>
         <a class="link" href="trainingView.aspx"><b>View Trainings</b></a>
-        <a href="index.html"><b>Home</b></a></div>
+        <a href="main.html"><b>Home</b></a></div>
     <br />
-
-    <center>
+        <h3 align="center"style="color:brown"><b>View Training Details</b></h3>
+    
     <asp:GridView ID="GridView1" runat="server" Width="643px" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="training_id" DataSourceID="SqlDataSource1" GridLines="Vertical">
         <AlternatingRowStyle BackColor="#DCDCDC" />
         <Columns>
