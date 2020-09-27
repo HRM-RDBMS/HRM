@@ -1,4 +1,5 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="departmentAdd.aspx.vb" Inherits="departmentAdd" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="departmentAdd.aspx.cs" Inherits="departmentAdd" %>
+
 
 <!DOCTYPE html>
 
@@ -9,6 +10,16 @@
     <style>
         .image {
             content:url('images/cool-background.jpg');
+        }
+        .auto-style1 {
+            width: 683px;
+        }
+        .auto-style2 {
+            width: 1295px;
+            height: 574px;
+        }
+        .colors{
+            color:black;
         }
     </style>
 </head>
@@ -21,24 +32,24 @@
         <a class="link" href="departmentAdd.aspx"><b>Add Department</b></a>
         <a class="link" href="departmentView.aspx"><b>View Department</b></a>
         <a href="main.html"><b>Home</b></a></div>
-            <h3 align="center"><b>New Department Details </b></h3>
-            <table align="center" style="background-color: none; width: 1295px;height:641px" >
+            <h3 align="center" ><b class="colors">New Department Details </b></h3>
+            <table align="center" style="background-color: none; " class="auto-style2" >
              <tr>
-                 <td align="center" ><b> Department Id</b></td>
+                 <td align="center" ><b class="colors"> Department Id</b></td>
                  <td class="auto-style1">
                      &nbsp;&nbsp;
-                     <asp:TextBox ID="TextBox2" runat="server" Width="310px"></asp:TextBox>
+                     
                 </td>
                  </tr>
                  <tr>
-                 <td align="center" ><b>Department Name</b></td>
+                 <td align="center" ><b class="colors">Department Name</b></td>
                  <td class="auto-style1">
                      &nbsp;&nbsp;
                      <asp:TextBox ID="TextBox3" runat="server" Width="310px"></asp:TextBox>
                 </td>
              </tr>
              <tr>
-                 <td align="center" ><b>Department Type</b></td>
+                 <td align="center" ><b class="colors">Department Type</b></td>
                  <td class="auto-style1">
                      &nbsp;&nbsp;
                      <asp:TextBox ID="TextBox1" runat="server" Width="310px"></asp:TextBox>
@@ -50,7 +61,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button2" runat="server" Height="44px" Text="Add Department" Width="310px" 
                 Font-Bold="True" Font-Italic="False" Font-Size="Large" 
-                style="margin-top: 26px" />
+                style="margin-top: 26px" OnClick="Button2_Click" />
         </td>
         </tr>
          </table>
