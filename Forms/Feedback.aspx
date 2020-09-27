@@ -29,6 +29,7 @@
 <body>
 
     <div class="container">
+    <h2><li class="active"><a href="../main.html"><b>Home</b></a></li></h2>
         <h2><b>Welcome to our Feedback Page</b></h2>
         <!-- Trigger the modal with a button -->
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Kindly Open please!!!</button>
