@@ -14,7 +14,7 @@
     <div class="bg-img">
       <div class="content">
         <header>Login Form</header>
-        <form action="../Candidate_Profile.html">
+        <form action="../index.html">
           <div class="field">
             <span class="fa fa-user"></span>
             <input type="text" required placeholder="Email or Phone">
