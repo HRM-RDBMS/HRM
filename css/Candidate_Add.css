@@ -1,0 +1,325 @@
+﻿/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+	/*Image only BG fallback*/
+	
+	/*background = gradient + image pattern combo*/
+	background: 
+		linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+}
+/*form styles*/
+#msform {
+	width: 400px;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: montserrat;
+	color: #2C3E50;
+	font-size: 13px;
+}
+/*buttons*/
+#msform .action-button {
+	width: 100px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 1px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+#msform .action-button:hover, #msform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+
+
+
+
+/** {
+    margin: 0;
+    padding: 0;
+}
+section {
+    background-image: url('../assets/img/intro-carousel/img9.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 1600px;
+    height: 1220px; /*1117px;*/
+    /*display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    /*margin-top:4px;
+    margin-bottom:4px;
+}
+ #main {  
+            width: 100%;  
+            margin: 0;  
+            height: 400px;  
+        }  
+  
+        #menubox {  
+            margin-top: 10px;  
+            height: 20px;  
+            /*background: rgba(255,255,255,0.4);*//*#666666;*/  
+            /*width: 100%;  
+        }  
+  
+        #menu {  
+            margin: 0;  
+            width: 150%;  
+        }  
+  
+        #menu ul {  
+            list-style:none;  
+        }  
+  
+        #menu ul li {  
+            float: right;  
+            position: relative;  
+        }  
+  
+        #menu ul li a {  
+            text-decoration: none;  
+            display:block;  
+            padding: 14px 50px 14px 50px;  
+            background: rgba(243, 89, 89, 0.50);/*#3300CC;*/  
+            /*color: #FFFFFF;  
+        }  
+  
+        #menu ul li a:hover {  
+            background: #003366;  
+        }  
+  
+        #menu ul li ul {  
+            position: absolute;  
+            display: none;  
+            top: 27px;  
+            width: 200px;  
+        }  
+  
+        #menu ul li ul li {  
+            position: relative;  
+            float: none;  
+        }  
+  
+        #menu ul li.home a {  
+            background: url(homeBg.png)left top no-repeat !important;  
+            padding: 14px 10px;  
+            margin-top: 12px;  
+            height: 34px;  
+            width: 180px;  
+            display: block;  
+        }  
+  
+        #menu ul li ul li a {  
+            border-bottom: 1px solid #666666;  
+            background: #b2a9b0;  
+            padding: 14px 10px;  
+        }  
+  
+        #menu ul li:hover ul {  
+            display: block;  
+        }  
+  
+        #menu ul li.home:hover a {  
+            background: url(home_hover.png) left top no-repeat !important;  
+        }  
+  
+        #menu ul li ul li ul {  
+            display: none !important;  
+            left: 100px;  
+            top: 0px;  
+            position: absolute;  
+            margin-left: 13px;  
+        }  
+  
+        #menu ul li ul li ul li {  
+            position: relative;  
+        }  
+  
+        #menu ul li ul li ul li a {}  
+  
+        #menu ul li ul li.vertical a {  
+            background: url(verticalBg.png) no-repeat !important;  
+            margin-left: -13px;  
+        }  
+  
+        #menu ul li ul li:hover ul {  
+            display: block !important;  
+        }*/ 
+  
+        /*#menu ul li ul li.vertical:hover a {  
+            background: url(vertical.png) no-repeat !important;  
+        }  
+  
+        #menu ul li ul li ul li ul {  
+            visibility: hidden;  
+            position: absolute;  
+            left: 195px;  
+        }  
+  
+        #menu ul li ul li ul li:hover ul {  
+            visibility: visible;  
+        }*/  
+/*span{
+    font-size: 2vw;
+    font-family: 'Bitter', serif;
+    color: white;
+    display: block;
+}*/
+/*.inner1 a{
+    display:inline-block;
+    width: 60%;
+    height: 4%;
+    margin-bottom: 11%;
+    padding: 4% 4%;
+    font-family: 'Bitter', serif;
+    color: white;
+}*/
+/*h3{
+    font-size: 22px;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 8%;
+    margin-top: 3%;
+}
+.btn {
+	width: 40%;
+    height: 10%;
+    margin-bottom:9vh;
+    font-family: 'Crete Round', serif;
+    font-size: 1.3vw;
+    background-color: #12a312;
+    color: white;
+    border: 1px solid;
+    position:absolute;
+}
+.container {
+    width: 82vw;
+    height: 140vh;
+    /*background-image: url(Image/sunrise_4k_8k-5120x2880.jpg);*/
+    /*background-size: cover;
+    position: relative;
+    margin-top:100px;
+    margin-bottom:70px;
+    right:600px;
+}
+.container .inner2 {
+    width: 60%;
+    height: 1024px;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    top: 13px;
+    background-color:rgba(255,255,255,0.6);*/
+/*}*/
+/*input[type=text],input[type=password]{
+    width: 80%;
+    height: 10%;
+    margin-bottom: 3%;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #4b4040;
+}*/
+/*input[placeholder]{
+    font-size: 1.4vw;
+    padding-left: 3%;
+    font-family: 'Crete Round', serif;
+}*/
