@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Delete Details</title>
+    <title>Edit Recruited Candidate Details</title>
 <style>
     html, body, h2 {
     margin: 0;
@@ -15,24 +15,6 @@
 body {
     background-image:url("assets/img/intro-carousel/img11.jpg");
     font-family:'Pacifico', cursive;
-}
-    input[type=text] {
-  width: 210px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: transparent;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-  width: 100%;
 }
 
 .show {
@@ -352,18 +334,20 @@ input[type="submit"] {
 </head>
 <body>
 <input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>Delete Profile</b><i class="flag left"></i><i class="flag right"></i></label>
-    <h2 align="center"><a href="Candidate_Profile.html"><b>Home</b></a></h2>
+    <label for="show" class="title"><b>Edit Details</b><i class="flag left"></i><i class="flag right"></i></label>
+    <h2 align="center"><a href="Recruited_Candidate_Profile.html"><b>Home</b></a></h2>
 <!-- Form -->
-<form action="Candidate_Delete.html" class="form">
-    <div class="group">
+<form action="Recruited_Candidates_Edit.html" class="form">
+    <!--search-->
+<div class="group">
         <div class="col-1">
-            <label for="search"><b>Search Candidate Id</b></label>
+            <label for="search"><b>Search Recruitement Id</b></label>
         </div>
         
-<input type="text" name="search" placeholder="Search candidate id">
+<input type="text" name="search" placeholder="Search recruitement id">
             
     </div>
+    <!--image-->
 <div class="group">
         <div class="col-1">
             <label for="image"><b>Profile Picture</b></label>
@@ -375,13 +359,23 @@ input[type="submit"] {
             <!--<input type="button" id="button" value="Upload image" />-->
         </div>
     </div>
-    <!-- Candidate Id -->
+     <!-- Recruitement Id -->
     <div class="group">
         <div class="col-1">
-            <label for="candidateid"><b>Candidate Id</b></label>
+            <label for="Recruitementid"><b>Recruitement Id</b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="candidateid" placeholder="Candidate Id" 
+            <input type="text" id="recruitementid" placeholder="Recruitment Id" 
+                required="required" />
+        </div>
+    </div>
+    <!-- Employee Id -->
+    <div class="group">
+        <div class="col-1">
+            <label for="employeeid"><b>Employee Id</b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="employeeid" placeholder="Employee Id" 
                 required="required" />
         </div>
     </div>
@@ -496,6 +490,15 @@ input[type="submit"] {
             </select>
         </div>
     </div>
+    <!-- Recruitment Date -->
+    <div class="group">
+        <div class="col-1">
+            <label for="rdate"><b>Recruitement Date</b></label>
+        </div>
+        <div class="col-2">
+            <input type="date" id="rdate" placeholder="Recruitement date" required="required" />
+        </div>
+    </div>
      <!-- Refernce -->
     <div class="group">
         <div class="col-1">
@@ -503,6 +506,15 @@ input[type="submit"] {
         </div>
         <div class="col-2">
             <input type="text" id="references" placeholder="References" required="required"/>
+        </div>
+    </div>
+    <!-- skills -->
+    <div class="group">
+        <div class="col-1">
+            <label for="skills"><b>Skills</b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="skills" placeholder="Skills" required="required"/>
         </div>
     </div>
     <!-- Password -->
@@ -523,6 +535,18 @@ input[type="submit"] {
             <input type="email" id="email" placeholder="example@email.com" required="required"/>
         </div>
     </div>
+    <!--CV-->
+    <div class="group">
+        <div class="col-1">
+            <label for="cv"><b>CV</b></label>
+        </div>
+        <div class="col-2">
+            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+            <img id="output" />
+            <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Images</label>
+            <!--<input type="button" id="button" value="Upload image" />-->
+        </div>
+    </div>
     <!-- Terms & Conditions -->
     <div class="group-2">
         <input type="checkbox" class="checkbox" id="terms" />
@@ -531,10 +555,10 @@ input[type="submit"] {
     <!-- Notifications -->
     <div class="group-2">
         <input type="checkbox" class="checkbox" id="notifications" />
-        <label for="notifications"><span class="toogle"></span>Have you check all the required fields to delete</label>
+        <label for="notifications"><span class="toogle"></span>Have you enter all the required fields</label>
     </div>
     <!-- Submit button -->
-    <input type="submit" class="submit" value="Deleted" />
+    <input type="submit" class="submit" value="submit" />
 </form>
 <script>
     var loadFile = function (event) {
