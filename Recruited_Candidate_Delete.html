@@ -16,6 +16,25 @@ body {
     background-image:url("assets/img/intro-carousel/img11.jpg");
     font-family:'Pacifico', cursive;
 }
+  input[type=text] {
+  width: 210px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: transparent;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
 
 .show {
     display: none;
@@ -334,7 +353,7 @@ input[type="submit"] {
 </head>
 <body>
 <input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>Edit Details</b><i class="flag left"></i><i class="flag right"></i></label>
+    <label for="show" class="title"><b>Delete Details</b><i class="flag left"></i><i class="flag right"></i></label>
     <h2 align="center"><a href="Recruited_Candidate_Profile.html"><b>Home</b></a></h2>
 <!-- Form -->
 <form action="Recruited_Candidates_Delete.html" class="form">
