@@ -11,7 +11,7 @@
     <meta name="keywords"
           content="unique  form,leamug  form,boostrap form,responsive  form,free css html  form,download  form">
     <meta name="author" content="leamug">
-    <title>Add Project</title>
+    <title>Edit Project</title>
     <link href="css/style.css" rel="stylesheet" id="style">
    
     <style>
@@ -24,7 +24,26 @@
   padding: 0px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  /*background-image:url("images/p7.jpg");*/
     
+}
+ input[type=text] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  /*background-image: url('searchicon.png');*/
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 80%;
 }
 
 .cotn_principal {
@@ -32,11 +51,12 @@
   width: 100%;
   height: 170%;
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd8dc+0,607d8b+100,b0bec5+100 */
-background: #cfd8dc; /* Old browsers */
-background: -moz-linear-gradient(-45deg,  #cfd8dc 0%, #607d8b 100%, #b0bec5 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg,  #cfd8dc 0%,#607d8b 100%,#b0bec5 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg,  #cfd8dc 0%,#607d8b 100%,#b0bec5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', endColorstr='#b0bec5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+/*background: #cfd8dc;*/ /* Old browsers */
+background-image:url("images/r2.jpg");
+/*background: -moz-linear-gradient(-45deg,  #cfd8dc 0%, #607d8b 100%, #b0bec5 100%);*/ /* FF3.6-15 */
+/*/*background: -webkit-linear-gradient(-45deg,  #cfd8dc 0%,#607d8b 100%,#b0bec5 100%);*/*/ /* Chrome10-25,Safari5.1-6 */
+/*background: linear-gradient(135deg,  #cfd8dc 0%,#607d8b 100%,#b0bec5 100%);*/ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', endColorstr='#b0bec5',GradientType=1 );*/ /* IE6-9 fallback on horizontal gradient */
 
 }
 
@@ -58,8 +78,9 @@ margin-left: -320px;
 .cont_back_info {  
 position: relative;
   float: left;
-  width: 640px;
-  height: 400px;
+  margin-right:5px;
+  width: 660px;
+  height: 470px;
 overflow: hidden;
   background-color: #fff;
   margin-top: 100px;
@@ -97,7 +118,7 @@ transition: all 0.5s;
 
 .cont_forms_active_sign_up {
 box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 1190px;  
+  height: 1250px;  
 top:20px;
 left:320px;
 -webkit-transition: all 0.5s;
@@ -211,14 +232,14 @@ cursor: pointer;
 .col_md_sign_up > h2 {
   font-weight: 400;
   margin-top: 70px;
-  color: #757575;
+  color: black;
 }
 
 .col_md_sign_up > p {
  font-weight: 400;
 margin-top: 15px;
 width: 80%;
- color: #37474F;
+ color: darkblue;
 }
 
 .btn_sign_up { 
@@ -340,19 +361,19 @@ border: none;
 }
 
 .cont_form_sign_up > h2 {
-margin-top: 50px; 
-font-weight: 400;
-  color: #757575;
+margin-top: 10px; 
+font-weight: 300;
+  color: black;
 }
 
 
 .cont_form_login > h2 {
 margin-top: 110px; 
 font-weight: 400;
-  color: #757575;
+  color: forestgreen;
 }
 .cont_form_login > a,.cont_form_sign_up > a  {
-  color: #757575;
+  color: forestgreen;
     position: relative;
     float: left;
     margin: 10px;
@@ -367,39 +388,43 @@ margin-left: 30px;
 <div class="cont_info_log_sign_up">   
 <div class="col_md_sign_up">
   <h2><b>Project Details</b></h2>
-<p>"Project Managers are primarily responsible for the completion of the project as planned. Depending on the type of project organization, they usually play a lead role in the overall planning, executing, monitoring, controlling, and closing of projects."</p>
-<button class="btn_sign_up" onclick="cambiar_sign_up()"><b>Click here to Add Details </b></button>
+<p><b>"Project Managers are primarily responsible for the completion of the project as planned. Depending on the type of project organization, they usually play a lead role in the overall planning, executing, monitoring, controlling, and closing of projects."</b></p>
+<button class="btn_sign_up" onclick="cambiar_sign_up()"><b>Click here to Edit Details </b></button>
   </div>
        </div>
     <div class="cont_back_info">
        <div class="cont_img_back_grey">
-       <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+       <!--<img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />-->
+       <img src="images/r2.jpg" alt="" />
        </div>
        
     </div>
 <div class="cont_forms" >
     <div class="cont_img_back_">
-       <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
+      <!-- <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />-->
+       <img src="images/r1.jpg" alt="" />
        </div>
  
-  <form action="Project_Add.html" class="form">
+  <form action="Project_Edit.html" class="form">
    <div class="cont_form_sign_up">
- <a href="Project_Details.html" onclick="ocultar_login_sign_up()">Home<i class="material-icons">&#xE5C4;</i></a>     
-<a href="#" onclick="ocultar_login_sign_up()">Back<i class="material-icons">&#xE5C4;</i></a>
-     <h2><b>Details</b></h2>
-<input type="text" placeholder="Project id" required=""/><br><br>
-<input type="text" placeholder="Project Manager id" required=""/><br><br>
-<input type="text" placeholder="Employee id" required=""/><br><br>       
-<input type="text" placeholder="Project Name" required=""/><br>
+ <a href="Project_Details.html" onclick="ocultar_login_sign_up()"><b>Home</b><i class="material-icons">&#xE5C4;</i></a>     
+<a href="#" onclick="ocultar_login_sign_up()"><b>Back</b><i class="material-icons">&#xE5C4;</i></a>
+<input type="text" name="search" placeholder="Search project id to edit"><br />
+     <h2><b>Display all Project Details</b></h2>
+     <br />
+<input type="text" placeholder="Project id" required=""/><br/><br/>
+<input type="text" placeholder="Project Manager id" required=""/><br/><br/>
+<input type="text" placeholder="Employee id" required=""/><br/><br/>       
+<input type="text" placeholder="Project Name" required=""/><br/>
 <h6><b>Project Start date</b></h6><input type="date" placeholder="Project Start date" required=""/><br>
-<h6><b>Expected End date</b></h6><input type="date" placeholder="Expected date" required=""/><br>
-<h6><b>Final date</b></h6><input type="date" placeholder="Final date" required=""/><br><br>
-<input type="text" placeholder="Project Budget" required=""/><br><br>
-<input type="text" placeholder="Labour Cost" required=""/><br><br>
-<input type="text" placeholder="Material Cost" required=""/><br><br>
-<input type="text" placeholder="Total Cost" required=""/><br>
-<h6><b>Total Hours taken</b></h6><input type="time" placeholder="Total hours" required=""/><br><br>
-<input type="text" placeholder="Project status [completed/stopped/pending]" required=""/><br>
+<h6><b>Expected End date</b></h6><input type="date" placeholder="Expected date" required=""/><br/>
+<h6><b>Final date</b></h6><input type="date" placeholder="Final date" required=""/><br/><br/>
+<input type="text" placeholder="Project Budget" required=""/><br/><br/>
+<input type="text" placeholder="Labour Cost" required=""/><br/><br/>
+<input type="text" placeholder="Material Cost" required=""/><br/><br/>
+<input type="text" placeholder="Total Cost" required=""/><br/>
+<h6><b>Total Hours taken</b></h6><input type="time" placeholder="Total hours" required=""/><br/><br/>
+<input type="text" placeholder="Project status [completed/stopped/pending]" required=""/><br/><br />
 <button class="btn_sign_up" onclick="cambiar_sign_up()">Submit</button>
 
     </div>
@@ -410,36 +435,37 @@ margin-left: 30px;
 </div>
     </div>
     <script>
-    /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
----------------------------------------
-*/
+        /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
+    ---------------------------------------
+    */
 
 
-function cambiar_sign_up(at) {
-  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
-  document.querySelector('.cont_form_sign_up').style.display = "block";
-
-  
-setTimeout(function(){  document.querySelector('.cont_form_sign_up').style.opacity = "1";
-},100);  
+        function cambiar_sign_up(at) {
+            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+            document.querySelector('.cont_form_sign_up').style.display = "block";
 
 
+            setTimeout(function () {
+                document.querySelector('.cont_form_sign_up').style.opacity = "1";
+            }, 100);
 
 
-}    
-function ocultar_login_sign_up() {
-
-document.querySelector('.cont_forms').className = "cont_forms";  
-document.querySelector('.cont_form_sign_up').style.opacity = "0";               
 
 
-setTimeout(function(){
-document.querySelector('.cont_form_sign_up').style.display = "none";
+        }
+        function ocultar_login_sign_up() {
 
-},500);  
-  
-  }
+            document.querySelector('.cont_forms').className = "cont_forms";
+            document.querySelector('.cont_form_sign_up').style.opacity = "0";
+
+
+            setTimeout(function () {
+                document.querySelector('.cont_form_sign_up').style.display = "none";
+
+            }, 500);
+
+        }
     </script>
-    </form>
+    
 </body>
 </html>
