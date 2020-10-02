@@ -378,6 +378,95 @@ font-weight: 400;
     margin: 10px;
 margin-left: 30px;
 }
+ /* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
         </style>
     </head>
 <body>
@@ -404,7 +493,7 @@ margin-left: 30px;
        <img src="images/r1.jpg" alt="" />
        </div>
  
-  <form action="Project_Add.html" class="form">
+ <!-- <form action="Project_Add.html" class="form">-->
    <div class="cont_form_sign_up">
  <a href="Project_Details.html" onclick="ocultar_login_sign_up()"><b>Home</b><i class="material-icons">&#xE5C4;</i></a>     
 <a href="#" onclick="ocultar_login_sign_up()"><b>Back</b><i class="material-icons">&#xE5C4;</i></a>
@@ -422,46 +511,60 @@ margin-left: 30px;
 <input type="text" placeholder="Total Cost" required=""/><br/>
 <h6><b>Total Hours taken</b></h6><input type="time" placeholder="Total hours" required=""/><br/><br/>
 <input type="text" placeholder="Project status [completed/stopped/pending]" required=""/><br/><br />
-<button class="btn_sign_up" onclick="cambiar_sign_up()">Submit</button>
-
+<!--<button class="btn_sign_up" onclick="cambiar_sign_up()">Submit</button>-->
+ <button class="btn_sign_up" onclick="document.getElementById('id01').style.display='block'">Confirm to Add</button>
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" action="Project_Add.html">
+    <div class="container">
+      <p><b>Hai Friend...</b></p>
+      <p><b>Are you sure you want to Add project details to your Account?</p>
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Add</button>
+      </div>
     </div>
-    </form>
-    
-  </div>
- </div>
+  </form>
 </div>
     </div>
     <script>
-    /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
----------------------------------------
-*/
+        /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
+    ---------------------------------------
+    */
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function cambiar_sign_up(at) {
+            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+            document.querySelector('.cont_form_sign_up').style.display = "block";
 
 
-function cambiar_sign_up(at) {
-  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
-  document.querySelector('.cont_form_sign_up').style.display = "block";
-
-  
-setTimeout(function(){  document.querySelector('.cont_form_sign_up').style.opacity = "1";
-},100);  
+            setTimeout(function () {
+                document.querySelector('.cont_form_sign_up').style.opacity = "1";
+            }, 100);
 
 
 
 
-}    
-function ocultar_login_sign_up() {
-
-document.querySelector('.cont_forms').className = "cont_forms";  
-document.querySelector('.cont_form_sign_up').style.opacity = "0";               
-
-
-setTimeout(function(){
-document.querySelector('.cont_form_sign_up').style.display = "none";
-
-},500);  
-  
-  }
+        }
+        /* function ocultar_login_sign_up() {
+ 
+             document.querySelector('.cont_forms').className = "cont_forms";
+             document.querySelector('.cont_form_sign_up').style.opacity = "0";
+ 
+ 
+             setTimeout(function () {
+                 document.querySelector('.cont_form_sign_up').style.display = "none";
+ 
+             }, 500);
+ 
+         }*/
     </script>
- <!--   </form>-->
-</body>
-</html>
+    </body>
+    </html>

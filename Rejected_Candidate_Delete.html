@@ -525,13 +525,16 @@ input[type="submit"] {
             <input type="text" id="skills" placeholder="Skills" required="required"/>
         </div>
     </div>
-    <!-- Password -->
+   <!--CV-->
     <div class="group">
         <div class="col-1">
-            <label for="password"><b>Password</b></label>
+            <label for="cv"><b>CV</b></label>
         </div>
         <div class="col-2">
-            <input type="password" id="password" placeholder="password" required="required"/>
+            <input type="file"  accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">
+            <img id="Img1" />
+            <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Images</label>
+            <!--<input type="button" id="button" value="Upload image" />-->
         </div>
     </div>
     <!-- Email -->
@@ -543,16 +546,13 @@ input[type="submit"] {
             <input type="email" id="email" placeholder="example@email.com" required="required"/>
         </div>
     </div>
-    <!--CV-->
+    <!-- Password -->
     <div class="group">
         <div class="col-1">
-            <label for="cv"><b>CV</b></label>
+            <label for="password"><b>Password</b></label>
         </div>
         <div class="col-2">
-            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
-            <img id="output" />
-            <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Images</label>
-            <!--<input type="button" id="button" value="Upload image" />-->
+            <input type="password" id="pwd1" placeholder="password" required="required"/>
         </div>
     </div>
     <!-- Terms & Conditions -->
