@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Project Details</title>
+    <title>Edit Project Status</title>
 <style>
     html, body, h2 {
     margin: 0;
@@ -391,10 +391,10 @@ input[type="submit"] {
 </head>
 <body>
 <input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>Edit Project </b><i class="flag left"></i><i class="flag right"></i></label>
+    <label for="show" class="title"><b>Edit Project Status</b><i class="flag left"></i><i class="flag right"></i></label>
     <h2 align="center"><a href="Project_Details.html"><b>Home</b></a></h2>
 <!-- Form -->
-<form action="Project_Edit.html" class="form" onsubmit="return (checkForm(this) && false);" method="POST">
+<form action="Project_Status_Edit.html" class="form" onsubmit="return (checkForm(this) && false);" method="POST">
 <div class="group">
         <div class="col-1">
             <label for="search"><b>Search Id<span  style="color:red"> *</span></b></label>
@@ -414,56 +414,7 @@ input[type="submit"] {
                 required="required" />
         </div>
     </div>
-     <!-- project manager Id -->
-    <div class="group">
-        <div class="col-1">
-            <label for="managerid"><b>Manager Id<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="managerid" placeholder="Project manager Id" 
-                required="required" />
-        </div>
-    </div>
-    <!-- Employee Id -->
-    <div class="group">
-        <div class="col-1">
-            <label for="employeeid"><b>Employee Id<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="employeeid" placeholder="Employee Id" 
-                required="required" />
-        </div>
-    </div>
-   <!-- project Name -->
-    <div class="group">
-        <div class="col-1">
-            <label for="projectname"><b>Project Name<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="projectname" placeholder="Project Name" 
-                required="required" />
-        </div>
-    </div>
-     <!-- project start date -->
-    <div class="group">
-        <div class="col-1">
-            <label for="start"><b>Start Date<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="date" id="start" placeholder="Project Start Date" 
-                required="required" />
-        </div>
-    </div>
-     <!-- project expected date -->
-    <div class="group">
-        <div class="col-1">
-            <label for="expected"><b>Expected Date<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="date" id="expected" placeholder="Project Expected End Date" 
-                required="required" />
-        </div>
-    </div>
+    
      <!-- project final date -->
     <div class="group">
         <div class="col-1">
@@ -471,56 +422,6 @@ input[type="submit"] {
         </div>
         <div class="col-2">
             <input type="date" id="final" placeholder="Project finished Date" 
-                required="required" />
-        </div>
-    </div>
-    <!-- project total hours -->
-    <div class="group">
-        <div class="col-1">
-            <label for="total"><b>Total Hours<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="time" id="total" placeholder="Project Total hours" 
-                required="required" />
-        </div>
-    </div>
-    <!-- project budget -->
-    <div class="group">
-        <div class="col-1">
-            <label for="budget"><b>Project Budget<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="budget" placeholder="Project Budget" 
-                required="required" />
-        </div>
-    </div>
-     <!-- project labor cost -->
-    <div class="group">
-        <div class="col-1">
-            <label for="labor"><b>Labor Cost<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="labor" placeholder="Project Labor cost" 
-                required="required" />
-        </div>
-    </div>
-     <!-- project material cost -->
-    <div class="group">
-        <div class="col-1">
-            <label for="material"><b>Material Cost<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="material" placeholder="Project material cost" 
-                required="required" />
-        </div>
-    </div>
-    <!-- project total cost -->
-    <div class="group">
-        <div class="col-1">
-            <label for="totals"><b>Total Cost<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="totals" placeholder="Project total cost" 
                 required="required" />
         </div>
     </div>

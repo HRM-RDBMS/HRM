@@ -136,7 +136,7 @@ body {
 }
 
 .col-1 {
-    width: 40%;
+    width: 39%;
 }
 
 .col-1 label {
@@ -299,6 +299,26 @@ input[type="submit"] {
     color: orange;
     background: rgba(0,0,0,1);
 }
+.submit1 {
+    border: none;
+    outline: none;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font-family:'Times New Roman';
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
+}
+
+.submit1:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
+}
     #cars
     {
         width: 235px;
@@ -333,6 +353,16 @@ input[type="submit"] {
         width: 227px;
     }
 
+    #address
+    {
+        width: 233px;
+        height: 57px;
+    }
+#references
+{
+        width: 233px;
+        height: 57px;
+    }
 </style>
 </head>
 <body>
@@ -343,11 +373,11 @@ input[type="submit"] {
 <form action="Candidate_Add.html" class="form" onsubmit="return (checkForm(this) && false);" method="POST">
 <div class="group">
         <div class="col-1">
-            <label for="image"><b>Profile Picture</b></label>
+            <label for="image"><b>Profile Picture<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
-            <img id="output" />
+            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;" required="required">
+            <img id="output">
             <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Image</label>
             <!--<input type="button" id="button" value="Upload image" />-->
         </div>
@@ -355,40 +385,40 @@ input[type="submit"] {
     <!-- Candidate Id -->
     <div class="group">
         <div class="col-1">
-            <label for="candidateid"><b>Candidate Id</b></label>
+            <label for="candidateid"><b>Candidate Id<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
             <input type="text" id="candidateid" placeholder="Candidate Id" 
-                required="required" />
+                required="required" style="background-color:#ccc;"/>
         </div>
     </div>
    <!-- Candidate Name -->
     <div class="group">
         <div class="col-1">
-            <label for="candidatename"><b>Candidate Name</b></label>
+            <label for="candidatename"><b>Candidate Name<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
             <input type="text" id="candidatename" placeholder="Candidate Name" 
-                required="required" />
+                required="required" style="background-color:#ccc;"/>
         </div>
     </div>
      <!-- Date Of Birth -->
     <div class="group">
         <div class="col-1">
-            <label for="dob"><b>Date of Birth</b></label>
+            <label for="dob"><b>Date of Birth<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
             <input type="date" id="dob" placeholder="Date of Birth" 
-                required="required" />
+                required="required" style="background-color:#ccc;" />
         </div>
     </div>
      <!-- Gender -->
     <div class="group">
         <div class="col-1">
-            <label for="gender"><b>Gender</b></label>
+            <label for="gender"><b>Gender<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-             <select id="gender" name="gender" required="required">
+             <select id="gender" name="gender" required="required" style="background-color:#ccc;">
                 <option value="name2"><b>Select your gender</b></option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -399,21 +429,20 @@ input[type="submit"] {
      <!-- Candidate Address -->
     <div class="group">
         <div class="col-1">
-            <label for="address"><b>Address</b></label>
+            <label for="address"><b>Address<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="textarea" id="address" placeholder="Address" 
-            required="required" />
-        </div>
+            <textarea  id="address" name="address" placeholder="Address" 
+            required="required" style="background-color:#ccc;"></textarea></div>
     </div>
      <!-- Contact -->
     <div class="group">
         <div class="col-1">
-            <label for="contact"><b>Contact Number</b></label>
+            <label for="contact"><b>Mobile Number<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
         <select name="countryCode" id="" 
-                style="width: 120px; height: 32px; margin-left: 11px;">
+                style="width: 120px; height: 32px; margin-left: 11px;background-color:#ccc;" required="required">
 	<option data-countryCode="GB" value="44" Selected>UK (+44)</option>
 	<option data-countryCode="US" value="1">USA (+1)</option>
 	<optgroup label="Other countries">
@@ -633,16 +662,16 @@ input[type="submit"] {
 		<option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
 	</optgroup>
 </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="tel" id="contact" placeholder="Mobile:(format:xxx-xxx-xxxx)" pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" required="required"/>
+            <input type="tel" id="contact" placeholder="Mobile:(format:xxx-xxx-xxxx)" pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" required="required" style="background-color:#ccc;"/>
         </div>
     </div>
      <!-- Qualifications -->
     <div class="group">
         <div class="col-1">
-            <label for="qualifications"><b>Qualifications</b></label>
+            <label for="qualifications"><b>Qualifications<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <select id="qualifications" name="qualification" required="required">
+            <select id="qualifications" name="qualification" required="required" style="background-color:#ccc;">
                  <option value="name2"><b>Select your qualifications</b></option>
                 <option value="ten">10th pass</option>
                 <option value="twelve">12th pass</option>
@@ -655,19 +684,19 @@ input[type="submit"] {
      <!-- Applying Date -->
     <div class="group">
         <div class="col-1">
-            <label for="apply"><b>Applying Date</b></label>
+            <label for="apply"><b>Applying Date<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="date" id="date" placeholder="Applying date" required="required" />
+            <input type="date" id="date" placeholder="Applying date" required="required" style="background-color:#ccc;"/>
         </div>
     </div>
      <!-- experience -->
     <div class="group">
         <div class="col-1">
-            <label for="experience"><b>Experience</b></label>
+            <label for="experience"><b>Experience<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <select id="experience" name="qualification" required="required">
+            <select id="experience" name="qualification" required="required" style="background-color:#ccc;">
                 <option value="name1"><b>Select Year of Experience</b></option>
                 <option value="below">Below 6months</option>
                 <option value="between">Between 6months to 1 year</option>
@@ -681,10 +710,10 @@ input[type="submit"] {
      <!-- post applied -->
     <div class="group">
         <div class="col-1">
-            <label for="post"><b>Post Applied</b></label>
+            <label for="post"><b>Post Applied<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <select id="post" name="post" required="required">
+            <select id="post" name="post" required="required" style="background-color:#ccc;">
                 <option value="post1"><b>Select the post applied</b></option>
                 <option value="programmer">Developer</option>
                 <option value="testing">Testing & Coding</option>
@@ -697,28 +726,29 @@ input[type="submit"] {
      <!-- Refernce -->
     <div class="group">
         <div class="col-1">
-            <label for="reference"><b>References</b></label>
+            <label for="reference"><b>References<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="references" placeholder="References" required="required"/>
+            <textarea id="references" name="references" placeholder="References" required="required" style="background-color:#ccc;"></textarea>
         </div>
     </div>
      <!-- Email -->
     <div class="group">
         <div class="col-1">
-            <label for="email"><b>Email Id</b></label>
+            <label for="email"><b>Email Id<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="email" id="email1" placeholder="example@email.com" required="required"/>
+            <input type="email" id="email1" placeholder="example@email.com" 
+                required="required" style="background-color:#ccc;"/>
         </div>
     </div>
     <!-- Password -->
     <div class="group">
         <div class="col-1">
-            <label for="password"><b>Password</b></label>
+            <label for="password"><b>Password<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="password" id="pwd1" placeholder="password" required="required"/>
+            <input type="password" id="pwd1" placeholder="password" required="required" style="background-color:#ccc;"/>
         </div>
     </div>
     <!-- Terms & Conditions -->
@@ -732,7 +762,8 @@ input[type="submit"] {
         <label for="notifications"><span class="toogle"></span>Have you enter all the required fields</label>
     </div>
     <!-- Submit button -->
-    <input type="submit" class="submit" value="submit" />
+    <input type="submit" class="submit" value="Submit" /><br />
+     <input type="submit" class="submit1" value="Cancel" />
 </form>
 <script>
     var loadFile = function (event) {

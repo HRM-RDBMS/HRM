@@ -1,570 +1,529 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords"
-          content="unique  form,leamug  form,boostrap form,responsive  form,free css html  form,download  form">
-    <meta name="author" content="leamug">
-    <title>Add Project</title>
-    <link href="css/style.css" rel="stylesheet" id="style">
-   
-    <style>
-        /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
----------------------------------------
-*/
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Project Details</title>
+<style>
+    html, body, h2 {
+    margin: 0;
+    padding: 0.5em;
+    /*font-family:'Pacifico', cursive;*/
+}
 
-* {
-  margin: 0px auto;
-  padding: 0px;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  /*background-image:url("images/p7.jpg");*/
+body {
+    background-image:url("assets/img/intro-carousel/1.jpg");
+    font-family:'Pacifico', cursive;
+}
+
+.show {
+    display: none;
+}
+
+.title,
+.form {
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.title {
+    margin-bottom: 0.5em;
+    display: block;
+    background: orange;
+    font-family:'Times New Roman';
+    font-size: 22px;
+    padding: 1em;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+}
+
+.flag {
+    position: absolute;
+    top: 7px;
+    border-radius: 2px;
+    border: 35px solid;
+    border-top-color: orange;
+    border-bottom-color: orange;
+}
+
+.show ~ .title {
+    z-index: 2;
+    width: 300px;
+    position: relative;
+    top: 250px;
+    left: 0;
+    transition:
+        width 200ms ease-out,
+        top 200ms ease-out;
+}
+
+.show ~ .title .flag {
+    opacity: 0; 
+}
+
+.show ~ .title .left {
+    left: 0;
+    border-right-color: orange;
+    border-left-color: transparent;
+}
+
+.show ~ .title .right {
+    right: 0;
+    border-right-color: transparent;
+    border-left-color: orange;
+}
+
+.show ~ .form {
+    opacity: 0;
+    transition:
+        opacity 200ms linear;
+}
+
+.show:checked ~ .title {
+    position: relative;
+    top: 0;
+    width: 500px;
+}
+
+.show:checked ~ .title .left {
+    opacity: 0.7;
+    left: -55px;
+    transition: 
+        opacity 50ms linear 200ms,
+        left 50ms linear 200ms;
+}
+
+.show:checked ~ .title .right {
+    opacity: 0.7;
+    right: -55px;
+    transition: 
+        opacity 50ms linear 200ms,
+        right 50ms linear 200ms;
+}
+
+.show:checked ~ .form {
+    opacity: 1;
+}
+
+.form {
+    width: 500px;
+    background: #ddd;
+    padding: 2em 0 2em 0;
+}
+
+.group,
+.group-2 {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.group {
+    margin-bottom: 2em;
+}
+
+.group:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.col-1,
+.col-2 {
+    float: left;
+}
+
+.col-1 {
+    width: 40%;
+}
+
+.col-1 label {
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-shadow: 0.5px 0.5px 0 #fff;
+   font-family:'Times New Roman';
+    text-transform: capitalize;
+}
+
+.col-2 {
+    width: 60%;
+}
+
+.col-2 input {
+    width: 100%;
+    height: 40px;
+    font-family:'Times New Roman';
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 
+        inset 0 0 3px 0 rgba(0,0,0,0.3),
+        0.5px 0.5px 0 0 #fff;
+    padding: 1em;
+    background: rgba(80,80,80,0.1);
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+}
+
+.group-2 {
+    margin-bottom: 1em;
+}
+
+.group-2:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.group-2 *:not(a) {
+    float: left;
+}
+
+.group-2 .checkbox {
+    display: none;
+}
+
+.group-2 label {
+    font-family:'Times New Roman';
+    font-size: 12px;
+    height: 100%;
+    cursor: pointer;
+    line-height: 22px;
+}
+
+.group-2 label a {
+    position: relative;
+    text-decoration: none;
+    color: blue;
+}
+
+.group-2 label a:after {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    right: 50%;
+    content: '';
+    height: 1px;
+    background: blue;
+    transition:
+        left 70ms linear,
+        right 70ms linear;
+}
+
+.group-2 label a:hover:after {
+    left: 0;
+    right: 0;
+}
+
+
+
+.toogle {
+    position: relative;
+    width: 41px;
+    height: 21px;
+    border-radius: 10px;
+    margin-right: 1em;
+    background: #ccc;
+    box-shadow:
+        inset 0 0 2px 0 rgba(0,0,0,0.5),
+        0.5px 0.5px 0 0 #fff;
     
 }
-  input[type=text] {
-  width: 200px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-  width: 80%;
-}
-.cotn_principal {
-  position: absolute;
-  width: 100%;
-  height: 170%;
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd8dc+0,607d8b+100,b0bec5+100 */
-/*background: #cfd8dc;*/ /* Old browsers */
-background-image:url("images/r2.jpg");
-/*background: -moz-linear-gradient(-45deg,  #cfd8dc 0%, #607d8b 100%, #b0bec5 100%);*/ /* FF3.6-15 */
-/*/*background: -webkit-linear-gradient(-45deg,  #cfd8dc 0%,#607d8b 100%,#b0bec5 100%);*/*/ /* Chrome10-25,Safari5.1-6 */
-/*background: linear-gradient(135deg,  #cfd8dc 0%,#607d8b 100%,#b0bec5 100%);*/ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', endColorstr='#b0bec5',GradientType=1 );*/ /* IE6-9 fallback on horizontal gradient */
-
-}
-
-
-.cont_centrar {
-  position: relative;
-  float: left;
-   width: 100%;
-}
-
-.cont_login {
-  position: relative;
-  width: 700px;
-left: 50%;
-margin-left: -320px;
-  
-}
-
-.cont_back_info {  
-position: relative;
-  float: left;
-  margin-right:5px;
-  width: 660px;
-  height: 470px;
-overflow: hidden;
-  background-color: #fff;
-  margin-top: 100px;
-box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-}
-
-.cont_forms {
-  position: absolute;
-  overflow: hidden;
-  top:100px;
-left: 0px;
-  width: 500px;
-  height: 280px;
-  background-color: #eee;
--webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
-        
-
-.cont_forms_active_login {
-box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 500px;  
-top:20px;
-left: 0px;
-  -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-
-}
-
-.cont_forms_active_sign_up {
-box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 1190px;  
-top:20px;
-left:320px;
--webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
-
-.cont_img_back_grey {
-  position: absolute;
-  width: 1100px;
-top:-80px;
-  left: -116px;
-}
-
-.cont_img_back_grey > img {
-  width: 100%;
- -webkit-filter: grayscale(200%);     filter: grayscale(200%);
-opacity: 0.2;
-animation-name: animar_fondo;
-  animation-duration: 20s;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
-animation-direction: alternate;
-
-}
-
-.cont_img_back_ {
-  position: absolute;
-  width: 950px;
-top:-80px;
-  left: -116px;
-}
-
-.cont_img_back_ > img {
-  width: 100%;
-opacity: 0.3;
-animation-name: animar_fondo;
-animation-duration: 20s;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
-animation-direction: alternate;
-}
-
-.cont_forms_active_login > .cont_img_back_ {
-top:0px;  
-  -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
-
-.cont_forms_active_sign_up > .cont_img_back_ {
-top:0px;  
-left: -435px;
-  -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
- 
-
-.cont_info_log_sign_up {
-position: absolute;
-  width: 640px;
-  height: 680px;
-  top: 100px;
-z-index: 1;
-} 
-
-.col_md_login {
-  position: relative;
-  float: left;
-  width: 50%;
-}
-
-.col_md_login > h2 {
-  font-weight: 400;
-margin-top: 70px;
-    color: #757575;
-}
-
-.col_md_login > p {
- font-weight: 400;
-margin-top: 15px;
-width: 80%;
-    color: #37474F;
-}
-
-.btn_login { 
-background-color: #26C6DA;
-  border: none;
-  padding: 10px;
-width: 200px;
-border-radius:3px;
-box-shadow: 1px 5px 20px -5px rgba(0,0,0,0.4);
-  color: #fff;
-margin-top: 10px;
-cursor: pointer;
-}
-
-.col_md_sign_up {
-  position: relative;
-  float: left;
-  width: 50%;  
-}
-
-.col_md_sign_up > h2 {
-  font-weight: 400;
-  margin-top: 70px;
-  color: black;
-}
-
-.col_md_sign_up > p {
- font-weight: 400;
-margin-top: 15px;
-width: 80%;
- color: darkblue;
-}
-
-.btn_sign_up { 
-background-color: #ef5350;
-  border: none;
-  padding: 10px;
-width: 200px;
-border-radius:3px;
-box-shadow: 1px 5px 20px -5px rgba(0,0,0,0.4);
-  color: #fff;
-margin-top: 10px;
-cursor: pointer;
-}
-.cont_forms_active_sign_up {
-z-index: 2;  
-}
-
-
-@-webkit-keyframes animar_fondo {
-  from { -webkit-transform: scale(1) translate(0px);
--moz-transform: scale(1) translate(0px);
--ms-transform: scale(1) translate(0px);
--o-transform: scale(1) translate(0px);
-transform: scale(1) translate(0px); }
-  to { -webkit-transform: scale(1.5) translate(50px);
--moz-transform: scale(1.5) translate(50px);
--ms-transform: scale(1.5) translate(50px);
--o-transform: scale(1.5) translate(50px);
-transform: scale(1.5) translate(50px); }
-}
-@-o-keyframes identifier {
-  from { -webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1); }
-  to { -webkit-transform: scale(1.5);
--moz-transform: scale(1.5);
--ms-transform: scale(1.5);
--o-transform: scale(1.5);
-transform: scale(1.5); }
-
-}
-@-moz-keyframes identifier {
-  from { -webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1); }
-  to { -webkit-transform: scale(1.5);
--moz-transform: scale(1.5);
--ms-transform: scale(1.5);
--o-transform: scale(1.5);
-transform: scale(1.5); }
-
-}
-@keyframes identifier {
-  from { -webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1); }
-  to { -webkit-transform: scale(1.5);
--moz-transform: scale(1.5);
--ms-transform: scale(1.5);
--o-transform: scale(1.5);
-transform: scale(1.5); }
-}
-.cont_form_login {
-  position: absolute;
-  opacity: 0;
-display: none;
-  width: 320px;
-  -webkit-transition: all 0.3s;
--moz-transition: all 0.3s;
--ms-transition: all 0.3s;
--o-transition: all 0.3s;
-transition: all 0.3s;
-}
-
-.cont_forms_active_login {
-z-index: 2;  
-}
-.cont_forms_active_login  >.cont_form_login {
-}
-
-.cont_form_sign_up {
-  position: absolute;
-  width: 460px;
-    height: 600px;
-float:left;
-  opacity: 0;
-display: none;
-  -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
-
-  
-.cont_form_sign_up > input {
-text-align: left;
-  padding: 10px 5px;
-margin-left: 10px;
-margin-top: 2px;
-  width: 400px;
-border: none;
-    color: #757575;
-}
-.cont_form_sign_up > h6 {
-text-align: left;
-    padding:2px 5px;
-margin-left: 26px;
-    margin-top: 25px;
-  width: 400px;
-border: none;
-    color:black;
-}
-
-.cont_form_sign_up > h2 {
-margin-top: 50px; 
-font-weight: 400;
-  color: black;
-}
-
-
-.cont_form_login > h2 {
-margin-top: 110px; 
-font-weight: 400;
-  color: forestgreen;
-}
-.cont_form_login > a,.cont_form_sign_up > a  {
-  color: forestgreen;
+.submit1 {
+    border: none;
+    outline: none;
     position: relative;
-    float: left;
-    margin: 10px;
-margin-left: 30px;
-}
- /* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 50%;
-  opacity: 0.9;
+    height: 40px;
+    color: #fff;
+    font-family:'Times New Roman';
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
 }
 
-button:hover {
-  opacity:1;
+.submit1:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
+}
+.toogle:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Float cancel and delete buttons and add an equal width */
-.cancelbtn, .deletebtn {
-  float: left;
-  width: 50%;
+.checkbox ~ label .toogle:before {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: left 150ms linear;
 }
 
-/* Add a color to the cancel button */
-.cancelbtn {
-  background-color: #ccc;
-  color: black;
+.checkbox ~ label .toogle {
+    background: rgba(200,0,0,0.5);
 }
 
-/* Add a color to the delete button */
-.deletebtn {
-  background-color: #f44336;
+.checkbox ~ label {
+    color: rgba(0,0,0,0.4);
+    transition: color 100ms linear;
 }
 
-/* Add padding and center-align text to the container */
-.container {
-  padding: 16px;
-  text-align: center;
+.checkbox:checked ~ label .toogle:before {
+    position: absolute;
+    top: 3px;
+    left: 22px;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
+.checkbox:checked ~ label .toogle {
+    background: rgba(0,200,0,0.5);
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+.checkbox:checked ~ label {
+    color: rgba(0,0,0,1);
 }
 
-/* Style the horizontal ruler */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
- 
-/* The Modal Close Button (x) */
-.close {
-  position: absolute;
-  right: 35px;
-  top: 15px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #f1f1f1;
-}
-
-.close:hover,
-.close:focus {
-  color: #f44336;
-  cursor: pointer;
+.submit {
+    border: none;
+    outline: none;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font-family:'Times New Roman';
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
 }
 
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+.submit:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
 }
-        </style>
-    </head>
+    #cars
+    {
+        width: 235px;
+        height: 40px;
+    }
+    #gender
+    {
+        width: 235px;
+        height: 40px;
+    }
+    .submit1 {
+    border: none;
+    outline: none;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font-family:'Times New Roman';
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
+}
+
+.submit1:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
+}
+    #qualifications
+    {
+        width: 235px;
+        height:40px;
+    }
+     #experience
+    {
+        width: 235px;
+        height:40px;
+    }
+    #post
+    {
+        width: 235px;
+        height: 40px;
+    }
+
+    #output
+    {
+        height: 146px;
+        width: 227px;
+    }
+
+</style>
+</head>
 <body>
-<div class="cotn_principal">
-<div class="cont_centrar">
-  <div class="cont_login">
-<div class="cont_info_log_sign_up">   
-<div class="col_md_sign_up">
-  <h2><b>Project Details</b></h2>
-<p><b>"Project Managers are primarily responsible for the completion of the project as planned. Depending on the type of project organization, they usually play a lead role in the overall planning, executing, monitoring, controlling, and closing of projects."</b></p>
-<button class="btn_sign_up" onclick="cambiar_sign_up()"><b>Click here to Add Details </b></button>
-  </div>
-       </div>
-    <div class="cont_back_info">
-       <div class="cont_img_back_grey">
-       <!--<img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />-->
-       <img src="images/r2.jpg" alt="" />
-       </div>
-       
+<input type="checkbox" id="show" class="show" />
+    <label for="show" class="title"><b>Add Project </b><i class="flag left"></i><i class="flag right"></i></label>
+    <h2 align="center"><a href="Project_Details.html"><b>Home</b></a></h2>
+<!-- Form -->
+<form action="Project_Add.html" class="form" onsubmit="return (checkForm(this) && false);" method="POST">
+     <!-- Project Id -->
+    <div class="group">
+        <div class="col-1">
+            <label for="projectid"><b>Project Id<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="projectid" placeholder="Project Id" 
+                required="required" />
+        </div>
     </div>
-<div class="cont_forms" >
-    <div class="cont_img_back_">
-      <!-- <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />-->
-       <img src="images/r1.jpg" alt="" />
-       </div>
- 
- <!-- <form action="Project_Add.html" class="form">-->
-   <div class="cont_form_sign_up">
- <a href="Project_Details.html" onclick="ocultar_login_sign_up()"><b>Home</b><i class="material-icons">&#xE5C4;</i></a>     
-<a href="#" onclick="ocultar_login_sign_up()"><b>Back</b><i class="material-icons">&#xE5C4;</i></a>
-     <h2><b>Details</b></h2>
-<input type="text" placeholder="Project id" required=""/><br/><br/>
-<input type="text" placeholder="Project Manager id" required=""/><br/><br/>
-<input type="text" placeholder="Employee id" required=""/><br/><br/>       
-<input type="text" placeholder="Project Name" required=""/><br/>
-<h6><b>Project Start date</b></h6><input type="date" placeholder="Project Start date" required=""/><br>
-<h6><b>Expected End date</b></h6><input type="date" placeholder="Expected date" required=""/><br/>
-<h6><b>Final date</b></h6><input type="date" placeholder="Final date" required=""/><br/><br/>
-<input type="text" placeholder="Project Budget" required=""/><br/><br/>
-<input type="text" placeholder="Labour Cost" required=""/><br/><br/>
-<input type="text" placeholder="Material Cost" required=""/><br/><br/>
-<input type="text" placeholder="Total Cost" required=""/><br/>
-<h6><b>Total Hours taken</b></h6><input type="time" placeholder="Total hours" required=""/><br/><br/>
-<input type="text" placeholder="Project status [completed/stopped/pending]" required=""/><br/><br />
-<!--<button class="btn_sign_up" onclick="cambiar_sign_up()">Submit</button>-->
- <button class="btn_sign_up" onclick="document.getElementById('id01').style.display='block'">Confirm to Add</button>
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-  <form class="modal-content" action="Project_Add.html">
-    <div class="container">
-      <p><b>Hai Friend...</b></p>
-      <p><b>Are you sure you want to Add project details to your Account?</p>
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">Add</button>
-      </div>
+     <!-- project manager Id -->
+    <div class="group">
+        <div class="col-1">
+            <label for="managerid"><b>Manager Id<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="managerid" placeholder="Project manager Id" 
+                required="required" />
+        </div>
     </div>
-  </form>
-</div>
+    <!-- Employee Id -->
+    <div class="group">
+        <div class="col-1">
+            <label for="employeeid"><b>Employee Id<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="employeeid" placeholder="Employee Id" 
+                required="required" />
+        </div>
     </div>
-    <script>
-        /* ------------------------------------ Click on login and Sign Up to  changue and view the effect
-    ---------------------------------------
-    */
-        var modal = document.getElementById('id01');
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        function cambiar_sign_up(at) {
-            document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
-            document.querySelector('.cont_form_sign_up').style.display = "block";
-
-
-            setTimeout(function () {
-                document.querySelector('.cont_form_sign_up').style.opacity = "1";
-            }, 100);
-
-
-
-
-        }
-        /* function ocultar_login_sign_up() {
- 
-             document.querySelector('.cont_forms').className = "cont_forms";
-             document.querySelector('.cont_form_sign_up').style.opacity = "0";
- 
- 
-             setTimeout(function () {
-                 document.querySelector('.cont_form_sign_up').style.display = "none";
- 
-             }, 500);
- 
-         }*/
-    </script>
-    </body>
-    </html>
+   <!-- project Name -->
+    <div class="group">
+        <div class="col-1">
+            <label for="projectname"><b>Project Name<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="projectname" placeholder="Project Name" 
+                required="required" />
+        </div>
+    </div>
+     <!-- project start date -->
+    <div class="group">
+        <div class="col-1">
+            <label for="start"><b>Start Date<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="date" id="start" placeholder="Project Start Date" 
+                required="required" />
+        </div>
+    </div>
+     <!-- project expected date -->
+    <div class="group">
+        <div class="col-1">
+            <label for="expected"><b>Expected Date<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="date" id="expected" placeholder="Project Expected End Date" 
+                required="required" />
+        </div>
+    </div>
+     <!-- project final date -->
+    <div class="group">
+        <div class="col-1">
+            <label for="final"><b>Final Date<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="date" id="final" placeholder="Project finished Date" 
+                required="required" />
+        </div>
+    </div>
+    <!-- project total hours -->
+    <div class="group">
+        <div class="col-1">
+            <label for="total"><b>Total Hours<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="time" id="total" placeholder="Project Total hours" 
+                required="required" />
+        </div>
+    </div>
+    <!-- project budget -->
+    <div class="group">
+        <div class="col-1">
+            <label for="budget"><b>Project Budget<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="budget" placeholder="Project Budget" 
+                required="required" />
+        </div>
+    </div>
+     <!-- project labor cost -->
+    <div class="group">
+        <div class="col-1">
+            <label for="labor"><b>Labor Cost<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="labor" placeholder="Project Labor cost" 
+                required="required" />
+        </div>
+    </div>
+     <!-- project material cost -->
+    <div class="group">
+        <div class="col-1">
+            <label for="material"><b>Material Cost<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="material" placeholder="Project material cost" 
+                required="required" />
+        </div>
+    </div>
+    <!-- project total cost -->
+    <div class="group">
+        <div class="col-1">
+            <label for="totals"><b>Total Cost<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="totals" placeholder="Project total cost" 
+                required="required" />
+        </div>
+    </div>
+     <!-- Project status -->
+    <div class="group">
+        <div class="col-1">
+            <label for="status"><b>Project Status<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+             <select id="status" name="status" required="required" style="background-color:#ccc;">
+                <option value="name2"><b>Select project current status</b></option>
+                <option value="Completed">Completed</option>
+                <option value="Stopped">Stopped</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Terms & Conditions -->
+    <div class="group-2">
+        <input type="checkbox" class="checkbox" id="terms" />
+        <label for="terms"><span class="toogle"></span>I declare to have read and accepted the <a href="#">terms of service</a></label>
+    </div>
+    <!-- Notifications -->
+    <div class="group-2">
+        <input type="checkbox" class="checkbox" id="notifications" />
+        <label for="notifications"><span class="toogle"></span>Have you enter all the required fields</label>
+    </div>
+    <!-- Submit button -->
+    <input type="submit" class="submit" value="Submit" /><br />
+     <input type="submit" class="submit1" value="Cancel" />
+</form>
+</body>
+</html>

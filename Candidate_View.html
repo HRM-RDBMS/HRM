@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Edit Project Details</title>
+    <title>View Details</title>
 <style>
     html, body, h2 {
     margin: 0;
@@ -13,8 +13,26 @@
 }
 
 body {
-    background-image:url("assets/img/intro-carousel/1.jpg");
+    background-image:url("assets/img/intro-carousel/img11.jpg");
     font-family:'Pacifico', cursive;
+}
+    input[type=text] {
+  width: 210px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: transparent;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
 }
 
 .show {
@@ -38,24 +56,6 @@ body {
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
-}
-   input[type=text] {
-  width: 210px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: transparent;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-  width: 100%;
 }
 
 .flag {
@@ -165,7 +165,26 @@ input[type=text]:focus {
    font-family:'Times New Roman';
     text-transform: capitalize;
 }
+.submit1 {
+    border: none;
+    outline: none;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font-family:'Times New Roman';
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
+}
 
+.submit1:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
+}
 .col-2 {
     width: 60%;
 }
@@ -315,26 +334,6 @@ input[type="submit"] {
     color: orange;
     background: rgba(0,0,0,1);
 }
-.submit1 {
-    border: none;
-    outline: none;
-    position: relative;
-    height: 40px;
-    color: #fff;
-    font-family:'Times New Roman';
-    text-transform: uppercase;
-    border-radius: 2px;
-    background: rgba(0,0,0,0.6);
-    box-shadow: 0 0 1px 0 #000;
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    transition: background 70ms linear;
-}
-
-.submit1:hover {
-    color: orange;
-    background: rgba(0,0,0,1);
-}
     #cars
     {
         width: 235px;
@@ -345,26 +344,7 @@ input[type="submit"] {
         width: 235px;
         height: 40px;
     }
-    .submit1 {
-    border: none;
-    outline: none;
-    position: relative;
-    height: 40px;
-    color: #fff;
-    font-family:'Times New Roman';
-    text-transform: uppercase;
-    border-radius: 2px;
-    background: rgba(0,0,0,0.6);
-    box-shadow: 0 0 1px 0 #000;
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    transition: background 70ms linear;
-}
 
-.submit1:hover {
-    color: orange;
-    background: rgba(0,0,0,1);
-}
     #qualifications
     {
         width: 235px;
@@ -386,159 +366,193 @@ input[type="submit"] {
         height: 146px;
         width: 227px;
     }
-
+     #address
+    {
+        width: 233px;
+        height: 57px;
+    }
+#references
+{
+        width: 233px;
+        height: 57px;
+    }
 </style>
 </head>
 <body>
 <input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>Edit Project </b><i class="flag left"></i><i class="flag right"></i></label>
-    <h2 align="center"><a href="Project_Details.html"><b>Home</b></a></h2>
+    <label for="show" class="title"><b>View Profile</b><i class="flag left"></i><i class="flag right"></i></label>
+    <h2 align="center"><a href="Candidate_Profile.html"><b>Home</b></a></h2>
 <!-- Form -->
-<form action="Project_Edit.html" class="form" onsubmit="return (checkForm(this) && false);" method="POST">
-<div class="group">
+<form action="#" class="form">
+    <div class="group">
         <div class="col-1">
             <label for="search"><b>Search Id<span  style="color:red"> *</span></b></label>
         </div>
         
-<input type="text" name="search" placeholder="Search project id" required="required"></div>
+<input type="text" name="search" placeholder="Search candidate id" required="required">
+            
+    </div>
     <div><input type="submit" class="submit1" value="Search" />        
     </div>
     <br />
-     <!-- Project Id -->
-    <div class="group">
+<div class="group">
         <div class="col-1">
-            <label for="projectid"><b>Project Id<span  style="color:red"> *</span></b></label>
+            <label for="image"><b>Profile Picture</b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="projectid" placeholder="Project Id" 
-                required="required" />
+            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+            <img id="output" />
+            <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Image</label>
+            <!--<input type="button" id="button" value="Upload image" />-->
         </div>
     </div>
-     <!-- project manager Id -->
+    <!-- Candidate Id -->
     <div class="group">
         <div class="col-1">
-            <label for="managerid"><b>Manager Id<span  style="color:red"> *</span></b></label>
+            <label for="candidateid"><b>Candidate Id</b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="managerid" placeholder="Project manager Id" 
-                required="required" />
+            <input type="text" id="candidateid" placeholder="Candidate Id" 
+                />
         </div>
     </div>
-    <!-- Employee Id -->
+   <!-- Candidate Name -->
     <div class="group">
         <div class="col-1">
-            <label for="employeeid"><b>Employee Id<span  style="color:red"> *</span></b></label>
+            <label for="candidatename"><b>Candidate Name</b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="employeeid" placeholder="Employee Id" 
-                required="required" />
+            <input type="text" id="candidatename" placeholder="Candidate Name" 
+                />
         </div>
     </div>
-   <!-- project Name -->
+     <!-- Date Of Birth -->
     <div class="group">
         <div class="col-1">
-            <label for="projectname"><b>Project Name<span  style="color:red"> *</span></b></label>
+            <label for="dob"><b>Date of Birth</b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="projectname" placeholder="Project Name" 
-                required="required" />
+            <input type="date" id="dob" placeholder="Date of Birth" 
+                />
         </div>
     </div>
-     <!-- project start date -->
+     <!-- Gender -->
     <div class="group">
         <div class="col-1">
-            <label for="start"><b>Start Date<span  style="color:red"> *</span></b></label>
+            <label for="gender"><b>Gender</b></label>
         </div>
         <div class="col-2">
-            <input type="date" id="start" placeholder="Project Start Date" 
-                required="required" />
-        </div>
-    </div>
-     <!-- project expected date -->
-    <div class="group">
-        <div class="col-1">
-            <label for="expected"><b>Expected Date<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="date" id="expected" placeholder="Project Expected End Date" 
-                required="required" />
-        </div>
-    </div>
-     <!-- project final date -->
-    <div class="group">
-        <div class="col-1">
-            <label for="final"><b>Final Date<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="date" id="final" placeholder="Project finished Date" 
-                required="required" />
-        </div>
-    </div>
-    <!-- project total hours -->
-    <div class="group">
-        <div class="col-1">
-            <label for="total"><b>Total Hours<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="time" id="total" placeholder="Project Total hours" 
-                required="required" />
-        </div>
-    </div>
-    <!-- project budget -->
-    <div class="group">
-        <div class="col-1">
-            <label for="budget"><b>Project Budget<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="budget" placeholder="Project Budget" 
-                required="required" />
-        </div>
-    </div>
-     <!-- project labor cost -->
-    <div class="group">
-        <div class="col-1">
-            <label for="labor"><b>Labor Cost<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="labor" placeholder="Project Labor cost" 
-                required="required" />
-        </div>
-    </div>
-     <!-- project material cost -->
-    <div class="group">
-        <div class="col-1">
-            <label for="material"><b>Material Cost<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="material" placeholder="Project material cost" 
-                required="required" />
-        </div>
-    </div>
-    <!-- project total cost -->
-    <div class="group">
-        <div class="col-1">
-            <label for="totals"><b>Total Cost<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="totals" placeholder="Project total cost" 
-                required="required" />
-        </div>
-    </div>
-     <!-- Project status -->
-    <div class="group">
-        <div class="col-1">
-            <label for="status"><b>Project Status<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-             <select id="status" name="status" required="required" style="background-color:#ccc;">
-                <option value="name2"><b>Select project current status</b></option>
-                <option value="Completed">Completed</option>
-                <option value="Stopped">Stopped</option>
-                <option value="Pending">Pending</option>
+             <select id="gender" name="gender" style="background-color:#ccc;">
+                <option value="name2"><b>Select your gender</b></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
             </select>
         </div>
     </div>
-    
+     <!-- Candidate Address -->
+    <div class="group">
+        <div class="col-1">
+            <label for="address"><b>Address</b></label>
+        </div>
+        <div class="col-2">
+             <textarea  id="address" name="address" placeholder="Address" style="background-color:#ccc;"></textarea>
+        </div>
+    </div>
+     <!-- Contact -->
+    <div class="group">
+        <div class="col-1">
+            <label for="contact"><b>Mobile Number</b></label>
+        </div>
+        <div class="col-2">
+            <input type="tel" id="contact" placeholder="Contact number" />
+        </div>
+    </div>
+     <!-- Qualifications -->
+    <div class="group">
+        <div class="col-1">
+            <label for="qualifications"><b>Qualifications</b></label>
+        </div>
+        <div class="col-2">
+            <select id="qualifications" name="qualification" style="background-color:#ccc;">
+                 <option value="name2"><b>Select your qualifications</b></option>
+                <option value="ten">10th pass</option>
+                <option value="twelve">12th pass</option>
+                <option value="ug">Undergraduate</option>
+                <option value="pg">Postgraduate</option>
+                <option value="phd">Doctorate(PhD)</option>
+            </select>
+        </div>
+    </div>
+     <!-- Applying Date -->
+    <div class="group">
+        <div class="col-1">
+            <label for="apply"><b>Applying Date</b></label>
+        </div>
+        <div class="col-2">
+            <input type="date" id="date" placeholder="Applying date"  />
+        </div>
+    </div>
+     <!-- experience -->
+    <div class="group">
+        <div class="col-1">
+            <label for="experience"><b>Experience</b></label>
+        </div>
+        <div class="col-2">
+            <select id="experience" name="experience" style="background-color:#ccc;" >
+                <option value="name1"><b>Select Year of Experience</b></option>
+                <option value="below">Below 6months</option>
+                <option value="between">Between 6months to 1 year</option>
+                <option value="year1">Between 1 year to 3 year</option>
+                <option value="year2">Between 3 year to 5 year</option>
+                <option value="above">Above 5 year</option>
+                <option value="no">No Experience</option>
+            </select>
+        </div>
+    </div>
+     <!-- post applied -->
+    <div class="group">
+        <div class="col-1">
+            <label for="post"><b>Post Applied</b></label>
+        </div>
+        <div class="col-2">
+            <select id="post" name="post" style="background-color:#ccc;" >
+                <option value="post1"><b>Select the post applied</b></option>
+                <option value="programmer">Developer</option>
+                <option value="testing">Testing & Coding</option>
+                <option value="account">Accountant</option>
+                <option value="sales">Salesman</option>
+                <option value="manager">Training manager</option>
+            </select>
+        </div>
+    </div>
+     <!-- Refernce -->
+    <div class="group">
+        <div class="col-1">
+            <label for="reference"><b>References</b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="references" placeholder="References" />
+        </div>
+    </div>
+    <!-- Email -->
+    <div class="group">
+        <div class="col-1">
+            <label for="email"><b>Email Id</b></label>
+        </div>
+        <div class="col-2">
+            <input type="email" id="email" placeholder="example@email.com"/>
+        </div>
+    </div>
+     <!-- Password -->
+    <div class="group">
+        <div class="col-1">
+            <label for="password"><b>Password</b></label>
+        </div>
+        <div class="col-2">
+            <input type="pwd1" id="password" placeholder="password" />
+        </div>
+    </div>
     <!-- Terms & Conditions -->
     <div class="group-2">
         <input type="checkbox" class="checkbox" id="terms" />
@@ -547,11 +561,18 @@ input[type="submit"] {
     <!-- Notifications -->
     <div class="group-2">
         <input type="checkbox" class="checkbox" id="notifications" />
-        <label for="notifications"><span class="toogle"></span>Have you edit all the required fields</label>
+        <label for="notifications"><span class="toogle"></span>Have you view all details</label>
     </div>
     <!-- Submit button -->
-    <input type="submit" class="submit" value="Save" /><br />
-     <input type="submit" class="submit1" value="Cancel" />
+    <input type="submit" class="submit" value="Cancel" />
+   
+    
 </form>
+<script>
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
 </body>
 </html>
