@@ -363,6 +363,11 @@ input[type="submit"] {
         width: 233px;
         height: 57px;
     }
+    #Img1
+    {
+        width: 237px;
+        height: 155px;
+    }
 </style>
 </head>
 <body>
@@ -376,7 +381,7 @@ input[type="submit"] {
             <label for="image"><b>Profile Picture<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;" required="required">
+            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;" required="required" >
             <img id="output">
             <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Image</label>
             <!--<input type="button" id="button" value="Upload image" />-->
@@ -730,6 +735,18 @@ input[type="submit"] {
         </div>
         <div class="col-2">
             <textarea id="references" name="references" placeholder="References" required="required" style="background-color:#ccc;"></textarea>
+        </div>
+    </div>
+    <!--CV-->
+    <div class="group">
+        <div class="col-1">
+            <label for="cv"><b>CV<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="file"  accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">
+            <img id="Img1" />
+            <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Images</label>
+            <!--<input type="button" id="button" value="Upload image" />-->
         </div>
     </div>
      <!-- Email -->

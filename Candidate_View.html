@@ -38,7 +38,11 @@ input[type=text]:focus {
 .show {
     display: none;
 }
-
+#Img1
+    {
+        width: 237px;
+        height: 155px;
+    }
 .title,
 .form {
     margin: 0 auto;
@@ -533,6 +537,18 @@ input[type="submit"] {
         </div>
         <div class="col-2">
             <input type="text" id="references" placeholder="References" />
+        </div>
+    </div>
+    <!--CV-->
+    <div class="group">
+        <div class="col-1">
+            <label for="cv"><b>CV</b></label>
+        </div>
+        <div class="col-2">
+            <input type="file"  accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">
+            <img id="Img1" />
+            <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Images</label>
+            <!--<input type="button" id="button" value="Upload image" />-->
         </div>
     </div>
     <!-- Email -->
