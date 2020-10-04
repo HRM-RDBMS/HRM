@@ -4,17 +4,54 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add Candidate Details</title>
+    <title>Edit Rejected Candidate Details</title>
 <style>
     html, body, h2 {
     margin: 0;
     padding: 0.5em;
     /*font-family:'Pacifico', cursive;*/
 }
+.submit1 {
+    border: none;
+    outline: none;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font-family:'Times New Roman';
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
+}
 
+.submit1:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
+}
 body {
     background-image:url("assets/img/intro-carousel/img11.jpg");
     font-family:'Pacifico', cursive;
+}
+  input[type=text] {
+  width: 210px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: transparent;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
 }
 
 .show {
@@ -136,7 +173,7 @@ body {
 }
 
 .col-1 {
-    width: 39%;
+    width: 40%;
 }
 
 .col-1 label {
@@ -149,25 +186,23 @@ body {
 }
 
 .col-2 {
-    width: 59%;
+    width: 60%;
 }
 
 .col-2 input {
-    border-style: none;
-        border-color: inherit;
-        border-width: medium;
-width: 94%;
-        height: 40px;
-        font-family:'Times New Roman';
-        outline: none;
-        border-radius: 20px;
-        box-sizing: border-box;
-        box-shadow: 
+    width: 100%;
+    height: 40px;
+    font-family:'Times New Roman';
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 
         inset 0 0 3px 0 rgba(0,0,0,0.3),
         0.5px 0.5px 0 0 #fff;
-        padding: 1em;
-        margin-left: 8px;
-    }
+    padding: 1em;
+    background: rgba(80,80,80,0.1);
+}
 
 input[type="submit"] {
     display: block;
@@ -299,26 +334,6 @@ input[type="submit"] {
     color: orange;
     background: rgba(0,0,0,1);
 }
-.submit1 {
-    border: none;
-    outline: none;
-    position: relative;
-    height: 40px;
-    color: #fff;
-    font-family:'Times New Roman';
-    text-transform: uppercase;
-    border-radius: 2px;
-    background: rgba(0,0,0,0.6);
-    box-shadow: 0 0 1px 0 #000;
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    transition: background 70ms linear;
-}
-
-.submit1:hover {
-    color: orange;
-    background: rgba(0,0,0,1);
-}
     #cars
     {
         width: 235px;
@@ -326,9 +341,8 @@ input[type="submit"] {
     }
     #gender
     {
-        width: 225px;
+        width: 235px;
         height: 40px;
-        margin-left: 10px;
     }
 
     #qualifications
@@ -352,8 +366,7 @@ input[type="submit"] {
         height: 146px;
         width: 227px;
     }
-
-    #address
+#address
     {
         width: 233px;
         height: 57px;
@@ -363,38 +376,55 @@ input[type="submit"] {
         width: 233px;
         height: 57px;
     }
+#skills
+{
+    width: 233px;
+        height: 57px;
+    }
     #Img1
     {
-        width: 237px;
-        height: 155px;
+        width: 227px;
+        height: 146px;
     }
 </style>
 </head>
 <body>
 <input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>Add More details to your Profile</b><i class="flag left"></i><i class="flag right"></i></label>
-    <h2 align="center"><a href="Candidate_Profile.html"><b>Home</b></a></h2>
+    <label for="show" class="title"><b>Edit Details</b><i class="flag left"></i><i class="flag right"></i></label>
+    <h2 align="center"><a href="Rejected_Candidate_Profile.html"><b>Home</b></a></h2>
 <!-- Form -->
-<form action="Candidate_Add.html" class="form" onsubmit="return (checkForm(this) && false);" method="POST">
+<form action="Rejected_Candidate_Edit.html" class="form" onsubmit="return (checkForm(this) && false);" method="POST">
+    <!--search-->
+<div class="group">
+        <div class="col-1">
+            <label for="search"><b>Search Rejected Id<span  style="color:red"> *</span></b></label>
+        </div>
+        
+<input type="text" name="search" placeholder="Search rejected id" required="required" >
+            
+    </div>
+     <div><input type="submit" class="submit1" value="Search" /></div>
+    <br />
+    <!--image-->
 <div class="group">
         <div class="col-1">
             <label for="image"><b>Profile Picture<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;" required="required" >
-            <img id="output">
+            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+            <img id="output" />
             <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Image</label>
             <!--<input type="button" id="button" value="Upload image" />-->
         </div>
     </div>
-    <!-- Candidate Id -->
+     <!-- Rejected Id -->
     <div class="group">
         <div class="col-1">
-            <label for="candidateid"><b>Candidate Id<span  style="color:red"> *</span></b></label>
+            <label for="rejectedid"><b>Rejected Id<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="candidateid" placeholder="Candidate Id" 
-                required="required" style="background-color:#ccc;"/>
+            <input type="text" id="rejectedid" placeholder="Rejected Id" 
+                required="required" />
         </div>
     </div>
    <!-- Candidate Name -->
@@ -404,7 +434,7 @@ input[type="submit"] {
         </div>
         <div class="col-2">
             <input type="text" id="candidatename" placeholder="Candidate Name" 
-                required="required" style="background-color:#ccc;"/>
+                required="required" />
         </div>
     </div>
      <!-- Date Of Birth -->
@@ -414,7 +444,7 @@ input[type="submit"] {
         </div>
         <div class="col-2">
             <input type="date" id="dob" placeholder="Date of Birth" 
-                required="required" style="background-color:#ccc;" />
+                required="required" />
         </div>
     </div>
      <!-- Gender -->
@@ -437,17 +467,18 @@ input[type="submit"] {
             <label for="address"><b>Address<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <textarea  id="address" name="address" placeholder="Address" 
+           <textarea  id="address" name="address" placeholder="Address" 
             required="required" style="background-color:#ccc;"></textarea></div>
-    </div>
+        </div>
+  
      <!-- Contact -->
     <div class="group">
         <div class="col-1">
-            <label for="contact"><b>Mobile Number<span  style="color:red"> *</span></b></label>
+            <label for="contact"><b>Contact Number<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-        <select name="countryCode" id="" 
-                style="width: 120px; height: 32px; margin-left: 11px;background-color:#ccc;" required="required">
+            <select name="countryCode" id="" 
+                style="width: 120px; height: 32px; margin-left: 11px; background-color:#ccc;" >
 	<option data-countryCode="GB" value="44" Selected>UK (+44)</option>
 	<option data-countryCode="US" value="1">USA (+1)</option>
 	<optgroup label="Other countries">
@@ -667,7 +698,7 @@ input[type="submit"] {
 		<option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
 	</optgroup>
 </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="tel" id="contact" placeholder="Mobile:(format:xxx-xxx-xxxx)" pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" required="required" style="background-color:#ccc;"/>
+            <input type="tel" id="contact" placeholder="Mobile:(format:xxx-xxx-xxxx)" pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" required="required"/>
         </div>
     </div>
      <!-- Qualifications -->
@@ -692,7 +723,7 @@ input[type="submit"] {
             <label for="apply"><b>Applying Date<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="date" id="date" placeholder="Applying date" required="required" style="background-color:#ccc;"/>
+            <input type="date" id="date" placeholder="Applying date" required="required" />
         </div>
     </div>
      <!-- experience -->
@@ -701,7 +732,7 @@ input[type="submit"] {
             <label for="experience"><b>Experience<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <select id="experience" name="qualification" required="required" style="background-color:#ccc;">
+            <select id="experience" name="experience" required="required" style="background-color:#ccc;">
                 <option value="name1"><b>Select Year of Experience</b></option>
                 <option value="below">Below 6months</option>
                 <option value="between">Between 6months to 1 year</option>
@@ -728,15 +759,34 @@ input[type="submit"] {
             </select>
         </div>
     </div>
+    <!-- Rejected Date -->
+    <div class="group">
+        <div class="col-1">
+            <label for="rjdate"><b>Rejected Date<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <input type="date" id="rjdate" placeholder="Rejected date" required="required" />
+        </div>
+    </div>
      <!-- Refernce -->
     <div class="group">
         <div class="col-1">
             <label for="reference"><b>References<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <textarea id="references" name="references" placeholder="References" required="required" style="background-color:#ccc;"></textarea>
+             <textarea id="references" name="references" placeholder="References" required="required" style="background-color:#ccc;"></textarea>
         </div>
     </div>
+    <!-- skills -->
+    <div class="group">
+        <div class="col-1">
+            <label for="skills"><b>Skills<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+            <textarea id="skills" name="skills" placeholder="skills" required="required" style="background-color:#ccc;"></textarea>
+        </div>
+    </div>
+   
     <!--CV-->
     <div class="group">
         <div class="col-1">
@@ -749,14 +799,14 @@ input[type="submit"] {
             <!--<input type="button" id="button" value="Upload image" />-->
         </div>
     </div>
-     <!-- Email -->
+     
+    <!-- Email -->
     <div class="group">
         <div class="col-1">
             <label for="email"><b>Email Id<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="email" id="email1" placeholder="example@email.com" 
-                required="required" style="background-color:#ccc;"/>
+            <input type="email" id="email" placeholder="example@email.com" required="required"/>
         </div>
     </div>
     <!-- Password -->
@@ -765,7 +815,7 @@ input[type="submit"] {
             <label for="password"><b>Password<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="password" id="pwd1" placeholder="password" required="required" style="background-color:#ccc;"/>
+            <input type="password" id="password" placeholder="password" required="required"/>
         </div>
     </div>
     <!-- Terms & Conditions -->
@@ -779,8 +829,8 @@ input[type="submit"] {
         <label for="notifications"><span class="toogle"></span>Have you enter all the required fields</label>
     </div>
     <!-- Submit button -->
-    <input type="submit" class="submit" value="Submit" /><br />
-     <input type="submit" class="submit1" value="Cancel" />
+    <input type="submit" class="submit" value="Save" /><br />
+    <input type="submit" class="submit1" value="Cancel" />
 </form>
 <script>
     var loadFile = function (event) {

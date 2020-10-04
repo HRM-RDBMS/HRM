@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Delete Details</title>
+    <title>Delete Recruited Candidate Details</title>
 <style>
     html, body, h2 {
     margin: 0;
@@ -16,7 +16,7 @@ body {
     background-image:url("assets/img/intro-carousel/img11.jpg");
     font-family:'Pacifico', cursive;
 }
-    input[type=text] {
+  input[type=text] {
   width: 210px;
   box-sizing: border-box;
   border: 2px solid #ccc;
@@ -35,14 +35,11 @@ input[type=text]:focus {
   width: 100%;
 }
 
+
 .show {
     display: none;
 }
-#Img1
-    {
-        width: 237px;
-        height: 155px;
-    }
+
 .title,
 .form {
     margin: 0 auto;
@@ -169,26 +166,7 @@ input[type=text]:focus {
    font-family:'Times New Roman';
     text-transform: capitalize;
 }
-.submit1 {
-    border: none;
-    outline: none;
-    position: relative;
-    height: 40px;
-    color: #fff;
-    font-family:'Times New Roman';
-    text-transform: uppercase;
-    border-radius: 2px;
-    background: rgba(0,0,0,0.6);
-    box-shadow: 0 0 1px 0 #000;
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    transition: background 70ms linear;
-}
 
-.submit1:hover {
-    color: orange;
-    background: rgba(0,0,0,1);
-}
 .col-2 {
     width: 60%;
 }
@@ -370,7 +348,7 @@ input[type="submit"] {
         height: 146px;
         width: 227px;
     }
-     #address
+    #address
     {
         width: 233px;
         height: 57px;
@@ -380,25 +358,57 @@ input[type="submit"] {
         width: 233px;
         height: 57px;
     }
+#skills
+{
+    width: 233px;
+        height: 57px;
+    }
+    #Img1
+    {
+        height: 158px;
+        width: 227px;
+    }
+    .submit1 {
+    border: none;
+    outline: none;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font-family:'Times New Roman';
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
+}
+
+.submit1:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
+}
 </style>
 </head>
 <body>
 <input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>Delete Profile</b><i class="flag left"></i><i class="flag right"></i></label>
-    <h2 align="center"><a href="Candidate_Profile.html"><b>Home</b></a></h2>
+    <label for="show" class="title"><b>Delete Details</b><i class="flag left"></i><i class="flag right"></i></label>
+    <h2 align="center"><a href="Recruited_Candidate_Profile.html"><b>Home</b></a></h2>
 <!-- Form -->
-<form action="Candidate_Delete.html" class="form">
-    <div class="group">
+<form action="Recruited_Candidates_Delete.html" class="form">
+    <!--search-->
+<div class="group">
         <div class="col-1">
             <label for="search"><b>Search Id<span  style="color:red"> *</span></b></label>
         </div>
         
-<input type="text" name="search" placeholder="Search candidate id" required="required">
+<input type="text" id="search" name="search" placeholder="Search recruitement id" required="required" >
             
     </div>
     <div><input type="submit" class="submit1" value="Search" />        
     </div>
     <br />
+    <!--image-->
 <div class="group">
         <div class="col-1">
             <label for="image"><b>Profile Picture</b></label>
@@ -410,14 +420,24 @@ input[type="submit"] {
             <!--<input type="button" id="button" value="Upload image" />-->
         </div>
     </div>
-    <!-- Candidate Id -->
+     <!-- Recruitement Id -->
     <div class="group">
         <div class="col-1">
-            <label for="candidateid"><b>Candidate Id</b></label>
+            <label for="Recruitementid"><b>Recruitement Id</b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="candidateid" placeholder="Candidate Id" 
+            <input type="text" id="recruitementid" placeholder="Recruitment Id" 
                 />
+        </div>
+    </div>
+    <!-- Employee Id -->
+    <div class="group">
+        <div class="col-1">
+            <label for="employeeid"><b>Employee Id</b></label>
+        </div>
+        <div class="col-2">
+            <input type="text" id="employeeid" placeholder="Employee Id" 
+               />
         </div>
     </div>
    <!-- Candidate Name -->
@@ -437,7 +457,7 @@ input[type="submit"] {
         </div>
         <div class="col-2">
             <input type="date" id="dob" placeholder="Date of Birth" 
-                />
+                 />
         </div>
     </div>
      <!-- Gender -->
@@ -460,16 +480,17 @@ input[type="submit"] {
             <label for="address"><b>Address</b></label>
         </div>
         <div class="col-2">
-             <textarea  id="address" name="address" placeholder="Address" style="background-color:#ccc;"></textarea>
+            <textarea  id="address" name="address" placeholder="Address" 
+            style="background-color:#ccc;"></textarea>
         </div>
     </div>
      <!-- Contact -->
     <div class="group">
         <div class="col-1">
-            <label for="contact"><b>Mobile Number</b></label>
+            <label for="contact"><b>Contact Number</b></label>
         </div>
         <div class="col-2">
-            <input type="tel" id="contact" placeholder="Contact number" />
+            <input type="number" id="contact" placeholder="Contact number" />
         </div>
     </div>
      <!-- Qualifications -->
@@ -494,7 +515,7 @@ input[type="submit"] {
             <label for="apply"><b>Applying Date</b></label>
         </div>
         <div class="col-2">
-            <input type="date" id="date" placeholder="Applying date"  />
+            <input type="date" id="date" placeholder="Applying date" style="background-color:#ccc;"/>
         </div>
     </div>
      <!-- experience -->
@@ -503,7 +524,7 @@ input[type="submit"] {
             <label for="experience"><b>Experience</b></label>
         </div>
         <div class="col-2">
-            <select id="experience" name="experience" style="background-color:#ccc;" >
+            <select id="experience" name="qualification" style="background-color:#ccc;">
                 <option value="name1"><b>Select Year of Experience</b></option>
                 <option value="below">Below 6months</option>
                 <option value="between">Between 6months to 1 year</option>
@@ -520,7 +541,7 @@ input[type="submit"] {
             <label for="post"><b>Post Applied</b></label>
         </div>
         <div class="col-2">
-            <select id="post" name="post" style="background-color:#ccc;" >
+            <select id="post" name="post" style="background-color:#ccc;">
                 <option value="post1"><b>Select the post applied</b></option>
                 <option value="programmer">Developer</option>
                 <option value="testing">Testing & Coding</option>
@@ -530,16 +551,34 @@ input[type="submit"] {
             </select>
         </div>
     </div>
+    <!-- Recruitment Date -->
+    <div class="group">
+        <div class="col-1">
+            <label for="rdate"><b>Recruitement Date</b></label>
+        </div>
+        <div class="col-2">
+            <input type="date" id="rdate" placeholder="Recruitement date"  />
+        </div>
+    </div>
      <!-- Refernce -->
     <div class="group">
         <div class="col-1">
             <label for="reference"><b>References</b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="references" placeholder="References" />
+            <textarea id="references" name="references" placeholder="References" style="background-color:#ccc;"></textarea>
         </div>
     </div>
-    <!--CV-->
+    <!-- skills -->
+    <div class="group">
+        <div class="col-1">
+            <label for="skills"><b>Skills</b></label>
+        </div>
+        <div class="col-2">
+            <textarea id="skills" name="skills" placeholder="skills" style="background-color:#ccc;"></textarea>
+        </div>
+    </div>
+     <!--CV-->
     <div class="group">
         <div class="col-1">
             <label for="cv"><b>CV</b></label>
@@ -557,16 +596,16 @@ input[type="submit"] {
             <label for="email"><b>Email Id</b></label>
         </div>
         <div class="col-2">
-            <input type="email" id="email" placeholder="example@email.com"/>
+            <input type="email" id="email" placeholder="example@email.com" />
         </div>
     </div>
-     <!-- Password -->
+    <!-- Password -->
     <div class="group">
         <div class="col-1">
             <label for="password"><b>Password</b></label>
         </div>
         <div class="col-2">
-            <input type="pwd1" id="password" placeholder="password" />
+            <input type="password" id="pwd1" placeholder="password"/>
         </div>
     </div>
     <!-- Terms & Conditions -->
@@ -582,7 +621,7 @@ input[type="submit"] {
     <!-- Submit button -->
     <input type="submit" class="submit" value="Deleted" /><br />
     <input type="submit" class="submit1" value="Cancel" />        
-    
+  
 </form>
 <script>
     var loadFile = function (event) {
