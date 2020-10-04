@@ -68,9 +68,15 @@
 
                         <asp:Button ID="Button1" class="login100-form-btn" runat="server" Text="Login" OnClick="Button1_Click" />
 
+
 						
 					</div>
-
+					<div>
+						Browse without login!
+						<br />
+						<asp:TextBox ID="guestname" CssClass="input100" runat="server" placeholder="Enter you name..."></asp:TextBox>
+                        <asp:Button ID="guestButton" runat="server" Text="Continue" OnClick="guestButton_Click" />
+					</div>
 					<div class="text-center p-t-90">
 						<a class="txt1" href="#">
 							Forgot Password?

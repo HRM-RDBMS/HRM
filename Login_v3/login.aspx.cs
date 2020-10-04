@@ -31,11 +31,24 @@ public partial class Login_v3_login : System.Web.UI.Page
         Response.Write(output);
         if (output == "1")
         {
-            Response.Redirect("../main.html");
+            Session["user"] = useridText.Text;
+            Response.Redirect("../main.aspx");
         }
         else
         {
             Response.Write("Your userID and Password is incorrect:!!! " + output);
         }
+    }
+
+    protected void guestButton_Click(object sender, EventArgs e)
+    {
+        String str = guestname.Text;
+        if (str != "")
+        {
+            Session["guest"] = str;
+            Response.Redirect("../main.aspx");
+        }
+        else
+            Response.Write("Guest name is complusory");
     }
 }

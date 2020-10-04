@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="main.aspx.cs" Inherits="main" %>
+
+<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
@@ -15,6 +17,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
+
+        function alertUser() {
+            alert("hello");
+        }
+        
+
     </script>
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="css/zoomslider.css" rel='stylesheet' type='text/css' />
@@ -27,7 +35,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     
 
 
-<body>
+<body >
+    
+    
     <!--top -->
     <div id="demo-1" data-zs-src='["images/b1.jpg", "images/banner2.jpg","images/3.jpg", "images/4.jpg"]' data-zs-overlay="dots">
         <div class="demo-inner-content">
@@ -44,7 +54,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>
                             <div class="col-md-3 sign-btn">
                                 
-                                <i class="far fa-user" style="color:chocolate; font-size:larger" runat="server" > Welcome!</i>
+                                    <i class="far fa-user" style="color:chocolate; font-size:larger" id="mywelcome" runat="server"> Welcome!</i>
+                                <form runat="server">
+                                <asp:Button ID="logout" runat="server" Text="Logout" OnClick="logout_Click" />
+                                    </form>
                             </div>
                             
                                 <!-- open/close -->
