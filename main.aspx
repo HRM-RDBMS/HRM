@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <body >
-    
+    <form runat="server">
     
     <!--top -->
     <div id="demo-1" data-zs-src='["images/b1.jpg", "images/banner2.jpg","images/3.jpg", "images/4.jpg"]' data-zs-overlay="dots">
@@ -55,9 +55,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="col-md-3 sign-btn">
                                 
                                     <i class="far fa-user" style="color:chocolate; font-size:larger" id="mywelcome" runat="server"> Welcome!</i>
-                                <form runat="server">
+                                
                                 <asp:Button ID="logout" runat="server" Text="Logout" OnClick="logout_Click" />
-                                    </form>
+                                  
                             </div>
                             
                                 <!-- open/close -->
@@ -89,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </span>
 
                         </button>
-
+                        
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-lg-auto text-center">
                                 <li class="nav-item active">
@@ -102,10 +102,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         Candidates
                                         <i class="fas fa-angle-down"></i>
                                     </a>
+                                    
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="index.html">Candidate Details</a>
+                                        <!---
+                                        <asp:Button ID="Button1" runat="server" CssClass="dropdown-item" Text="Candidate Details"  OnClick="candidate_details"/>
+                                        <asp:Button ID="Button2" runat="server" class="dropdown-item" Text="Recruited Candidate Details" />
+                                        <asp:Button ID="Button3" runat="server" class="dropdown-item" Text="Rejected Candidate Details" />
+                                       --->
+                                       
+                                       <a  class="dropdown-item" href="index.html" >Candidate Details</a>
                                         <a class="dropdown-item" href="Recruited_Login.html" title="">Recruited Candidate Details</a>
-                                        <a class="dropdown-item" href="Rejected_Login.html" title="">Rejected Candidate Details</a>
+                                         <a  class="dropdown-item" href="Rejected_Login.html" title=""> Rejected Candidate Details</a>
+
+                                            
                                        <!-- <a class="dropdown-item" href="candidates_list.html" title="">Recuruited Candidate Details </a>
                                         <a class="dropdown-item" href="candidates_list.html" title="">Rejected Candidate Details</a>-->
 
@@ -165,6 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </ul>
 
                         </div>
+                     
                     </nav>
                 </header>
             </div>
@@ -687,6 +697,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!--// end-smoth-scrolling -->
+     </form>   
 </body>
+
 
 </html>
