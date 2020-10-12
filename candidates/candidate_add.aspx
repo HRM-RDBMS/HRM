@@ -374,6 +374,7 @@ input[type="submit"] {
 </style>
 </head>
 <body>
+    <center><h1>Add Details</h1></center>
     <form id="form1" runat="server" class="form">
        
         <div class="group">
@@ -381,7 +382,7 @@ input[type="submit"] {
             <label for="image"><b>Profile Picture<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <asp:FileUpload ID="profile_pic" runat="server" />
+            <asp:FileUpload ID="profile_pic" runat="server" required="" />
             <!---
             <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;" required="required" >
             <img id="output">
@@ -391,24 +392,24 @@ input[type="submit"] {
         </div>
     </div>
     <!-- Candidate Id -->
-        <!--
+      
     <div class="group">
         <div class="col-1">
             <label for="candidateid"><b>Candidate Id<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <input type="text" id="candidateid" placeholder="Candidate Id" 
-                required="required" style="background-color:#ccc;"/>
+            <asp:TextBox ID="candidateID" runat="server" ReadOnly="true" style="background-color:#ccc;"></asp:TextBox>
+            
         </div>
     </div>
-        --->
+        
    <!-- Candidate Name -->
     <div class="group">
         <div class="col-1">
             <label for="candidatename"><b>Candidate Name<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="candidate_name" placeholder="Candidate Name"  style="background-color:#ccc;" runat="server"></asp:TextBox>
+            <asp:TextBox ID="candidate_name"  ReadOnly="true" style="background-color:#ccc;" runat="server"></asp:TextBox>
 
             <!---
             <input type="text" id="candidatename" placeholder="Candidate Name" 
@@ -772,29 +773,11 @@ input[type="submit"] {
             <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Images</label>
             <!--<input type="button" id="button" value="Upload image" />-->
             
-            <asp:FileUpload ID="cv_pic" runat="server" />
+            <asp:FileUpload ID="cv_pic" required="" runat="server" />
         </div>
     </div>
-     <!-- Email -->
-    <div class="group">
-        <div class="col-1">
-            <label for="email"><b>Email Id<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="email" runat="server" TextMode="Email" placeholder="example@email.com"  style="background-color:#ccc;"></asp:TextBox>
-          <!--  <input type="email" id="email1" runat="server" placeholder="example@email.com"  style="background-color:#ccc;"/>-->
-        </div>
-    </div>
-    <!-- Password -->
-    <div class="group">
-        <div class="col-1">
-            <label for="password"><b>Password<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="pwd" runat="server" TextMode="Password" placeholder="password"  style="background-color:#ccc;"></asp:TextBox>
-            <!---<input type="password" id="pwd1" runat="server" placeholder="password"  style="background-color:#ccc;"/>-->
-        </div>
-    </div>
+     
+    
     <!-- Terms & Conditions -->
     <div class="group-2">
         <asp:CheckBox ID="terms" runat="server" />
@@ -806,7 +789,7 @@ input[type="submit"] {
     <!-- Submit button -->
         <div class ="submit">
             
-                <input id="Reset1" type="reset" value="reset" class="submit1"   />
+               <center> <input id="Reset1" type="reset" value="reset" class="submit1"   /></center>
             </div>
             <div class="submit">
                 <asp:Button ID="submit" runat="server" Text="Submit" CssClass="submit" OnClick="submit_Click" OnClientClick="return checkForm(form1);" />

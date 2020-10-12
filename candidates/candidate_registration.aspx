@@ -58,100 +58,92 @@
 					<label for="pass" class="label">Password</label>
 					
                     <asp:TextBox ID="pwd1" TextMode="Password" CssClass="input" runat="server"></asp:TextBox>
-
+                    
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Repeat Password</label>
 					<!--<input id="pwd2" type="password" class="input" data-type="password"/>-->
                      <asp:TextBox ID="pwd2" TextMode="Password" CssClass="input" runat="server"></asp:TextBox>
 				</div>
+                
+
                 <div class="group">
 					<input id="check" type="checkbox" class="check" checked="checked"/>
 					<label for="check"><span class="icon"></span> Register me</label>
 				</div>
 				<div class="group">
-                    <asp:Button ID="Button1" runat="server" Text="Sign Up" OnClick="Button1_Click" CssClass="button" OnClientClick="checkForm(this)" />
+                    <asp:Button ID="Button1" runat="server" Text="Sign Up" OnClick="Button1_Click" CssClass="button"  />
                     <!--<input id="Submit1" type="submit" class="button" value="Sign up" onclick="checkForm(this)" />-->
 				
 				</div>
 				<!--<div class="hr"></div>-->
 				<div class="foot-lnk">
-					<label for="tab-1"><a href="Candidate_Login.html">Already Member?</a></label>
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+					<label for="tab-1"><a href="candidate_login.aspx">Already Member?</a></label>
+                                       <!-- <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
                     <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                     <br />
                     <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button1_Click" />
-
+                        -->
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
     </form>
+    <!--
     <script type="text/javascript">
-        function checkForm(form) {
-            if (document.getElementById("username").value == "") {
+        function checkForm() {
+            re = /[0-9]/;
+            re1 = /[A-Z]/;
+            if (document.getElementById('<%=username.ClientID%>').value == "") {
                 alert("Error: Username cannot be blank!");
+                    
                 //    form.username.focus();
-                return false;
+                
             }
-                else if (document.getElementById("email1").value == "") {
+            if (document.getElementById("'<%=email1.ClientID%>'").value == "") {
                     alert("Error: Email cannot be blank!");
                 return false;
                 }
             
-            //// regular expression to match required string format
-            //re = /^\w+$/;
-            //if (!re.test(form.username.value)) {
-            //    alert("Error: Username must contain only letters, numbers and underscores!");
-            //    form.username.focus();
-            //    return false;
-            //}
-            //compare both password field value 
-
-            if (document.getElementById("pwd1").value != "" && document.getElementById("pwd1").value == document.getElementById("pwd2").value) {
+            if (document.getElementById('<%=pwd1.ClientID%>').value != "" && document.getElementById('<%=pwd1.ClientID%>').value == document.getElementById('<%=pwd2.ClientID%>').value) {
                 if (form1.pwd1.value.length < 6) {
                     alert("Error: Password must contain at least six characters!");
-                    
+
                     return false;
                 }
-                //compare username and password if both are same generate error 
-                //if (form.pwd1.value == form.username.value) {
-                //    alert("Error: Password must be different from Username!");
-                //    form.pwd1.focus();
-                //    return false;
-                //}
-                // regular expression to match required at least one numeric value in passord field
-                re = /[0-9]/;
-                if (!re.test(document.getElementById("pwd1").value)) {
+
+
+                if (!re.test(document.getElementById('<%=pwd1.ClientID%>').value)) {
                     alert("Error: password must contain at least one number (0-9)!");
-                    
+
                     return false;
                 }
                 // regular expression to match required at least one lowercase letter in passord field
-                re = /[a-z]/;
-                if (!re.test(document.getElementById("pwd1").value)) {
+
+                if (!re.test(document.getElementById('<%=pwd1.ClientID%>').value)) {
                     alert("Error: password must contain at least one lowercase letter (a-z)!");
-                    
+
                     return false;
                 }
                 // regular expression to match required at least one uppercase letter in passord field
-                re = /[A-Z]/;
-                if (!re.test(document.getElementById("pwd1").value)) {
+
+                if (!re1.test(document.getElementById('<%=pwd1.ClientID%>').value)) {
                     alert("Error: password must contain at least one uppercase letter (A-Z)!");
-                    
+
                     return false;
                 }
-            } else {
-                alert("Error: Please check that you've entered and confirmed your password!");
-                
-                return false;
+
+            }
+            else {
+                return true;
             }
             
-            return true;
         }
 
     </script>
+        -->
 </body>
 </html>
 

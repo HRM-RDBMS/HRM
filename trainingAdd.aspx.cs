@@ -31,11 +31,16 @@ public partial class trainingAdd : System.Web.UI.Page
 
     protected void Button2_Click(object sender, EventArgs e)
     {
+        string script = string.Format("javascript:document.getElementById('{0}').innerText = {1}.options[{1}.selectedIndex].value;",
+            Label1.ClientID,
+            DropDownList1.ClientID);
+        DropDownList1.Attributes.Add("onChange", script);
+
         con.Open();
         SqlCommand cmd = con.CreateCommand();
         cmd.CommandType = CommandType.Text;
         cmd.CommandText = " insert into training_details values" +
-            "('" + TextBox4.Text + "', '" + DropDownList1.Text + "', '" + DropDownList1.DataTextField + "', '" + TextBox6.Text + "', '" + TextBox7.Text + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox8.Text + "', '" + TextBox5.Text + "' )";
+            "('" + TextBox4.Text + "', '" + DropDownList1.Text + "', '" + Label1.Text + "', '" + TextBox6.Text + "', '" + TextBox7.Text + "', '" + TextBox1.Text + "', '" + TextBox2.Text + "', '" + TextBox8.Text + "', '" + TextBox5.Text + "' )";
         cmd.ExecuteNonQuery();
 
         con.Close();

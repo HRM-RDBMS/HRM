@@ -7,594 +7,163 @@
 <head runat="server">
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>View Details</title>
-<style>
-    html, body, h2 {
-    margin: 0;
-    padding: 0.5em;
-    /*font-family:'Pacifico', cursive;*/
-}
-
-body {
-    background-image:url("assets/img/intro-carousel/img11.jpg");
-    font-family:'Pacifico', cursive;
-}
-    input[type=text] {
-  width: 210px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: transparent;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-  width: 100%;
-}
-
-.show {
-    display: none;
-}
-#Img1
-    {
-        width: 237px;
-        height: 155px;
-    }
-.title,
-.form {
-    margin: 0 auto;
-    border-radius: 2px;
-}
-
-.title {
-    margin-bottom: 0.5em;
-    display: block;
-    background: orange;
-    font-family:'Times New Roman';
-    font-size: 22px;
-    padding: 1em;
-    text-transform: uppercase;
-    box-sizing: border-box;
-    text-align: center;
-    cursor: pointer;
-}
-
-.flag {
-    position: absolute;
-    top: 7px;
-    border-radius: 2px;
-    border: 35px solid;
-    border-top-color: orange;
-    border-bottom-color: orange;
-}
-
-.show ~ .title {
-    z-index: 2;
-    width: 300px;
-    position: relative;
-    top: 250px;
-    left: 0;
-    transition:
-        width 200ms ease-out,
-        top 200ms ease-out;
-}
-
-.show ~ .title .flag {
-    opacity: 0; 
-}
-
-.show ~ .title .left {
-    left: 0;
-    border-right-color: orange;
-    border-left-color: transparent;
-}
-
-.show ~ .title .right {
-    right: 0;
-    border-right-color: transparent;
-    border-left-color: orange;
-}
-
-.show ~ .form {
-    opacity: 0;
-    transition:
-        opacity 200ms linear;
-}
-
-.show:checked ~ .title {
-    position: relative;
-    top: 0;
-    width: 500px;
-}
-
-.show:checked ~ .title .left {
-    opacity: 0.7;
-    left: -55px;
-    transition: 
-        opacity 50ms linear 200ms,
-        left 50ms linear 200ms;
-}
-
-.show:checked ~ .title .right {
-    opacity: 0.7;
-    right: -55px;
-    transition: 
-        opacity 50ms linear 200ms,
-        right 50ms linear 200ms;
-}
-
-.show:checked ~ .form {
-    opacity: 1;
-}
-
-.form {
-    width: 500px;
-    background: #ddd;
-    padding: 2em 0 2em 0;
-}
-
-.group,
-.group-2 {
-    margin: 0 auto;
-    width: 80%;
-}
-
-.group {
-    margin-bottom: 2em;
-}
-
-.group:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.col-1,
-.col-2 {
-    float: left;
-}
-
-.col-1 {
-    width: 40%;
-}
-
-.col-1 label {
-    height: 40px;
-    line-height: 40px;
-    font-size: 18px;
-    text-shadow: 0.5px 0.5px 0 #fff;
-   font-family:'Times New Roman';
-    text-transform: capitalize;
-}
-.submit1 {
-    border: none;
-    outline: none;
-    position: relative;
-    height: 40px;
-    color: #fff;
-    font-family:'Times New Roman';
-    text-transform: uppercase;
-    border-radius: 2px;
-    background: rgba(0,0,0,0.6);
-    box-shadow: 0 0 1px 0 #000;
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    transition: background 70ms linear;
-}
-
-.submit1:hover {
-    color: orange;
-    background: rgba(0,0,0,1);
-}
-.col-2 {
-    width: 60%;
-}
-
-.col-2 input {
-    width: 100%;
-    height: 40px;
-    font-family:'Times New Roman';
-    outline: none;
-    border: none;
-    border-radius: 20px;
-    box-sizing: border-box;
-    box-shadow: 
-        inset 0 0 3px 0 rgba(0,0,0,0.3),
-        0.5px 0.5px 0 0 #fff;
-    padding: 1em;
-    background: rgba(80,80,80,0.1);
-}
-
-input[type="submit"] {
-    display: block;
-    margin: 0 auto;
-    width: 30%;
-}
-
-.group-2 {
-    margin-bottom: 1em;
-}
-
-.group-2:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.group-2 *:not(a) {
-    float: left;
-}
-
-.group-2 .checkbox {
-    display: none;
-}
-
-.group-2 label {
-    font-family:'Times New Roman';
-    font-size: 12px;
-    height: 100%;
-    cursor: pointer;
-    line-height: 22px;
-}
-
-.group-2 label a {
-    position: relative;
-    text-decoration: none;
-    color: blue;
-}
-
-.group-2 label a:after {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    right: 50%;
-    content: '';
-    height: 1px;
-    background: blue;
-    transition:
-        left 70ms linear,
-        right 70ms linear;
-}
-
-.group-2 label a:hover:after {
-    left: 0;
-    right: 0;
-}
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 
+  <title>Candidate Profile</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-.toogle {
-    position: relative;
-    width: 41px;
-    height: 21px;
-    border-radius: 10px;
-    margin-right: 1em;
-    background: #ccc;
-    box-shadow:
-        inset 0 0 2px 0 rgba(0,0,0,0.5),
-        0.5px 0.5px 0 0 #fff;
-    
-}
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-.toogle:before {
-    content: '';
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #fff;
-    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
 
-.checkbox ~ label .toogle:before {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    transition: left 150ms linear;
-}
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-.checkbox ~ label .toogle {
-    background: rgba(200,0,0,0.5);
-}
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" />
 
-.checkbox ~ label {
-    color: rgba(0,0,0,0.4);
-    transition: color 100ms linear;
-}
-
-.checkbox:checked ~ label .toogle:before {
-    position: absolute;
-    top: 3px;
-    left: 22px;
-}
-
-.checkbox:checked ~ label .toogle {
-    background: rgba(0,200,0,0.5);
-}
-
-.checkbox:checked ~ label {
-    color: rgba(0,0,0,1);
-}
-
-.submit {
-    border: none;
-    outline: none;
-    position: relative;
-    height: 40px;
-    color: #fff;
-    font-family:'Times New Roman';
-    text-transform: uppercase;
-    border-radius: 2px;
-    background: rgba(0,0,0,0.6);
-    box-shadow: 0 0 1px 0 #000;
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    transition: background 70ms linear;
-}
-
-.submit:hover {
-    color: orange;
-    background: rgba(0,0,0,1);
-}
-    #cars
-    {
-        width: 235px;
-        height: 40px;
-    }
-    #gender
-    {
-        width: 235px;
-        height: 40px;
-    }
-
-    #qualifications
-    {
-        width: 235px;
-        height:40px;
-    }
-     #experience
-    {
-        width: 235px;
-        height:40px;
-    }
-    #post
-    {
-        width: 235px;
-        height: 40px;
-    }
-
-    #output
-    {
-        height: 146px;
-        width: 227px;
-    }
-     #address
-    {
-        width: 233px;
-        height: 57px;
-    }
-#references
-{
-        width: 233px;
-        height: 57px;
-    }
-</style>
+  <!-- =======================================================
+  * Template Name: BizPage - v4.0.0
+  * Template URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 <body>
-<input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>View Profile</b><i class="flag left"></i><i class="flag right"></i></label>
-    <h2 align="center"><a href="Candidate_Profile.html"><b>Home</b></a></h2>
-<!-- Form -->
-<form action="#" class="form" runat="server">
-    
-           
-    
-   
-    <br />
-<div class="group">
-        <div class="col-1">
-            <label for="image"><b>Profile Picture</b></label>
-        </div>
-        <div class="col-2">
-            <input id="file" type="file"  accept="image/*" name="image"   onchange="loadFile(event)" style="display: none;" />
-            <asp:Image ID="output" runat="server" />
-            <asp:Label ID="Label1" runat="server" Text="Label" for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Change Image</asp:Label>
-            <input id="Button1" type="button" value="button" />
+    <form id="form1" runat="server">
+    <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-transparent">
+    <div class="container-fluid">
 
-            <!---
-            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
-            <img id="output" />
-            <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Change Image</label>
-            <!--<input type="button" id="button" value="Upload image" />-->
-            
+      <div class="row justify-content-center">
+        <div class="col-xl-11 d-flex align-items-center">
+          <h3 class="logo mr-auto"><a href="index.html">Candidate Profile Page</a></h3>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+          <nav class="nav-menu d-none d-lg-block">
+            <ul>
+              <li class="active">
+                  <asp:HyperLink ID="HyperLink1" NavigateUrl="" runat="server">Home</asp:HyperLink></li>
+              <li><a href="Candidate_Add.html">Add Profile</a></li>
+              
+              
+              <li><a href="Candidate_View.html">View Profile</a></li>
+              
+                <li>
+                    <asp:Button ID="Button1" runat="server" Text="Button" /></li>  
+           </ul>
+          </nav><!-- .nav-menu -->
         </div>
+      </div>
+
     </div>
-    <!-- Candidate Id -->
-    <div class="group">
-        <div class="col-1">
-            <label for="candidateid"><b>Candidate Id</b></label>
+  </header><!-- End Header -->
+
+  <!-- ======= Intro Section ======= -->
+  <section id="intro">
+    <div class="intro-container">
+      <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+        <ol class="carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active" style="background-image: url(assets/img/intro-carousel/img11.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown">Hai Candidate!!!</h2>
+                <p class="animate__animated animate__fadeInUp">You can Add your details</p>
+               <!-- <a href="main.html" class="btn-get-started scrollto animate__animated animate__fadeInUp">Go to Our Site</a>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(assets/img/intro-carousel/img12.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <!--<h2 class="animate__animated animate__fadeInDown">"You can dream, create, design and build the most wonderful place in the world…but it requires people to make the dream a reality." --Walt Disney</h2>-->
+                <h2 class="animate__animated animate__fadeInDown">Hai Candidate!!!</h2>
+                <p class="animate__animated animate__fadeInUp">You can Edit your Profile</p>
+               <!-- <a href="main.html" class="btn-get-started scrollto animate__animated animate__fadeInUp">Go to Our Site</a>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(assets/img/intro-carousel/img6.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+               <!-- <h2 class="animate__animated animate__fadeInDown">Temporibus autem quibusdam</h2>-->
+               <h2 class="animate__animated animate__fadeInDown">Hai Candidate!!!</h2>
+                <p class="animate__animated animate__fadeInUp">You can delete your Profile</p>
+               <!-- <a href="main.html" class="btn-get-started scrollto animate__animated animate__fadeInUp">Go to Our Site</a>-->
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="background-image: url(assets/img/intro-carousel/img9.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+                <!--<h2 class="animate__animated animate__fadeInDown">Nam libero tempore</h2>-->
+                <h2 class="animate__animated animate__fadeInDown">Hai Candidate!!!</h2>
+                <p class="animate__animated animate__fadeInUp">You can view your profile</p>
+              <!-- <a href="main.html" class="btn-get-started scrollto animate__animated animate__fadeInUp">Go to Our Site</a>-->
+              </div>
+            </div>
+          </div>
+
+         <!-- <div class="carousel-item" style="background-image: url(assets/img/intro-carousel/5.jpg)">
+            <div class="carousel-container">
+              <div class="container">
+               <!-- <h2 class="animate__animated animate__fadeInDown">Magnam aliquam quaerat</h2>-->
+                <!--<p class="animate__animated animate__fadeInUp">"Hiring people is an art, not a science, and resumes can’t tell you whether someone will fit into a company’s culture."--Howard Schultz</p>
+               <a href="main.html" class="btn-get-started scrollto animate__animated animate__fadeInUp">Go to Our Site</a>
+              </div>
+            </div>
+          </div>-->
+
         </div>
-        <div class="col-2">
-            <input type="text" id="candidateid" placeholder="Candidate Id" 
-                />
-        </div>
+
+        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
     </div>
-   <!-- Candidate Name -->
-    <div class="group">
-        <div class="col-1">
-            <label for="candidatename"><b>Candidate Name</b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="candidatename" placeholder="Candidate Name" 
-                />
-        </div>
-    </div>
-     <!-- Date Of Birth -->
-    <div class="group">
-        <div class="col-1">
-            <label for="dob"><b>Date of Birth</b></label>
-        </div>
-        <div class="col-2">
-            <input type="date" id="dob" placeholder="Date of Birth" 
-                />
-        </div>
-    </div>
-     <!-- Gender -->
-    <div class="group">
-        <div class="col-1">
-            <label for="gender"><b>Gender</b></label>
-        </div>
-        <div class="col-2">
-             <select id="gender" name="gender" style="background-color:#ccc;">
-                <option value="name2"><b>Select your gender</b></option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Others">Others</option>
-            </select>
-        </div>
-    </div>
-     <!-- Candidate Address -->
-    <div class="group">
-        <div class="col-1">
-            <label for="address"><b>Address</b></label>
-        </div>
-        <div class="col-2">
-             <textarea  id="address" name="address" placeholder="Address" style="background-color:#ccc;"></textarea>
-        </div>
-    </div>
-     <!-- Contact -->
-    <div class="group">
-        <div class="col-1">
-            <label for="contact"><b>Mobile Number</b></label>
-        </div>
-        <div class="col-2">
-            <input type="tel" id="contact" placeholder="Contact number" />
-        </div>
-    </div>
-     <!-- Qualifications -->
-    <div class="group">
-        <div class="col-1">
-            <label for="qualifications"><b>Qualifications</b></label>
-        </div>
-        <div class="col-2">
-            <select id="qualifications" name="qualification" style="background-color:#ccc;">
-                 <option value="name2"><b>Select your qualifications</b></option>
-                <option value="ten">10th pass</option>
-                <option value="twelve">12th pass</option>
-                <option value="ug">Undergraduate</option>
-                <option value="pg">Postgraduate</option>
-                <option value="phd">Doctorate(PhD)</option>
-            </select>
-        </div>
-    </div>
-     <!-- Applying Date -->
-    <div class="group">
-        <div class="col-1">
-            <label for="apply"><b>Applying Date</b></label>
-        </div>
-        <div class="col-2">
-            <input type="date" id="date" placeholder="Applying date"  />
-        </div>
-    </div>
-     <!-- experience -->
-    <div class="group">
-        <div class="col-1">
-            <label for="experience"><b>Experience</b></label>
-        </div>
-        <div class="col-2">
-            <select id="experience" name="experience" style="background-color:#ccc;" >
-                <option value="name1"><b>Select Year of Experience</b></option>
-                <option value="below">Below 6months</option>
-                <option value="between">Between 6months to 1 year</option>
-                <option value="year1">Between 1 year to 3 year</option>
-                <option value="year2">Between 3 year to 5 year</option>
-                <option value="above">Above 5 year</option>
-                <option value="no">No Experience</option>
-            </select>
-        </div>
-    </div>
-     <!-- post applied -->
-    <div class="group">
-        <div class="col-1">
-            <label for="post"><b>Post Applied</b></label>
-        </div>
-        <div class="col-2">
-            <select id="post" name="post" style="background-color:#ccc;" >
-                <option value="post1"><b>Select the post applied</b></option>
-                <option value="programmer">Developer</option>
-                <option value="testing">Testing & Coding</option>
-                <option value="account">Accountant</option>
-                <option value="sales">Salesman</option>
-                <option value="manager">Training manager</option>
-            </select>
-        </div>
-    </div>
-     <!-- Refernce -->
-    <div class="group">
-        <div class="col-1">
-            <label for="reference"><b>References</b></label>
-        </div>
-        <div class="col-2">
-            <input type="text" id="references" placeholder="References" />
-        </div>
-    </div>
-    <!--CV-->
-    <div class="group">
-        <div class="col-1">
-            <label for="cv"><b>CV</b></label>
-        </div>
-        <div class="col-2">
-            <input type="file"  accept="image/*" name="image" id="file1"  onchange="loadFile(event)" style="display: none;">
-            <img id="Img1" />
-            <label for="file" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Images</label>
-            <!--<input type="button" id="button" value="Upload image" />-->
-        </div>
-    </div>
-    <!-- Email -->
-    <div class="group">
-        <div class="col-1">
-            <label for="email"><b>Email Id</b></label>
-        </div>
-        <div class="col-2">
-            <input type="email" id="email" placeholder="example@email.com"/>
-        </div>
-    </div>
-     <!-- Password -->
-    <div class="group">
-        <div class="col-1">
-            <label for="password"><b>Password</b></label>
-        </div>
-        <div class="col-2">
-            <input type="pwd1" id="password" placeholder="password" />
-        </div>
-    </div>
-    <!-- Terms & Conditions -->
-    <div class="group-2">
-        <input type="checkbox" class="checkbox" id="terms" />
-        <label for="terms"><span class="toogle"></span>I declare to have read and accepted the <a href="#">terms of service</a></label>
-    </div>
-    <!-- Notifications -->
-    <div class="group-2">
-        <input type="checkbox" class="checkbox" id="notifications" />
-        <label for="notifications"><span class="toogle"></span>Have you view all details</label>
-    </div>
-    <!-- Submit button -->
-    <input type="submit" class="submit" value="Cancel" />
-   
-    
-</form>
-<script>
-    var loadFile = function (event) {
-        var image = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
-    };
-</script>
+  </section><!-- End Intro Section -->
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+    </form>
 </body>
+
 </html>

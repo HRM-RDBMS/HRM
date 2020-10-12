@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="main.aspx.cs" Inherits="main" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="main.aspx.cs" Inherits="main"  %>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -32,11 +32,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 </head>
-    
 
 
 <body >
-    <form runat="server">
+    <form id="ggh" runat="server">
+   
+       
     
     <!--top -->
     <div id="demo-1" data-zs-src='["images/b1.jpg", "images/banner2.jpg","images/3.jpg", "images/4.jpg"]' data-zs-overlay="dots">
@@ -55,8 +56,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="col-md-3 sign-btn">
                                 
                                     <i class="far fa-user" style="color:chocolate; font-size:larger" id="mywelcome" runat="server"> Welcome!</i>
-                                
-                                <asp:Button ID="logout" runat="server" Text="Logout" OnClick="logout_Click" />
+                                <!---<asp:Button ID="btn1" runat="server" CausesValidation="false"  OnClick="btn_Click" Text="Login" 
+                                    />
+                                <asp:Button ID="btn2" runat="server"  CausesValidation="false" OnClick="btn2_Click" Text="Logout" 
+                                    />-->
+                                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/admin_login.aspx" runat="server">Admin Login</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink2" NavigateUrl="~/admin_logout.aspx" runat="server">Logout</asp:HyperLink>
+                               
+                               
                                   
                             </div>
                             
@@ -93,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-lg-auto text-center">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home
+                                    <a class="nav-link" href="main.aspx">Home
                                         <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
@@ -105,12 +112,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <!---
-                                        <asp:Button ID="Button1" runat="server" CssClass="dropdown-item" Text="Candidate Details"  OnClick="candidate_details"/>
+                                        <asp:Button ID="Button1" runat="server" CssClass="dropdown-item" Text="Candidate Details"  />
                                         <asp:Button ID="Button2" runat="server" class="dropdown-item" Text="Recruited Candidate Details" />
                                         <asp:Button ID="Button3" runat="server" class="dropdown-item" Text="Rejected Candidate Details" />
                                        --->
                                        
-                                       <a  class="dropdown-item" href="index.html" >Candidate Details</a>
+                                       <a  class="dropdown-item" href="candidates/candidate_login.aspx" >Candidate Details</a>
                                         <a class="dropdown-item" href="Recruited_Login.html" title="">Recruited Candidate Details</a>
                                          <a  class="dropdown-item" href="Rejected_Login.html" title=""> Rejected Candidate Details</a>
 
@@ -159,7 +166,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <i class="fas fa-angle-down"></i>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="Project_Login.html">Project Details</a>
+                                        <a class="dropdown-item" href="projects/project_login.aspx">Project Details</a>
                                         <!--<a class="dropdown-item" href="Project_Status_View.aspx">Project Status</a>
                                         <a class="dropdown-item" href="Employee_Assigned_View">Employee Assigned Projects</a>-->
                                     </div>
@@ -181,8 +188,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="banner-info-w3layouts text-center">
 
                 <h3>
-                    <span>Tagline</span> .
-                    <span>Tagline</span>
+                    <span>Discover What's Possible</span> .
+                    <span>Increasing Value thgrough People </span>
                 </h3>
             </div>
         </div>
@@ -409,7 +416,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                            <div class="card">
                               <div class="card-body text-center">
                                  <p><img src="images/member2.jpeg" alt="" class="image-fluid"></p>
-                                 <h4 class="card-title mt-3">Issac Xavier</h4>
+                                 <h4 class="card-title mt-3">Isaac Desouza</h4>
                                  <p class="card-text mb-3">HR</p>
                                 
                               </div>
@@ -418,12 +425,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="backside">
                            <div class="card">
                               <div class="card-body text-center mt-4">
-                                 <h4 class="card-title ">Issac Xavier</h4>
+                                 <h4 class="card-title ">Isaac Desoouza</h4>
                                  <p class="card-text mb-3">HR</p>
                                  <ul class="list-inline">
                                     <li class="list-inline-item">
                                        <a class="social-icon text-xs-center" target="_blank" href="#">
-                                       <span class="fab fa-facebook-f"></span>
+                                       <span class="fab fa-facebook-f">facebook.com/isaac.desouza.71</span>
                                        </a>
                                     </li>
                                     <li class="list-inline-item">

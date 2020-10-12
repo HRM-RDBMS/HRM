@@ -14,24 +14,38 @@ public partial class candidates_candidate_add : System.Web.UI.Page
     SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-P9TCKPP;Initial Catalog=Test;Integrated Security=True");
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(this.IsPostBack)
+        if (Session["userId"] == null)
         {
-            pwd.Attributes["value"] = pwd.Text;
+            Response.Redirect("candidate_login.aspx");
         }
-        
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
+
+        con.Open();
+        String query = "select name,readyOnly from candidate_details where id='" + Session["userId"].ToString() + "';";
+        SqlCommand cmd = new SqlCommand(query, con);
+        SqlDataReader res = cmd.ExecuteReader();
+        res.Read();
+
+        candidateID.Text = Session["userId"].ToString();
+        candidate_name.Text = res[0].ToString();
+        if(res[1].ToString() == "1")
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", " alert('Cannot Change Details Anymore'); window.location='../candidate_menu.aspx';", true);
+            //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Cannot Change Details ')", true);
+            //Response.Redirect("../candidate_menu.aspx");
+
+        }
+
+
+        con.Close();
 
     }
  
 
     protected void submit_Click(object sender, EventArgs e)
     {
-        if (candidate_name.Text == "")
-        {
-            // Response.Write("<script>alert('Candidate Name cannot be empty')</script>")
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Candiate Name is empty')", true);
-            return;
-        }
-        else if (dob.Text == "")
+        
+        if (dob.Text == "")
         {
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Dob is empty')", true);
             return;
@@ -81,15 +95,9 @@ public partial class candidates_candidate_add : System.Web.UI.Page
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Enter References')", true);
             return;
         }
-        else if (email.Text == "")
-        {
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Enter Email')", true);
-            return;
-        }
-        else if (pwd.Attributes["value"].ToString() == "")
-        {
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Password cannot be empty')", true);
-        }
+        
+        
+        
         else if((!terms.Checked))
         {
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Accept terms and condition ')", true);
@@ -102,23 +110,23 @@ public partial class candidates_candidate_add : System.Web.UI.Page
 
             con.Open();
 
-            profile_pic.SaveAs(Server.MapPath("profile_pics/") + Path.GetFileName(profile_pic.FileName));
-            String profile_link = "profile_pics/" + Path.GetFileName(profile_pic.FileName);
+            profile_pic.SaveAs(Server.MapPath("profile_pics/") + candidateID.Text + Path.GetFileName(profile_pic.FileName) );
+            String profile_link = "profile_pics/" + candidate_name.Text + Path.GetFileName(profile_pic.FileName) ;
 
-            cv_pic.SaveAs(Server.MapPath("cv/") + Path.GetFileName(cv_pic.FileName));
-            String cv_link = "cv/" + Path.GetFileName(cv_pic.FileName);
+            cv_pic.SaveAs(Server.MapPath("cv/") + candidateID.Text + Path.GetFileName(cv_pic.FileName));
+            String cv_link = "cv/" + candidateID.Text + Path.GetFileName(cv_pic.FileName) ;
 
             String current_date = DateTime.Now.ToString("dd/MM/yyyy");
 
-
-            SqlCommand cmd = con.CreateCommand();
+            int num = 1;
+           SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into candidate_details values" +
-                "('" + candidate_name.Text + "', '" + dob.Text + "', '" + gender.Text.ToString() + "', '" + address.Value.ToString() + "', '" + mobile_code.SelectedValue.ToString() + "','" + contact.Value.ToString() + "', '" + qualifications.SelectedValue.ToString() + "', '" + experience.SelectedValue.ToString() + "', '" + post.SelectedValue.ToString() + "', '" + references.Value.ToString() + "', '" + cv_link + "', '" + profile_link + "', '" + current_date + "', '" + email.Text + "', '" + pwd.Attributes["value"].ToString() + "')";
+            cmd.CommandText = "update candidate_details set dob='" + dob.Text + "', gender='" + gender.Text.ToString() + "', address='" + address.Value.ToString() + "', mobile_code='" + mobile_code.SelectedValue.ToString() + "', mobile_num='" + contact.Value.ToString() + "', qualifications='" + qualifications.SelectedValue.ToString() + "', experience='" + experience.SelectedValue.ToString() + "', post_applied='" + post.SelectedValue.ToString() + "', referencess='"+references.Value.ToString() +"', cv='" + cv_link + "', profile_pic='" + profile_link + "', applying_date='" + current_date + "', readyOnly='"+num+"' where id='" + Session["userId"].ToString() + "';";
 
             cmd.ExecuteNonQuery();
             con.Close();
-            Response.Redirect("candidate_add.aspx");
+            Response.Redirect("../candidate_menu.aspx");
+          
         }
     }
 }
