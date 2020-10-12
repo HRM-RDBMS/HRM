@@ -142,12 +142,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <i class="fas fa-angle-down"></i>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="admin.html"> Employee Details</a>
-                                        <a class="dropdown-item" href="admins.html">Employee Status</a>
-                                        <a class="dropdown-item" href="adminp.html">Employee Performance</a>
-                                        <a class="dropdown-item" href="adminl.html">Employee Leave Status</a>
-                                            <a class="dropdown-item" href="admind.html">Payroll Details</a>
-                                         <a class="dropdown-item" href="adminr.html">Resignation Details</a>
+                                        <a class="dropdown-item" href="employees/employee_login.aspx"> Employee Information</a>
+                                        
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -188,8 +184,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="banner-info-w3layouts text-center">
 
                 <h3>
-                    <span>Discover What's Possible</span> .
-                    <span>Increasing Value thgrough People </span>
+                    <span class="navbar-brand">GREAT THINGS IN BUSINESS ARE NEVER DONE BY ONE PERSON.</span><br />
+                    <span class="navbar-brand">THEY'RE DONE BY A TEAM OF PEOPLE.</span>
                 </h3>
             </div>
         </div>

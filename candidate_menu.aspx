@@ -60,7 +60,7 @@
               
              
               <li class="active"><a href="candidates/candidate_view.aspx">View Profile</a></li>
-            <li class="active"><a href="candidates/candidate_reset.aspx">Reset Password</a></li>
+            <li class="active"><a href="candidates/candidate_status.aspx">View Status</a></li>
                 <li>
                     <asp:Button ID="logout" OnClick="logout_Click" runat="server" Text="Logout" /></li>
               
