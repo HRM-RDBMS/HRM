@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<title>Employee Profile</title>
+<title>Employee Status</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <section id="container">
 <!--header start-->
-<header class="header fixed-top clearfix">
+<header class="header fixed-top clearfix" style="left: 0; right: 0; top: 0px">
 <!--logo start-->
 <div class="brand">
     <a href="employee_dashboard.aspx" class="logo">
@@ -67,11 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         
         <!-- user login dropdown start-->
         <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-               
-                <asp:Label runat="server" ID="emp_name" class="username">Emp Name</asp:Label>
-                <b class="caret"></b>
-            </a>
+            <asp:HyperLink ID="HyperLink1" NavigateUrl="employee_logout.aspx" runat="server">Logout</asp:HyperLink>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
@@ -147,26 +143,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- //market-->
 		<div class="main">
 		<h1>Employee Status</h1>
-		<!--<div id="navigation" style="display:none;" class="w3_agile">
+		<div id="navigation" style="display:none;" class="w3_agile">
 			<ul>
 				<li class="selected">
-					<a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
+					<a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Work</span></a>
 				</li>
 				<li>
-					<a href="#"><i class="fa fa-folder" aria-hidden="true"></i><span>Workplace</span></a>
+					<a href="#"><i class="fa fa-folder" aria-hidden="true"></i><span>Projects</span></a>
 				</li>
 				<li>
-					<a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span>Info</span></a>
-				</li>
+					<a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span>Trainings</span></a>
+				</li> 
 			</ul>
 		</div>-->
 		<div id="wrapper" class="w3ls_wrapper w3layouts_wrapper">
 			<div id="steps" style="margin:0 auto;" class="agileits w3_steps">
 
-				<form id="formElem" name="formElem" action="#" method="post" runat="server" class="w3_form w3l_form_fancy">
+				<form id="formElem" runat="server">
 					<fieldset class="step agileinfo w3ls_fancy_step">
-						<!--
-						<legend>About</legend>
+						
+					
 						<div class="abt-agile">
 							<div class="abt-agile-left" id="img" runat="server">
                                 
@@ -177,91 +173,132 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<ul class="address">
 									<li>
 										<ul class="address-text">
-											<li ></li>
-											<li id="dob" runat="server">: 07-06-1998</li>
+											<li >Divison </li>
+											<li id="division" runat="server">: 07-06-1998</li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
-											<li><b>PHONE </b></li>
-											<li id="pho_num" runat="server">: +91 9999999999</li>
+											<li><b>Position </b></li>
+											<li id="position" runat="server">: +91 9999999999</li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
-											<li><b>ADDRESS </b></li>
-											<li id="addres" runat="server" >: New Delhi,India</li>
+											<li><b>WorkGroup </b></li>
+											<li id="wrkgrp" runat="server" >: New Delhi,India</li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
-											<li><b>E-MAIL </b></li>
-											<li id="email" runat="server" >: nikitabaid178@gmail.com</li>
+											<li><b>Supervisor </b></li>
+											<li id="supervisor" runat="server" >: nikitabaid178@gmail.com</li>
 										</ul>
 									</li>
 									
 								</ul>
 							</div>
 								<div class="clear"></div>
-						</div>-->
+						</div>
 					</fieldset>
 					<fieldset class="step wthree">
-						<legend>Work</legend>
-						<div class="work-w3agile">
+						<legend>Projects</legend>
+						<div class="abt-agile">
+							<div class="abt-agile-left" style="background-image:none;" runat="server">
+                                <ul class="address">
+									<li>
+										<ul class="address-text">
+											<li >Total </li>
+											<li id="totalProjects" runat="server">
+                                                
+											</li>
+										</ul>
+									</li>
+									<li>
+										<ul class="address-text">
+											<li >Completed </li>
+											<li id="Li5" runat="server">
+                                                
+                                            </li>
+										</ul>
+									</li>
+									</ul>
+							</div>
+							<div class="abt-agile-right">
+
+								
+								<ul class="address">
+									<li>
+										<ul class="address-text">
+											<li >Divison </li>
+											<li id="Li1" runat="server">: 07-06-1998</li>
+										</ul>
+									</li>
+									<li>
+										<ul class="address-text">
+											<li><b>Position </b></li>
+											<li id="Li2" runat="server">: +91 9999999999</li>
+										</ul>
+									</li>
+									<li>
+										<ul class="address-text">
+											<li><b>WorkGroup </b></li>
+											<li id="Li3" runat="server" >: New Delhi,India</li>
+										</ul>
+									</li>
+									<li>
+										<ul class="address-text">
+											<li><b>Supervisor </b></li>
+											<li id="Li4" runat="server" >: nikitabaid178@gmail.com</li>
+										</ul>
+									</li>
+
+									
+								</ul>
+							</div>
+								<div class="clear"></div>
+						</div>
+						<!--<div class="work-w3agile">
 							<div class="work-w3agile-top">
 								<div class="agileits_w3layouts_work_grid1 w3layouts_work_grid1 hover14 column">
 									<div class="w3_agile_work_effect">
 										<ul>
 											<li>
-												<a href="../Nikita/images/c1.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c1.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
+                                                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 											</li>
 											<li>
-												<a href="../Nikita/images/c2.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c2.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
+                                                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
 											</li>
 											<li>
-												<a href="../Nikita/images/c3.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c3.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
+                                                
 											</li>
 											<li>
-												<a href="images/c4.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c4.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
+												
 											</li>
 											<li>
-												<a href="images/c5.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c5.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
+												<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
 											</li>
 											<li>
-												<a href="images/c6.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c6.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
+												<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
 											</li>
-												<div class="clear"></div>
+											<li>
+												
+											</li>
+											<li>
+												<asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+											</li>
+											<li>
+												<asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+											</li>
+												
 										</ul> 
 									</div>
 								</div>
 							</div>
 						</div>
+						-->
 					</fieldset>
-				<!--	<fieldset class="step w3_agileits">
+					<fieldset class="step w3_agileits">
 						<legend>General Info</legend>
 							<div class="agilecontactw3ls-grid">
 								
@@ -274,7 +311,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="clear"></div>
 							</div>
-					</fieldset>-->
+					</fieldset>
 				</form>
 			</div>
             </div>

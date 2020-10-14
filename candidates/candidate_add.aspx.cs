@@ -36,8 +36,8 @@ public partial class candidates_candidate_add : System.Web.UI.Page
 
         }
 
-
-        con.Close();
+       // SqlConnection con = new SqlConnection(@" Data Source = SQL5060.site4now.net; Initial Catalog = DB_A68C68_isaacdes; User Id = DB_A68C68_isaacdes_admin; Password =123456isaac");
+       con.Close();
 
     }
  
@@ -111,7 +111,7 @@ public partial class candidates_candidate_add : System.Web.UI.Page
             con.Open();
 
             profile_pic.SaveAs(Server.MapPath("profile_pics/") + candidateID.Text + Path.GetFileName(profile_pic.FileName) );
-            String profile_link = "profile_pics/" + candidate_name.Text + Path.GetFileName(profile_pic.FileName) ;
+            String profile_link = "profile_pics/" + candidateID.Text + Path.GetFileName(profile_pic.FileName) ;
 
             cv_pic.SaveAs(Server.MapPath("cv/") + candidateID.Text + Path.GetFileName(cv_pic.FileName));
             String cv_link = "cv/" + candidateID.Text + Path.GetFileName(cv_pic.FileName) ;

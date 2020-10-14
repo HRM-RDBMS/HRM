@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class employees_employee_attendance : System.Web.UI.Page
+public partial class employees_employee_logout : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
-       
+        Session.Abandon();
+        Response.Redirect("employee_login.aspx");
     }
 }

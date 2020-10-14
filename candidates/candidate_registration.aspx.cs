@@ -68,7 +68,7 @@ public partial class candidates_candidate_registration : System.Web.UI.Page
             }
             else
             {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-P9TCKPP;Initial Catalog=Test;Integrated Security=True");
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
                 con.Open();
 
                 SqlCommand command = con.CreateCommand();
@@ -86,10 +86,10 @@ public partial class candidates_candidate_registration : System.Web.UI.Page
                 //*/
                 Session["userId"] = response;
                 //Session["userName"] = username.Text;
-
+                con.Close();
                 Response.Redirect("candidate_login.aspx");
 
-                con.Close();
+                
             }
             ///*
             

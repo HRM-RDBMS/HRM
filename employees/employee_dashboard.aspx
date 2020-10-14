@@ -67,11 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         
         <!-- user login dropdown start-->
         <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-               
-                <asp:Label runat="server" ID="emp_name" class="username">Emp Name</asp:Label>
-                <b class="caret"></b>
-            </a>
+            <asp:HyperLink ID="HyperLink1" NavigateUrl="employee_logout.aspx" runat="server">Logout</asp:HyperLink>
             <ul class="dropdown-menu extended logout">
                 <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
                 <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
@@ -155,9 +151,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li>
 					<a href="#"><i class="fa fa-folder" aria-hidden="true"></i><span>Workplace</span></a>
 				</li>
-				<li>
-					<a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span>Info</span></a>
-				</li>
+				
 			</ul>
 		</div>
 		<div id="wrapper" class="w3ls_wrapper w3layouts_wrapper">

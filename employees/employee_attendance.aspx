@@ -67,15 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         
         <!-- user login dropdown start-->
         <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-               
-                <asp:Label runat="server" ID="emp_name" class="username">Emp Name</asp:Label>
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-            </ul>
+            <asp:HyperLink ID="HyperLink1" NavigateUrl="employee_logout.aspx" runat="server">Logout</asp:HyperLink>
         </li>
         <!-- user login dropdown end -->
        
@@ -147,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- //market-->
 		<div class="main">
 		<h1>Attendance</h1>
-		<!--<div id="navigation" style="display:none;" class="w3_agile">
+		<div id="navigation" style="display:none;" class="w3_agile">
 			<ul>
 				<li class="selected">
 					<a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></a>
@@ -159,7 +151,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span>Info</span></a>
 				</li>
 			</ul>
-		</div>-->
+		</div>
 		<div id="wrapper" class="w3ls_wrapper w3layouts_wrapper">
 			<div id="steps" style="margin:0 auto;" class="agileits w3_steps">
 
@@ -261,9 +253,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</fieldset>
-				<!--	<fieldset class="step w3_agileits">
+
+					<fieldset class="step w3_agileits">
 						<legend>General Info</legend>
-							<div class="agilecontactw3ls-grid">
+						<!--	<div class="agilecontactw3ls-grid">
 								
 								<div class="agile-con-right">
 									<h6>Employee Name :-</h6><h6 id="nm" runat="server"> Nikita Baid</h6>
@@ -273,12 +266,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 								</div>
 								<div class="clear"></div>
-							</div>
-					</fieldset>-->
+							</div>-->
+						<asp:TextBox ID="empID" runat="server"  class="username" placeholder="Employee Id"></asp:TextBox>
+						<asp:TextBox ID="TextBox1" placeholder="Reason Of leaving" runat="server"></asp:TextBox>
+					</fieldset>
 				</form>
 			</div>
             </div>
             </div>
+			
 		
 </section>
  
