@@ -50,7 +50,7 @@ public partial class projects_project_add : System.Web.UI.Page
 
             cmd.ExecuteNonQuery();
             con.Close();
-            Response.Redirect("../project_menu.aspx");
+            Response.Redirect("project_add.aspx");
         }
         
     }

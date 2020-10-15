@@ -41,7 +41,7 @@ public partial class projects_project_delete : System.Web.UI.Page
         
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
         con.Open();
-
+        projectId.Text = DropDownList1.SelectedValue;
         String query = "select * from projects where project_id='" + projectId.Text + "'";
         SqlCommand cmd = new SqlCommand(query, con);
         SqlDataReader res = cmd.ExecuteReader();

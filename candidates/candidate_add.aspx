@@ -744,11 +744,11 @@ input[type="submit"] {
         <div class="col-2">
             <asp:DropDownList id="post" name="post" runat="server" style="background-color:#ccc;" >
                 <asp:ListItem value="">Select the post applied</asp:ListItem>
-                <asp:ListItem value="programmer">Developer</asp:ListItem>
-                <asp:ListItem value="testing">Testing & Coding</asp:ListItem>
-                <asp:ListItem value="account">Accountant</asp:ListItem>
-                <asp:ListItem value="sales">Salesman</asp:ListItem>
-                <asp:ListItem value="manager">Training manager</asp:ListItem>
+                <asp:ListItem value="Developer">Developer</asp:ListItem>
+                <asp:ListItem value="Testter/ Debugger">Testing & Coding</asp:ListItem>
+                <asp:ListItem value="Account">Accountant</asp:ListItem>
+                <asp:ListItem value="Sales">Salesman</asp:ListItem>
+                <asp:ListItem value="Manager">Training manager</asp:ListItem>
             </asp:DropDownList>
         </div>
     </div>

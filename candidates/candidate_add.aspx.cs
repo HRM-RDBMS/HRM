@@ -11,7 +11,7 @@ using System.IO;
 
 public partial class candidates_candidate_add : System.Web.UI.Page
 {
-    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-P9TCKPP;Initial Catalog=Test;Integrated Security=True");
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["userId"] == null)

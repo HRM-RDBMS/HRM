@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="candidate_status.aspx.cs" Inherits="candidates_candidate_status" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="select_candidates.aspx.cs" Inherits="candidateSelections_select_candidates" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
 <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>View Details</title>
+    <title>Canidate Selection</title>
 <style>
     html, body, h2 {
     margin: 0;
@@ -16,7 +16,7 @@
 }
 
 body {
-    background-image:url("../assets/img/intro-carousel/img11.jpg");
+    background-image:url("../assets/img/intro-carousel/bg.jpg");
     font-family:'Pacifico', cursive;
 }
     input[type=text] {
@@ -386,38 +386,45 @@ input[type="submit"] {
 </style>
 </head>
 <body>
-<input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>View Profile</b><i class="flag left"></i><i class="flag right"></i></label>
-    <h2 align="center"><a href="../candidate_menu.aspx"><b>Home</b></a></h2>
+
+    <label for="show" class="title"><b>Candidate Selection Process</b><i class="flag left"></i><i class="flag right"></i></label>
+    <h2 align="center"><a href="../main.aspx"><b>Home</b></a></h2>
 <!-- Form -->
 <form id="form1"  runat="server" class="form">
+    <div class="group">
+        <div class="col-1">
+            <label for="search"><b>Search Id<span  style="color:red"> *</span></b></label>
+        </div>
     
+    <asp:DropDownList ID="DropDownList1" runat="server" style="background-color:#ccc;" DataSourceID="SqlDataSource1" DataTextField="id" DataValueField="id"></asp:DropDownList>
+
+       
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TestConnectionString %>" SelectCommand="SELECT id, name FROM candidate_details WHERE (review IS NULL) AND (readyOnly = 1)"></asp:SqlDataSource>
+
+       
+
+    <div><asp:Button ID="search" CssClass="submit1" runat="server" Text="Search" OnClick="search_Click" /> 
+    </div>
+    </div>
 <div class="group">
         <div class="col-1">
             <label for="image"><b>Profile Picture</b></label>
         </div>
         <div class="col-2">
             
-            <img id="output" runat="server" src="" />
+            <img id="output" runat="server" src=""  />
            
         </div>
     </div>
-    <!-- Candidate Id -->
-    <div class="group">
-        <div class="col-1">
-            <label for="candidateid"><b>Candidate Id</b></label>
-        </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_id" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
-        </div>
-    </div>
+    
    <!-- Candidate Name -->
     <div class="group">
         <div class="col-1">
             <label for="candidatename"><b>Candidate Name</b></label>
         </div>
         <div class="col-2">
-            <asp:Label ID="candidate_name" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+            <asp:Label ID="candidate_name" runat="server" style="background-color:#ccc;" Text=""></asp:Label>
             
         </div>
     </div>
@@ -427,7 +434,7 @@ input[type="submit"] {
             <label for="dob"><b>Date of Birth</b></label>
         </div>
         <div class="col-2">
-            <asp:Label ID="candidate_dob" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+            <asp:Label ID="candidate_dob" runat="server" style="background-color:#ccc;" Text=""></asp:Label>
             
         </div>
     </div>
@@ -437,7 +444,7 @@ input[type="submit"] {
             <label for="gender"><b>Gender</b></label>
         </div>
         <div class="col-2">
-             <asp:Label ID="candidate_gender" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+             <asp:Label ID="candidate_gender" runat="server" style="background-color:#ccc;" Text=""></asp:Label>
         </div>
     </div>
      <!-- Candidate Address -->
@@ -455,7 +462,7 @@ input[type="submit"] {
             <label for="contact"><b>Mobile Number</b></label>
         </div>
         <div class="col-2">
-            <asp:Label ID="candidate_num" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+            <asp:Label ID="candidate_num" runat="server" style="background-color:#ccc;" Text=""></asp:Label>
         </div>
     </div>
      <!-- Qualifications -->
@@ -464,16 +471,7 @@ input[type="submit"] {
             <label for="qualifications"><b>Qualifications</b></label>
         </div>
         <div class="col-2">
-            <asp:Label ID="candidate_qual" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
-        </div>
-    </div>
-     <!-- Applying Date -->
-    <div class="group">
-        <div class="col-1">
-            <label for="apply"><b>Applying Date</b></label>
-        </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_apply" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+            <asp:Label ID="candidate_qual" runat="server" style="background-color:#ccc;" Text=""></asp:Label>
         </div>
     </div>
      <!-- experience -->
@@ -482,16 +480,16 @@ input[type="submit"] {
             <label for="experience"><b>Experience</b></label>
         </div>
         <div class="col-2">
-            <asp:Label ID="candidate_exp" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+            <asp:Label ID="candidate_exp" runat="server" style="background-color:#ccc;" Text=""></asp:Label>
         </div>
     </div>
-     <!-- post applied -->
+    <!-- post applied -->
     <div class="group">
         <div class="col-1">
             <label for="post"><b>Post Applied</b></label>
         </div>
         <div class="col-2">
-            <asp:Label ID="candidate_post" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+            <asp:Label ID="candidate_post" runat="server" style="background-color:#ccc;" Text=""></asp:Label>
         </div>
     </div>
      <!-- Refernce -->
@@ -500,9 +498,20 @@ input[type="submit"] {
             <label for="reference"><b>References</b></label>
         </div>
         <div class="col-2">
-            <asp:Label ID="candidate_ref" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+            <asp:Label ID="candidate_ref" runat="server" style="background-color:#ccc;" Text=""></asp:Label>
         </div>
     </div>
+     <!-- Applying Date -->
+    <div class="group">
+        <div class="col-1">
+            <label for="apply"><b>Applying Date</b></label>
+        </div>
+        <div class="col-2">
+            <asp:Label ID="candidate_apply" runat="server" style="background-color:#ccc;" Text=""></asp:Label>
+        </div>
+    </div>
+    
+     
     <!--CV-->
     <div class="group">
         <div class="col-1">
@@ -514,16 +523,17 @@ input[type="submit"] {
             
         </div>
     </div>
-    <!-- Email -->
     <div class="group">
         <div class="col-1">
-            <label for="email"><b>Email Id</b></label>
+            <asp:Button ID="reject" runat="server"  OnClientClick="return confirm('You are about to Reject the selected Candidate\nNote:- Are you Sure');" CssClass="submit1"  style="height:50px; width:150px;" OnClick="reject_Click" Text="Reject " />
         </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_email" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+        
+        <div class="col-1">
+           
+            <asp:Button ID="accept" runat="server"  OnClientClick="return confirm('You are Accepting the selected Candidate\nNote:- Please fill the remaining Details in the following page');" CssClass="submit1" style="height:50px; width:150px;" Text="Accept "  OnClick="accept_Click"  />
+            
         </div>
     </div>
-
     
     
    

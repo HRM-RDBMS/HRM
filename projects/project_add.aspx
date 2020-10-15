@@ -491,7 +491,7 @@ input[type="submit"] {
     
     <!-- Submit button -->
    <center> <input type="reset" class="submit1" value="Reset" /></center>
-    <asp:Button ID="Button1" CssClass="submit" runat="server" Text="Submit" OnClick="Button1_Click" />
+    <asp:Button ID="Button1" OnClientClick="return confirm('The Page will refresh on Succesfull Addition of Project');" CssClass="submit" runat="server" Text="Submit" OnClick="Button1_Click" />
     
      
 </form>

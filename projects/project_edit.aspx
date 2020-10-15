@@ -423,6 +423,7 @@ input[type="submit"] {
 
     <div><asp:Button ID="Button1" CssClass="submit1" runat="server" Text="Search" OnClick="Button1_Click1" /> 
     </div>
+    </div>
     <br />
      <!-- Project Id -->
     <div class="group">
@@ -530,7 +531,7 @@ input[type="submit"] {
     </div>
      
     <!-- Submit button -->
-    <asp:Button ID="Button2" runat="server" Text="Update Changes" style="height:50px; width:150px;"  OnClick="Button2_Click"/>
+    <asp:Button ID="Button2" runat="server"  Text="Update Changes" style="height:50px; width:150px;"  OnClick="Button2_Click"/>
     
 </form>
 </body>

@@ -29,7 +29,7 @@ public partial class employees_employee_status : System.Web.UI.Page
 
         con.Open();
 
-        String query = "select employee_table.emp_name from employee_table where employee_table.emp_id in ( select emp_id from managers where manager_id in ( select employee_table.manager_id from employee_table where employee_table.emp_id = '" + Session["userId"].ToString() + "'))";
+        String query = "select employee_table.emp_name from employee_table where employee_table.emp_id in(select managers.emp_id from managers where manager_id in(select employee_under_managers.manager_id from employee_under_managers where employee_under_managers.employee_id = '" + Session["userId"].ToString() + "'))";
 
         SqlCommand cmd = new SqlCommand(query, con);
         SqlDataReader res = cmd.ExecuteReader();
@@ -48,7 +48,7 @@ public partial class employees_employee_status : System.Web.UI.Page
         SqlCommand cmd1 = new SqlCommand(query, con);
         SqlDataReader res1 = cmd1.ExecuteReader();
         res1.Read();
-        String url = "~/candidates/" + res1[14].ToString();
+        String url = "~/candidates/" + res1[13].ToString();
         img.Style["background-image"] = Page.ResolveUrl(url);
         con.Close();
 
