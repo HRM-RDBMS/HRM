@@ -392,6 +392,16 @@ input[type="submit"] {
     }
 
 </style>
+    <script>
+        function ConfirmApproval(objMsg) {
+            if (confirm(objMsg)) {
+                alert("Yes");
+                return true;
+            }
+            else
+                return false;
+        }
+    </script>
 </head>
 <body>
 
@@ -544,7 +554,7 @@ input[type="submit"] {
     
    
     <!-- Submit button -->
-   <asp:Button ID="delete" OnClientClick="return confirm('Are you sure you want to Delete?');" 
+   <asp:Button ID="delete" OnClientClick="return confirm('Are you sure you want to Delete?\nNote:- The page will refresh on Successfull Deletion.');" 
             Text="Delete" runat="server"   style="height:50px; width:150px;" OnClick="delete_Click" />
      
 </form>

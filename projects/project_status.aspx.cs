@@ -21,7 +21,23 @@ public partial class projects_project_status : System.Web.UI.Page
 
     protected void submit_Click(object sender, EventArgs e)
     {
-        if(change_status.SelectedValue == "")
+        projectId.Text = DropDownList1.Text;
+        SqlConnection con1 = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
+        con1.Open();
+
+        String query = "select * from projects where project_id='" + projectId.Text + "'";
+        SqlCommand cmd1 = new SqlCommand(query, con1);
+        SqlDataReader res = cmd1.ExecuteReader();
+        res.Read();
+        if(res[11].ToString() == "Completed" || res[11].ToString() == "Stopped")
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Project is already Completed or Stopped')", true);
+            return;
+        }
+        con1.Close();
+        
+
+        if (change_status.Text == "")
         {
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Not Selected staus of project')", true);
             return;
@@ -31,13 +47,20 @@ public partial class projects_project_status : System.Web.UI.Page
         SqlCommand cmd = con.CreateCommand();
         cmd.CommandType = CommandType.Text;
 
-        if(change_status.SelectedValue == "Completed" || change_status.SelectedValue == "Stopped" && end.Text == "")
+        if(change_status.Text == "Completed"  && end.Text == "")
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Fina date is not seleccted')", true);
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Final date is not seleccted')", true);
             return;
         }
 
-        if(end.Text == "")
+        if (change_status.Text == "Stopped" && end.Text == "")
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Final date is not seleccted')", true);
+            return;
+        }
+       
+
+        if (end.Text == "")
         {
             cmd.CommandText = "update projects set status='" + change_status.SelectedValue + "' where project_id='" + projectId.Text + "' ";
         }
@@ -65,6 +88,16 @@ public partial class projects_project_status : System.Web.UI.Page
 
         expectedLabel.Text = res[4].ToString().Replace("12.00.00 AM", "");
         current.Text = res[11].ToString();
+        if(current.Text == "Completed" || current.Text == "Stopped")
+        {
+            ggh.Visible = true;
+            final.Text = res[5].ToString().Replace("12.00.00 AM", "");
+        }
+        else
+        {
+            ggh.Visible = false;
+        }
+
         con.Close();
     }
 }

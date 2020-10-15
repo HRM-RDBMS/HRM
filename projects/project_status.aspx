@@ -443,6 +443,14 @@ input[type="submit"] {
              <asp:TextBox ID="end" TextMode="Date"  placeholder="Project Start Date" runat="server"></asp:TextBox>
         </div>
     </div>
+     <div class="group" runat="server" id="ggh">
+        <div class="col-1">
+            <label for="final"><b>Final Date<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+             <asp:Label ID="final" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
     <!-- Current Project status -->
     <div class="group">
         <div class="col-1">

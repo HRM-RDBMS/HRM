@@ -29,14 +29,16 @@ public partial class projects_project_delete : System.Web.UI.Page
         cmd.CommandText = "delete from projects where project_id='" + projectId.Text + "' ";
         cmd.ExecuteNonQuery();
         con.Close();
-        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Deletion Was Successfull!!')", true);
+        //string str = "Deletion Was Successfull!!, Click ok to refresh Page";
+        //this.ClientScript.RegisterStartupScript(typeof(Page), "Popup", "ConfirmApproval('" + str + "');", true);
+        //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Deletion Was Successfull!!')", true);
         Response.Redirect("project_delete.aspx");
         
     }
 
     protected void search_Click(object sender, EventArgs e)
     {
-        projectId.Text = DropDownList1.Text;
+        
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
         con.Open();
 
