@@ -78,7 +78,7 @@ public partial class projects_project_edit : System.Web.UI.Page
         if (expected.Text == "")
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Select new expeccted Date')", true);
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-P9TCKPP;Initial Catalog=Test;Integrated Security=True");
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
         con.Open();
         SqlCommand cmd = con.CreateCommand();
         cmd.CommandType = CommandType.Text;

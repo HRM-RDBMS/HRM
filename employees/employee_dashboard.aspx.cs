@@ -32,7 +32,7 @@ public partial class employees_employee_dashboard : System.Web.UI.Page
         pho_num.InnerText = num;
 
         email.InnerText =": " + res[8].ToString();
-        String url= "~/candidates/" +res[14].ToString();
+        String url= "~/candidates/" +res[13].ToString();
         img.Style["background-image"] = Page.ResolveUrl(url);
 
         addres.InnerText = ": " + res[5].ToString();

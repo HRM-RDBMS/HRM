@@ -10,8 +10,8 @@
     <form id="form1" runat="server">
         <div>
         </div>
-        <asp:DropDownList ID="DropDownList1" DataTextField="FirstName" DataValueField="id" runat="server">
-        </asp:DropDownList>
+         <asp:GridView ID="stopgrid" runat="server"></asp:GridView>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>

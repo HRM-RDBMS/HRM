@@ -22,7 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- font-awesome icons -->
 
 <link rel="stylesheet" href="../Nikita/css/font.css" type="text/css"/>
-<link href="../Nikita/css/font-awesome.css" rel="stylesheet"> 
+<link href="../Nikita/css/font-awesome.css" rel="stylesheet"/> 
 <link rel="stylesheet" href="../Nikita/css/morris.css" type="text/css"/>
 
 <!-- calendar -->
@@ -155,7 +155,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span>Trainings</span></a>
 				</li> 
 			</ul>
-		</div>-->
+		</div>
 		<div id="wrapper" class="w3ls_wrapper w3layouts_wrapper">
 			<div id="steps" style="margin:0 auto;" class="agileits w3_steps">
 
@@ -204,7 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<fieldset class="step wthree">
 						<legend>Projects</legend>
 						<div class="abt-agile">
-							<div class="abt-agile-left" style="background-image:none;" runat="server">
+						<!--	<div class="abt-agile-left" style="background-image:none;" runat="server">-->
                                 <ul class="address">
 									<li>
 										<ul class="address-text">
@@ -212,52 +212,80 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li id="totalProjects" runat="server">
                                                 
 											</li>
+
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
+											<li >Pending: </li>
+											<li id="pending" runat="server">
+												<asp:Label ID="pendinglabel" runat="server" Text="   No records"></asp:Label>
+                                                <asp:GridView ID="pendinggrid" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2">
+                                <FooterStyle BackColor="#CCCCCC" />
+                                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                                                    <RowStyle BackColor="White" />
+                                <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                <SortedAscendingHeaderStyle BackColor="#808080" />
+                                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                <SortedDescendingHeaderStyle BackColor="#383838" />
+                               
+                            </asp:GridView>
+                                               
+                                            </li>
+										</ul>
+									</li>
+
+									<li>
+										<ul class="address-text">
 											<li >Completed </li>
-											<li id="Li5" runat="server">
+											<li id="completed" runat="server">
                                                 
+												<asp:Label ID="Label11" runat="server" Text="No records"></asp:Label>
+							<asp:GridView ID="GridView1" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                                <FooterStyle BackColor="#CCCCCC" />
+                                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                                <RowStyle BackColor="White" />
+                                <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                <SortedAscendingHeaderStyle BackColor="#808080" />
+                                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                <SortedDescendingHeaderStyle BackColor="#383838" />
+                               
+                            </asp:GridView>
+
+                                            </li>
+										</ul>
+									</li>
+
+
+									<li>
+										<ul class="address-text">
+											<li >Stopped </li>
+											<li id="stopped" runat="server">
+                                               
+                                                <asp:Label ID="stp" runat="server" Text="No records"></asp:Label>
+							<asp:GridView ID="stopgrid" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                                <FooterStyle BackColor="#CCCCCC" />
+                                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                                <RowStyle BackColor="White" />
+                                <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                <SortedAscendingHeaderStyle BackColor="#808080" />
+                                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                <SortedDescendingHeaderStyle BackColor="#383838" />
+                               
+                            </asp:GridView>
                                             </li>
 										</ul>
 									</li>
 									</ul>
 							</div>
-							<div class="abt-agile-right">
-
-								
-								<ul class="address">
-									<li>
-										<ul class="address-text">
-											<li >Divison </li>
-											<li id="Li1" runat="server">: 07-06-1998</li>
-										</ul>
-									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>Position </b></li>
-											<li id="Li2" runat="server">: +91 9999999999</li>
-										</ul>
-									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>WorkGroup </b></li>
-											<li id="Li3" runat="server" >: New Delhi,India</li>
-										</ul>
-									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>Supervisor </b></li>
-											<li id="Li4" runat="server" >: nikitabaid178@gmail.com</li>
-										</ul>
-									</li>
-
-									
-								</ul>
-							</div>
 								<div class="clear"></div>
-						</div>
+					<!--	</div>-->
 						<!--<div class="work-w3agile">
 							<div class="work-w3agile-top">
 								<div class="agileits_w3layouts_work_grid1 w3layouts_work_grid1 hover14 column">
@@ -297,6 +325,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 						-->
+                            
+							
 					</fieldset>
 					<fieldset class="step w3_agileits">
 						<legend>General Info</legend>
@@ -304,6 +334,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								
 								<div class="agile-con-right">
 									<h6>Employee Name :-</h6><h6 id="nm" runat="server"> Nikita Baid</h6>
+							<div class="abt-agile-right">
+
+								 
+								<!--<ul class="address">
+									<li>
+										<ul class="address-text">
+											<li >Divison </li>
+											<li id="Li1" runat="server">: 07-06-1998</li>
+										</ul>
+									</li>
+									<li>
+										<ul class="address-text">
+											<li><b>Position </b></li>
+											<li id="Li2" runat="server">: +91 9999999999</li>
+										</ul>
+									</li>
+									<li>
+										<ul class="address-text">
+											<li><b>WorkGroup </b></li>
+											<li id="Li3" runat="server" >: New Delhi,India</li>
+										</ul>
+									</li>
+									<li>
+										<ul class="address-text">
+											<li><b>Supervisor </b></li>
+											<li id="Li4" runat="server" >: nikitabaid178@gmail.com</li>
+										</ul>
+									</li>
+
+									
+								</ul>--->
+							</div>
 									<p>Team Leader:  NA </p>
 									<p>Completed Project:  NA </p>
 									<p>Assigned Projects:  NA</p>

@@ -40,12 +40,12 @@ public partial class projects_project_add : System.Web.UI.Page
         }
         else
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-P9TCKPP;Initial Catalog=Test;Integrated Security=True");
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             int total = int.Parse(labour.Text) + int.Parse(material.Text);
-            String res = "Started";
+            String res = "Pending";
             cmd.CommandText = "INSERT INTO projects( name, manager_id, start_date, expected_date, budget, labor, material, total, status) VALUES('"+projectname.Text+"', '"+Label1.Text+"', '"+start.Text+"', '"+expected.Text+"', '"+int.Parse(budget.Text)+"', '"+int.Parse(labour.Text)+"', '"+int.Parse(material.Text)+"', '"+total+"', '"+res+"');";
 
             cmd.ExecuteNonQuery();

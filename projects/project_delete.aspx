@@ -1,13 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="project_add.aspx.cs" Inherits="projects_project_add" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="project_delete.aspx.cs" Inherits="projects_project_delete" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Add Project Details</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delete Project Details</title>
 <style>
     html, body, h2 {
     margin: 0;
@@ -41,6 +42,24 @@ body {
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
+}
+   input[type=text] {
+  width: 210px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: transparent;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
 }
 
 .flag {
@@ -240,26 +259,7 @@ input[type="submit"] {
         0.5px 0.5px 0 0 #fff;
     
 }
-.submit1 {
-    border: none;
-    outline: none;
-    position: relative;
-    height: 40px;
-    color: #fff;
-    font-family:'Times New Roman';
-    text-transform: uppercase;
-    border-radius: 2px;
-    background: rgba(0,0,0,0.6);
-    box-shadow: 0 0 1px 0 #000;
-    letter-spacing: 1.5px;
-    font-size: 18px;
-    transition: background 70ms linear;
-}
 
-.submit1:hover {
-    color: orange;
-    background: rgba(0,0,0,1);
-}
 .toogle:before {
     content: '';
     width: 15px;
@@ -319,6 +319,26 @@ input[type="submit"] {
     color: orange;
     background: rgba(0,0,0,1);
 }
+.submit1 {
+    border: none;
+    outline: none;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font-family:'Times New Roman';
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
+}
+
+.submit1:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
+}
     #cars
     {
         width: 235px;
@@ -372,127 +392,160 @@ input[type="submit"] {
     }
 
 </style>
-    <script type="text/javascript">
-        function change() {
-            var mat = parseInt(document.getElementById("material").value);
-            var lab = parseInt(document.getElementById("labour").value);
-            var total = mat + lab;
-            //alert("Total Cost:  " + total);
-            document.getElementById("<%=total.ClientID%>").value = total;
-
-            
-        }
-        
-
-    </script>
 </head>
 <body>
-<input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>Add Project </b><i class="flag left"></i><i class="flag right"></i></label>
+
+    <label for="show" class="title"><b>Delete Project </b><i class="flag left"></i><i class="flag right"></i></label>
     <h2 align="center"><a href="../project_menu.aspx"><b>Home</b></a></h2>
 <!-- Form -->
-<form  class="form" id ="form1" runat="server">
-     <!-- project Name -->
+
+
+<form  class="form" id="form1" runat="server" >
+<div class="group">
+        <div class="col-1">
+            <label for="search"><b>Search Id<span  style="color:red"> *</span></b></label>
+        </div>
+        
+    <asp:DropDownList ID="DropDownList1" style="background-color:#ccc;" runat="server" DataSourceID="SqlDataSource1" DataTextField="name" DataValueField="project_id"></asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TestConnectionString %>" SelectCommand="SELECT [project_id], [name] FROM [projects]"></asp:SqlDataSource>
+
+  <br />
+        <asp:Button ID="Button1"  CssClass="submit1"  runat="server" Text="Search" OnClick="search_Click" /> 
+   
+
+    </div>
+    
+     <!-- Project Id -->
     <div class="group">
         <div class="col-1">
-            <label for="projectname"><b>Project Name<span  style="color:red"> *</span></b></label>
+            <label for="projectid"><b>Project Id</b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="projectname"  placeholder="Project Name"  required="required" runat="server"></asp:TextBox>
-           <!-- <input type="text" id="projectname" placeholder="Project Name" 
-                required="required" />-->
+           <asp:Label ID="projectId" runat="server" Text=""></asp:Label>
         </div>
     </div>
      <!-- project manager Id -->
     <div class="group">
         <div class="col-1">
-            <label for="managerid"><b>Manager Id<span  style="color:red"> *</span></b></label>
+            <label for="managerid"><b>Manager Id</b></label>
         </div>
         <div class="col-2">
-            <asp:DropDownList ID="DropDownList1" style="background-color:#ccc;" runat="server" DataSourceID="SqlDataSource1" DataTextField="emp_name" DataValueField="manager_id"  ></asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TestConnectionString %>" SelectCommand="SELECT employee_table.emp_name, managers.manager_id FROM employee_table INNER JOIN managers ON employee_table.emp_id = managers.emp_id WHERE (employee_table.emp_id IN (SELECT emp_id FROM managers AS managers_1))"></asp:SqlDataSource>&nbsp&nbsp&nbsp&nbsp&nbsp
-            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-           <!-- <input type="text" id="managerid" placeholder="Project manager Id" 
-                required="required" />-->
+           <asp:Label ID="managerID" runat="server" Text=""></asp:Label>
         </div>
     </div>
-    
-   
+    <!-- Employee Id -->
+    <div class="group">
+        <div class="col-1">
+            <label for="employeeid"><b>No of Employees</b></label>
+        </div>
+        <div class="col-2">
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        </div>
+        </div>
+     <div class="group">
+        <div class="col-1">
+            <label for="final"><b>Employees Undergoing this Project<span  style="color:red"> </span></b></label>
+            
+        </div>
+        <div class="col-2">
+            <asp:DropDownList ID="DropDownList2" style="background-color:#ccc;" runat="server"></asp:DropDownList>
+            </div>
+        </div>
+   <!-- project Name -->
+    <div class="group">
+        <div class="col-1">
+            <label for="projectname"><b>Project Name</b></label>
+        </div>
+        <div class="col-2">
+             <asp:Label ID="projectName" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
      <!-- project start date -->
     <div class="group">
         <div class="col-1">
-            <label for="start" ><b>Start Date<span  style="color:red"> *</span></b></label>
+            <label for="start"><b>Start Date</b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="start" TextMode="Date"   required="required" placeholder="Project Start Date" runat="server"></asp:TextBox>
-          <!--  <input type="date" id="start" placeholder="Project Start Date" 
-                required="required" />-->
+             <asp:Label ID="start_date" runat="server" Text=""></asp:Label>
         </div>
     </div>
      <!-- project expected date -->
     <div class="group">
         <div class="col-1">
-            <label for="expected"><b>Expected Date<span  style="color:red"> *</span></b></label>
+            <label for="expected"><b>Expected Date</b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="expected"  TextMode="Date"  required="required" placeholder="Project Expected End Date" runat="server"></asp:TextBox>
-           <!-- <input type="date" id="expected" placeholder="Project Expected End Date" 
-                required="required" />-->
+             <asp:Label ID="expectedDate" runat="server" Text=""></asp:Label>
         </div>
     </div>
-     
+     <!-- project final date -->
+    <div class="group">
+        <div class="col-1">
+            <label for="final"><b>Final Date</b></label>
+        </div>
+        <div class="col-2">
+             <asp:Label ID="final_date" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
+    <!-- project total hours 
+    <div class="group">
+        <div class="col-1">
+            <label for="total"><b>Total Hours</b></label>
+        </div>
+        <div class="col-2">
+            <asp:Label ID="expectedLabel" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
     <!-- project budget -->
     <div class="group">
         <div class="col-1">
-            <label for="budget"><b>Project Budget<span  style="color:red"> *</span></b></label>
+            <label for="budget"><b>Project Budget</b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="budget" required=""  TextMode="Number"  placeholder="Project Budget" runat="server"></asp:TextBox>
-         <!--   <input type="text" id="budget" placeholder="Project Budget" 
-                required="required" />-->
+            <asp:Label ID="budget" runat="server" Text=""></asp:Label>
         </div>
     </div>
      <!-- project labor cost -->
     <div class="group">
         <div class="col-1">
-            <label for="labor"><b>Labor Cost<span  style="color:red"> *</span></b></label>
+            <label for="labor"><b>Labor Cost</b></label>
         </div>
         <div class="col-2">
-            
-            <asp:TextBox ID="labour" required=""  TextMode="Number"  placeholder="Labour Cost" runat="server"></asp:TextBox>
-           <!-- <input type="text" id="labor" placeholder="Project Labor cost" 
-                required="required" />-->
+            <asp:Label ID="labourcost" runat="server" Text=""></asp:Label>
         </div>
     </div>
      <!-- project material cost -->
     <div class="group">
         <div class="col-1">
-            <label for="material"><b>Material Cost<span  style="color:red"> *</span></b></label>
+            <label for="material"><b>Material Cost</b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="material" required="" onblur="change()"    placeholder="Material Cost" runat="server"></asp:TextBox>
-           <!-- <input type="text" id="material" placeholder="Project material cost" 
-                required="required" />-->
+            <asp:Label ID="materialcost" runat="server" Text=""></asp:Label>
         </div>
     </div>
     <!-- project total cost -->
     <div class="group">
         <div class="col-1">
-            <label for="totals"><b>Total Cost<span  style="color:red"> *</span></b></label>
+            <label for="totals"><b>Total Cost</b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="total" ReadOnly="true" runat="server"></asp:TextBox>
-           <!-- <input type="text" id="totals" placeholder="Project total cost" 
-                required="required" />-->
+           <asp:Label ID="totalcost" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
+     <!-- Project status -->
+    <div class="group">
+        <div class="col-1">
+            <label for="status"><b>Project Status</b></label>
+        </div>
+        <div class="col-2">
+             <asp:Label ID="status" runat="server" Text=""></asp:Label>
         </div>
     </div>
     
-    
-    
+   
     <!-- Submit button -->
-   <center> <input type="reset" class="submit1" value="Reset" /></center>
-    <asp:Button ID="Button1" CssClass="submit" runat="server" Text="Submit" OnClick="Button1_Click" />
-    
+   <asp:Button ID="delete" OnClientClick="return confirm('Are you sure you want to Delete?');" 
+            Text="Delete" runat="server"   style="height:50px; width:150px;" OnClick="delete_Click" />
      
 </form>
 </body>

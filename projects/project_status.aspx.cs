@@ -26,7 +26,7 @@ public partial class projects_project_status : System.Web.UI.Page
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Not Selected staus of project')", true);
             return;
         }
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-P9TCKPP;Initial Catalog=Test;Integrated Security=True");
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
         con.Open();
         SqlCommand cmd = con.CreateCommand();
         cmd.CommandType = CommandType.Text;
