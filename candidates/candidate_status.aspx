@@ -7,7 +7,7 @@
 <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>View Details</title>
+    <title>Application Status</title>
 <style>
     html, body, h2 {
     margin: 0;
@@ -383,25 +383,20 @@ input[type="submit"] {
         width: 233px;
         height: 57px;
     }
+    .auto-style1 {
+        height: 50px;
+        width: 222px;
+    }
 </style>
 </head>
 <body>
 <input type="checkbox" id="show" class="show" />
-    <label for="show" class="title"><b>View Profile</b><i class="flag left"></i><i class="flag right"></i></label>
+    <label for="show" class="title"><b>Application Status</b><i class="flag left"></i><i class="flag right"></i></label>
     <h2 align="center"><a href="../candidate_menu.aspx"><b>Home</b></a></h2>
 <!-- Form -->
 <form id="form1"  runat="server" class="form">
     
-<div class="group">
-        <div class="col-1">
-            <label for="image"><b>Profile Picture</b></label>
-        </div>
-        <div class="col-2">
-            
-            <img id="output" runat="server" src="" />
-           
-        </div>
-    </div>
+
     <!-- Candidate Id -->
     <div class="group">
         <div class="col-1">
@@ -421,109 +416,84 @@ input[type="submit"] {
             
         </div>
     </div>
-     <!-- Date Of Birth -->
-    <div class="group">
-        <div class="col-1">
-            <label for="dob"><b>Date of Birth</b></label>
-        </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_dob" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
-            
-        </div>
-    </div>
+    
      <!-- Gender -->
     <div class="group">
         <div class="col-1">
-            <label for="gender"><b>Gender</b></label>
+            <label for="review"><b>Application Reviewed</b></label>
         </div>
         <div class="col-2">
-             <asp:Label ID="candidate_gender" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+             <asp:Label ID="review" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
         </div>
     </div>
      <!-- Candidate Address -->
-    <div class="group">
+    <div class="group" id="ms1" runat="server"  >
         <div class="col-1">
-            <label for="address"><b>Address</b></label>
+            <label for="offer" ><b>Job Offered</b></label>
         </div>
         <div class="col-2">
-             <textarea  id="address" readonly="readonly" runat="server" style="background-color:#ccc;"></textarea>
+             <asp:Label  id="offer"  runat="server" style="background-color:#ccc;"></asp:Label>
         </div>
     </div>
-     <!-- Contact -->
-    <div class="group">
+    
+    <!-- Candidate Address -->
+    <div class="group" id="ms2" runat="server" >
         <div class="col-1">
-            <label for="contact"><b>Mobile Number</b></label>
-        </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_num" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
-        </div>
-    </div>
-     <!-- Qualifications -->
-    <div class="group">
-        <div class="col-1">
-            <label for="qualifications"><b>Qualifications</b></label>
-        </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_qual" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
-        </div>
-    </div>
-     <!-- Applying Date -->
-    <div class="group">
-        <div class="col-1">
-            <label for="apply"><b>Applying Date</b></label>
-        </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_apply" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
-        </div>
-    </div>
-     <!-- experience -->
-    <div class="group">
-        <div class="col-1">
-            <label for="experience"><b>Experience</b></label>
-        </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_exp" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
-        </div>
-    </div>
-     <!-- post applied -->
-    <div class="group">
-        <div class="col-1">
-            <label for="post"><b>Post Applied</b></label>
-        </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_post" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
-        </div>
-    </div>
-     <!-- Refernce -->
-    <div class="group">
-        <div class="col-1">
-            <label for="reference"><b>References</b></label>
-        </div>
-        <div class="col-2">
-            <asp:Label ID="candidate_ref" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
-        </div>
-    </div>
-    <!--CV-->
-    <div class="group">
-        <div class="col-1">
-            <label for="cv"><b>CV</b></label>
+            <label for="message"><b>Message<span  style="color:red"> </span></b></label>
         </div>
         <div class="col-2">
             
-            <img id="Img1"  runat="server" src=""/>
+            <asp:Label  id="message" name="address" placeholder="message"  runat="server" style="background-color:#ccc; border: none; " class="auto-style1"></asp:Label></div>
+    </div>
+   
+   
+      
+    <div class="group" id="ms3" runat="server" >
+        <div class="col-1">
+            <label for="position"><b>Job Position<span  style="color:red"> </span></b></label>
+        </div>
+        <div class="col-2">
+            <asp:Label  id="position"  runat="server" style="background-color:#ccc;"></asp:Label>
             
         </div>
     </div>
-    <!-- Email -->
-    <div class="group">
+    <div class="group" id="ms4" runat="server"  >
         <div class="col-1">
-            <label for="email"><b>Email Id</b></label>
+            <label for="hirired"><b>Hired On<span  style="color:red"> </span></b></label>
         </div>
         <div class="col-2">
-            <asp:Label ID="candidate_email" runat="server" style="background-color:#ccc;" Text="Label"></asp:Label>
+            <asp:Label  id="hired"  runat="server" style="background-color:#ccc;"></asp:Label>
+            
         </div>
     </div>
-
+    <div class="group" id="ms5" runat="server" >
+        <div class="col-1">
+            <label for="joining"><b>Joining Date<span  style="color:red"> </span></b></label>
+        </div>
+        <div class="col-2">
+            <asp:Label  id="joining"  runat="server" style="background-color:#ccc;"></asp:Label>
+            
+        </div>
+    </div>
+    <div class="group" id="ms6" runat="server" >
+        <div class="col-1">
+            <asp:Button ID="reject" runat="server"  OnClientClick="return confirm('You are about to reject the Job Offer, are you sure?');" CssClass="submit1"  style="height:50px; width:150px;" OnClick="reject_Click" Text="Reject " />
+        </div>
+        
+        <div class="col-1">
+           
+            <asp:Button ID="accept" runat="server"  OnClientClick="return confirm('Your just one click away on joining our company\nContragulations!!!');" CssClass="submit1" style="height:50px; width:150px;" Text="Accept "  OnClick="accept_Click"  />
+            
+        </div>
+        </div>
+        <div class="group" id="ms7" runat="server" >
+        <div >
+           <center> <asp:Label id ="employee" runat="server"><b>You have declined the offer<span  style="color:red"> </span></b></asp:Label></center>
+            <asp:Button ID="go_to_employee" runat="server" Text="Go to Employee Login" OnClick="go_to_employee_Click" Width="151px" />
+        </div>
+       
+    </div>
+    
     
     
    

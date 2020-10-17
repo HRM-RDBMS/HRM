@@ -12,7 +12,7 @@
 <body>
     <div class="bg-img">
       <div class="content">
-        <header>Login Form</header>
+        <header>Employee Login </header>
         <form id="form1" runat="server">
           <div class="field">
             <span class="fa fa-user"></span>

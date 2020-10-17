@@ -5,14 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8"/>
-    <title>Login Form</title>
+    <title>Candidate Login Form</title>
     <link href="../css/Candidate_Login.css" rel="stylesheet" />
    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
     <div class="bg-img">
       <div class="content">
-        <header>Login Form</header>
+        <header>Candidate Login </header>
         <form id="form1" runat="server">
           <div class="field">
             <span class="fa fa-user"></span>

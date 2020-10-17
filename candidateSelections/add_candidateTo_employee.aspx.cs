@@ -67,7 +67,7 @@ public partial class candidateSelections_add_candidateTo_employee : System.Web.U
             //candiddate_id
             //designaton,  manager_id, hiring_dt, joining_dt, dept_id
             con.Open();
-            String current_date = DateTime.Now.ToString("dd/MM/yyyy");
+            String current_date = DateTime.Now.ToString("yyyy/MM/dd");
             SqlCommand cmd2 = con.CreateCommand();
             cmd2.CommandType = CommandType.Text;
             cmd2.CommandText = "insert into selection (candidate_id, designation, manager_id, hiring_dt, joining_dt, dept_id) values('"+id+"', '"+post2.SelectedValue.ToString()+"', '"+man+"', '"+current_date+"', '"+dt.Text+"', '"+DropDownList1.SelectedValue.ToString()+"')";

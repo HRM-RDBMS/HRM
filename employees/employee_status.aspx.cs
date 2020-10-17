@@ -48,7 +48,7 @@ public partial class employees_employee_status : System.Web.UI.Page
         SqlCommand cmd1 = new SqlCommand(query, con);
         SqlDataReader res1 = cmd1.ExecuteReader();
         res1.Read();
-        String url = "~/candidates/" + res1[13].ToString();
+        String url = "~/candidates/" + res1[12].ToString();
         img.Style["background-image"] = Page.ResolveUrl(url);
         con.Close();
 
