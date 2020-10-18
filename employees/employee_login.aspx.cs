@@ -13,7 +13,7 @@ public partial class employees_employee_admin_login : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["admin"] != null)
-            Response.Redirect("../admin_employee.aspx");
+            Response.Redirect("../adminEmployee/admin_employee.aspx");
         if (Session["userId"] != null)
         {
             Response.Redirect("employee_dashboard.aspx");

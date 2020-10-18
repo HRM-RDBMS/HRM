@@ -29,7 +29,7 @@ public partial class admin_login : System.Web.UI.Page
         if (res == 1)
         {
             Session["admin"] = username.Text;
-            Response.Redirect("main.aspx");
+            Response.Redirect("../main.aspx");
         }
         else
         {

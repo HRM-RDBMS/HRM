@@ -44,7 +44,7 @@ public partial class main : System.Web.UI.Page
     protected void btn_Click(object sender, EventArgs e)
     {
         //Response.Write("herllo");
-        Response.Redirect("admin_login.aspx");
+        Response.Redirect("../admin_login.aspx");
 
     }
 

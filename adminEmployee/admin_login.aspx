@@ -5,8 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>AdminLogins</title>
-	<link rel="stylesheet" href="css/adminstyle.css"/>
-	<link href="css/Candidate_Login.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/adminstyle.css"/>
+	<link href="../css/Candidate_Login.css" rel="stylesheet" />
 	<link href="//fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
 	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'/>
 
@@ -47,7 +47,7 @@
 
           
           <div class="footer-w3l">
-		<asp:HyperLink ID="HyperLink2" NavigateUrl="~/main.aspx" runat="server" Font-Bold="True" Font-Size="Larger" ForeColor="DarkGreen">Go Main Website</asp:HyperLink>
+		<asp:HyperLink ID="HyperLink2" NavigateUrl="../main.aspx" runat="server" Font-Bold="True" Font-Size="Larger" ForeColor="DarkGreen">Go Main Website</asp:HyperLink>
 	</div>
 </div>
 </body>

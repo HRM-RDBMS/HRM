@@ -60,8 +60,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     />
                                 <asp:Button ID="btn2" runat="server"  CausesValidation="false" OnClick="btn2_Click" Text="Logout" 
                                     />-->
-                                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/admin_login.aspx" runat="server">Admin Login</asp:HyperLink>
-                                <asp:HyperLink ID="HyperLink2" NavigateUrl="~/admin_logout.aspx" runat="server">Logout</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/adminEmployee/admin_login.aspx" runat="server">Admin Login</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink2" NavigateUrl="~/adminEmployee/admin_logout.aspx" runat="server">Logout</asp:HyperLink>
                                
                                
                                   
@@ -87,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="logo">
                             <h1>
-                                <a class="navbar-brand" href="index.html">LOGO</a>
+                                <a class="navbar-brand" href="main.aspx">LOGO</a>
                             </h1>
                         </div>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
