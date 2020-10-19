@@ -12,6 +12,10 @@ public partial class Training_training_add : System.Web.UI.Page
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TestConnectionString"].ToString());
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["admin"] == null)
+        {
+            Response.Redirect("../adminEmployee/admin_login.aspx");
+        }
 
     }
     protected void tccode_TextChanged(object sender, EventArgs e)

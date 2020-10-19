@@ -14,7 +14,7 @@ public partial class candidateSelections_select_candidates : System.Web.UI.Page
     {
         if (Session["admin"] == null)
         {
-            Response.Redirect("../admin_login.aspx");
+            Response.Redirect("../adminEmployee/admin_login.aspx");
         }
     }
 

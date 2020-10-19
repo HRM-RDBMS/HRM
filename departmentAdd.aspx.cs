@@ -14,7 +14,10 @@ public partial class departmentAdd : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["admin"] == null)
+        {
+            Response.Redirect("adminEmployee/admin_login.aspx");
+        }
     }
 
     protected void Button2_Click(object sender, EventArgs e)

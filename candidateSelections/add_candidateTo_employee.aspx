@@ -75,6 +75,8 @@
 
                             <asp:Label ID="Label4" runat="server" Text="Joining Date"></asp:Label>
 							<asp:TextBox ID="dt" style="height:50px" TextMode="Date" runat="server"></asp:TextBox>
+							<asp:Label ID="Label7" runat="server" Text="Basic Salary"></asp:Label>
+							<asp:TextBox ID="TextBox1" style="height:50px" TextMode="Number" runat="server"></asp:TextBox>
 							</div>
                             
 						 <asp:Button ID="add_candidate" OnClick="add_candidate_Click"  CssClass="auto-style1" runat="server" Text="Add Candidate To the Organisation" Height="47px" Width="604px" />

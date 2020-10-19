@@ -14,7 +14,7 @@ public partial class candidateSelections_add_candidateTo_employee : System.Web.U
     {
         if (Session["admin"] == null)
         {
-            Response.Redirect("../admin_login.aspx");
+            Response.Redirect("../adminEmployee/admin_login.aspx");
         }
         if (Request.QueryString["cand_id"] == null)
         {
@@ -70,7 +70,7 @@ public partial class candidateSelections_add_candidateTo_employee : System.Web.U
             String current_date = DateTime.Now.ToString("yyyy/MM/dd");
             SqlCommand cmd2 = con.CreateCommand();
             cmd2.CommandType = CommandType.Text;
-            cmd2.CommandText = "insert into selection (candidate_id, designation, manager_id, hiring_dt, joining_dt, dept_id) values('"+id+"', '"+post2.SelectedValue.ToString()+"', '"+man+"', '"+current_date+"', '"+dt.Text+"', '"+DropDownList1.SelectedValue.ToString()+"')";
+            cmd2.CommandText = "insert into selection (candidate_id, designation, manager_id, hiring_dt, joining_dt, dept_id, salary) values('"+id+"', '"+post2.SelectedValue.ToString()+"', '"+man+"', '"+current_date+"', '"+dt.Text+"', '"+DropDownList1.SelectedValue.ToString()+"', '"+TextBox1.Text+"')";
             cmd2.ExecuteNonQuery();
             con.Close();
 
@@ -86,7 +86,8 @@ public partial class candidateSelections_add_candidateTo_employee : System.Web.U
             cmd3.CommandText = "update candidate_details set review='1' where id='" + id + "'";
             cmd3.ExecuteNonQuery();
             con.Close();
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Candidate has been offered the Job')", true);
+            //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Candidate has been offered the Job')", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "ScriptKey", "alert('Candidate has been offered the Job');window.location='select_candidates.aspx'; ", true);
         }
 
 

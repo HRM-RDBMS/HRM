@@ -457,6 +457,15 @@ input[type="submit"] {
             
         </div>
     </div>
+    <div class="group" id="Div1" runat="server"  >
+        <div class="col-1">
+            <label for="hirired"><b>Basic Salary<span  style="color:red"> </span></b></label>
+        </div>
+        <div class="col-2">
+            <asp:Label  id="Label1"  runat="server" style="background-color:#ccc;"></asp:Label>
+            
+        </div>
+    </div>
     <div class="group" id="ms4" runat="server"  >
         <div class="col-1">
             <label for="hirired"><b>Hired On<span  style="color:red"> </span></b></label>

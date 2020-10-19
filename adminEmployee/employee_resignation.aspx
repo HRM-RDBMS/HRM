@@ -220,7 +220,7 @@ width: 94%;
 							</div>
 						<div class="group" id="g1" runat="server" >
 						<div class="col-1">
-						<label for="candidateid" style="color:black"><b>Candidate Id</b></label>
+						<label for="candidateid" style="color:black"><b>Employee Id</b></label>
 						</div>
 						<div class="col-2">
                             <asp:DropDownList ID="DropDownList1" runat="server"  DataSourceID="SqlDataSource2" DataTextField="emp_id" DataValueField="emp_id"></asp:DropDownList>
@@ -233,7 +233,7 @@ width: 94%;
 						</div>
 						<div class="group"  id="g2" runat="server">
 						<div class="col-1">
-						<label for="candidateid" style="color:black"><b>Candidate Name</b></label>
+						<label for="candidateid" style="color:black"><b>Employee Name</b></label>
 						</div>
 						<div class="col-2">
 						<asp:Label ID="employeename" runat="server" style="background-color:#ccc;" Text="dd"></asp:Label>

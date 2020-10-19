@@ -40,6 +40,7 @@ public partial class candidates_candidate_status : System.Web.UI.Page
             ms4.Visible = false;
             ms5.Visible = false;
             ms6.Visible = false;
+            Div1.Visible = false;
            
 
         }
@@ -58,6 +59,7 @@ public partial class candidates_candidate_status : System.Web.UI.Page
                 position.Text = res2[1].ToString();
                 joining.Text = res2[4].ToString().Replace("12.00.00 AM", "");
                 hired.Text = res2[3].ToString().Replace("12.00.00 AM", "");
+                Label1.Text = res2[7].ToString();
             }
             else
             {
@@ -74,6 +76,7 @@ public partial class candidates_candidate_status : System.Web.UI.Page
                 ms4.Visible = false;
                 ms5.Visible = false;
                 ms6.Visible = false;
+                Div1.Visible = false;
 
             }
             if(res2["accepted"].ToString() == "2")
@@ -157,9 +160,11 @@ public partial class candidates_candidate_status : System.Web.UI.Page
         String joining = res4[4].ToString();
         String dept = res4[5].ToString();
         String manager = res4[2].ToString();
+        String salary = res4[7].ToString();
         con.Close();
 
         
+
         //inserting to employee_table
         con.Open();
         SqlCommand cmd2 = con.CreateCommand();
@@ -194,7 +199,13 @@ public partial class candidates_candidate_status : System.Web.UI.Page
         cmd6.ExecuteNonQuery();
         con.Close();
 
-
+        //insertint into employee_salary_amount
+        con.Open();
+        SqlCommand cmd22 = con.CreateCommand();
+        cmd22.CommandType = CommandType.Text;
+        cmd22.CommandText = "insert into employee_salary_amount(employee_id, basic_salry) values('"+employee_id+"', '"+salary+"');";
+        cmd22.ExecuteNonQuery();
+        con.Close();
 
         //insert employee_under_managers
         con.Open();
