@@ -104,10 +104,8 @@ width: 94%;
 					<div class="header-right">
 						<div class="agileinfo-social-grids">
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin-in"></i></a></li>
+								<li id="name" runat="server"></li>
+								
 							</ul>
 						</div>
 					</div>
@@ -134,6 +132,7 @@ width: 94%;
 									<li><a href="employee_status.aspx" >Status</a></li> 
 									<li><a href="employee_performance.aspx" >Performance</a></li>
 									<li><a href="employee_payroll.aspx" >Payroll Details </a></li>
+									<li><a href="employee_leave.aspx" >Leave</a></li>
 									<li><a href="employee_resignation.aspx" >Resignation</a></li>
 								</ul>	
 								<div class="clearfix"> </div>
@@ -156,13 +155,13 @@ width: 94%;
 						<div>
 							<h3>View Employee Details</h3>
 							
-							<asp:RadioButtonList ID="RadioButtonList1" runat="server" >
+							<asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged" >
 								<asp:ListItem Value="1" ><p style="color:black">Search By Employee ID</p></asp:ListItem>
 								 <asp:ListItem Value="2" ><p style="color:black">Search By Employee Name</p></asp:ListItem>
 							</asp:RadioButtonList>
-							<div class="group">
+							<div class="group"  id="g1" runat="server">
 						  <div class="col-1">
-							 <label for="employeeId"><b><p style="color:black">Employee Id</b></label>
+							 <label for="employeeId"><b><p style="color:black">Employee Id</p></b></label>
 						 </div>
 						 <div class="col-2">
 						  <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="emp_id" DataValueField="emp_id" Height="49px" Width="168px"></asp:DropDownList>       
@@ -170,7 +169,7 @@ width: 94%;
 						 </div>
 						</div>
 
-							<div class="group">
+							<div class="group" id="g2" runat="server">
 						  <div class="col-1">
 							 <label for="employeeId"><b><p style="color:black">Employee Name</b></label>
 						 </div>
@@ -184,7 +183,7 @@ width: 94%;
 							<asp:Button ID="Button1" runat="server" Text="Retrive" OnClick="Button1_Click"></asp:Button>
                            <!--<input type="submit" value="Retrive "> -->
 							<hr /><br /><div class="clearfix"></div> 
-							<div class="group">
+							<div class="group" id="g3" runat="server">
         <div class="col-1">
             <label for="image"><b><p style="color:black">Profile Picture</p></b></label>
         </div>
@@ -195,7 +194,7 @@ width: 94%;
            
         </div>
     </div>
-                         <div class="group">
+                         <div class="group" id="g4" runat="server">
 						  <div class="col-1">
 							 <label for="employeeId"><b><p style="color:black">Employee Id</b></label>
 						 </div>
@@ -205,7 +204,7 @@ width: 94%;
 						</div>
         
 						
-					<div class="group">
+					<div class="group" id="g5" runat="server">
 					 <div class="col-1">
 					<label for="employee_nm"><b><p style="color:black">Employee Name</b></label>
 					 </div>
@@ -213,7 +212,7 @@ width: 94%;
 					 <asp:TextBox ID="employee_name"  ReadOnly="true" Text="Isaac"  style="background-color:#ccc;text-align:center;font-size:larger" runat="server"></asp:TextBox>							
 					</div>
 					</div>
-							<div class="group">
+							<div class="group" id="g6" runat="server">
 					 <div class="col-1">
 					<label for="employee_nm"><b><p style="color:black">Designation</b></label>
 					 </div>
@@ -221,7 +220,7 @@ width: 94%;
 					 <asp:TextBox ID="designation"  ReadOnly="true" Text="Isaac"  style="background-color:#ccc;text-align:center;font-size:larger" runat="server"></asp:TextBox>							
 					</div>
 					</div>
-							<div class="group">
+							<div class="group" id="g7" runat="server">
 						  <div class="col-1">
 							 <label for="employeeId"><b><p style="color:black">Dob</b></label>
 						 </div>
@@ -231,7 +230,7 @@ width: 94%;
 						</div>
 						
 						 <!-- gennder -->
-					<div class="group">
+					<div class="group" id="g8" runat="server">
 					 <div class="col-1">
 					<label for="employee_nm"><b><p style="color:black">Gender</b></label>
 					 </div>
@@ -239,7 +238,7 @@ width: 94%;
 					 <asp:TextBox ID="gender"  ReadOnly="true" Text="Isaac"  style="background-color:#ccc;text-align:center;font-size:larger" runat="server"></asp:TextBox>							
 					</div>
 					</div>
-							<div class="group">
+							<div class="group" id="g9" runat="server">
 						  <div class="col-1">
 							 <label for="employeeId"><b><p style="color:black">Address</b></label>
 						 </div>
@@ -249,7 +248,7 @@ width: 94%;
 						</div>
         
 						 <!-- mobile -->
-					<div class="group">
+					<div class="group" id="g10" runat="server">
 					 <div class="col-1">
 					<label for="employee_nm"><b><p style="color:black">Mobile No</b></label>
 					 </div>
@@ -257,7 +256,7 @@ width: 94%;
 					 <asp:TextBox ID="mobil"  ReadOnly="true" Text="Isaac"  style="background-color:#ccc;text-align:center;font-size:larger" runat="server"></asp:TextBox>							
 					</div>
 					</div>
-							<div class="group">
+							<div class="group" id="g11" runat="server">
 						  <div class="col-1">
 							 <label for="employeeId"><b><p style="color:black">Email ID</b></label>
 						 </div>
@@ -268,7 +267,7 @@ width: 94%;
         
 						 <!-- Candidate Name -->
 					
-							<div class="group">
+							<div class="group" id="g12" runat="server">
 						  <div class="col-1">
 							 <label for="employeeId"><b><p style="color:black">Hired Date</b></label>
 						 </div>
@@ -278,7 +277,7 @@ width: 94%;
 						</div>
         
 						 <!-- Candidate Name -->
-					<div class="group">
+					<div class="group" id="g13" runat="server">
 					 <div class="col-1">
 					<label for="employee_nm"><b><p style="color:black">Joined Date</b></label>
 					 </div>

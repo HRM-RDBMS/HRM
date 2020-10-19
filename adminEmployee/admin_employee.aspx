@@ -69,6 +69,7 @@
 									<li><a href="employee_status.aspx" >Status</a></li> 
 									<li><a href="employee_performance.aspx" >Performance</a></li>
 									<li><a href="employee_payroll.aspx" >Payroll Details </a></li>
+									<li><a href="employee_leave.aspx" >Leave</a></li>
 									<li><a href="employee_resignation.aspx" >Resignation</a></li>
 									
 								</ul>	

@@ -13,9 +13,37 @@ public partial class adminEmployee_employee_details : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["admin"] == null)
+        {
+            Response.Redirect("admin_login.aspx");
+        }
+        g1.Visible = false;
+        g2.Visible = false;
 
+        g3.Visible = false;
+        g4.Visible = false;
+        g5.Visible = false;
+        g6.Visible = false;
+        g7.Visible = false;
+        g8.Visible = false;
+        g9.Visible = false;
+        g10.Visible = false;
+        g11.Visible = false;
+        g12.Visible = false;
+        g13.Visible = false;
     }
 
+    protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (RadioButtonList1.Text == "1")
+        {
+            g1.Visible = true;
+        }
+        else
+        {
+            g2.Visible = true;
+        }
+    }
     protected void Button1_Click(object sender, EventArgs e)
     {
         if(RadioButtonList1.Text =="" )
@@ -50,5 +78,17 @@ public partial class adminEmployee_employee_details : System.Web.UI.Page
         joined.Text = res[11].ToString();
 
         output.Attributes["src"] = "~/candidates/" + res[12].ToString();
+
+        g3.Visible = true;
+        g4.Visible = true;
+        g5.Visible = true;
+        g6.Visible = true;
+        g7.Visible = true;
+        g8.Visible = true;
+        g9.Visible = true;
+        g10.Visible = true;
+        g11.Visible = true;
+        g12.Visible = true;
+        g13.Visible = true;
     }
 }

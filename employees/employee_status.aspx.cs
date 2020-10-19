@@ -23,13 +23,15 @@ public partial class employees_employee_status : System.Web.UI.Page
             pendingg();
             completedd();
             ended();
+            pendingtrain();
+            completedtrain();
         }
 
 
 
-        con.Open();
+        //con.Open();
 
-        String query = "select employee_table.emp_name from employee_table where employee_table.emp_id in(select managers.emp_id from managers where manager_id in(select employee_under_managers.manager_id from employee_under_managers where employee_under_managers.employee_id = '" + Session["userId"].ToString() + "'))";
+        /*String query = "select employee_table.emp_name from employee_table where employee_table.emp_id in(select managers.emp_id from managers where manager_id in(select employee_under_managers.manager_id from employee_under_managers where employee_under_managers.employee_id = '" + Session["userId"].ToString() + "'))";
 
         SqlCommand cmd = new SqlCommand(query, con);
         SqlDataReader res = cmd.ExecuteReader();
@@ -44,7 +46,7 @@ public partial class employees_employee_status : System.Web.UI.Page
         con.Close();
         con.Open();
 
-        query = "select * from employee_table where emp_id ='" + Session["userId"].ToString() + "'";
+        String query = "select * from employee_table where emp_id ='" + Session["userId"].ToString() + "'";
         SqlCommand cmd1 = new SqlCommand(query, con);
         SqlDataReader res1 = cmd1.ExecuteReader();
         res1.Read();
@@ -71,9 +73,9 @@ public partial class employees_employee_status : System.Web.UI.Page
             wrkgrp.InnerText = ": Not yet assigned";
         }
         con.Close();
-
+        */
         con.Open();
-        query = "select count(*) from employee_assigned_projects where employee_id ='" + Session["userId"].ToString() + "'";
+        String query = "select count(*) from employee_assigned_projects where employee_id ='" + Session["userId"].ToString() + "'";
         SqlCommand cmd3 = new SqlCommand(query, con);
         SqlDataReader res3 = cmd3.ExecuteReader();
         if (res3.Read())
@@ -82,15 +84,93 @@ public partial class employees_employee_status : System.Web.UI.Page
         }
         con.Close();
 
+        con.Open();
+        query = "select count(*) from employee_training_details where employee_id='" + Session["userId"].ToString() + "'";
+        SqlCommand cmd4 = new SqlCommand(query, con);
+        SqlDataReader res4 = cmd3.ExecuteReader();
+        if (res4.Read())
+        {
+            totaltraing.InnerText = ": " + res4[0].ToString() + " Trainings";
+        }
+        con.Close();
 
 
 
-        
-
-        
 
 
 
+
+
+    }
+
+    protected void pendingtrain()
+    {
+        con.Open();
+        String query = "select training_details.name,training_details.company from training_details where training_id in(select employee_training_details.training_id from employee_training_details where training_status='Pending' and employee_id ='" + Session["userId"].ToString() + "')";
+        SqlCommand cmd6 = new SqlCommand(query, con);
+        SqlDataReader res6 = cmd6.ExecuteReader();
+
+        if (res6.HasRows)
+        {
+            Label1.Visible = false;
+
+            DataTable dataTable2 = new DataTable();
+            dataTable2.Columns.Add("Name of Training");
+            dataTable2.Columns.Add("Company");
+            SqlDataReader reader2 = res6;
+            while (reader2.Read())
+            {
+                DataRow row1 = dataTable2.NewRow();
+                row1["Name of training"] = reader2["name"];
+                row1["Company"] = reader2["company"];
+                dataTable2.Rows.Add(row1);
+            }
+            GridView2.DataSource = dataTable2;
+            GridView2.DataBind();
+            GridView2.Visible = true;
+        }
+        else
+        {
+            Label1.Visible = true;
+        }
+
+
+        con.Close();
+    }
+
+    protected void completedtrain()
+    {
+        con.Open();
+        String query = "select training_details.name,training_details.company from training_details where training_id in(select employee_training_details.training_id from employee_training_details where training_status='Completed' and employee_id ='" + Session["userId"].ToString() + "')";
+        SqlCommand cmd6 = new SqlCommand(query, con);
+        SqlDataReader res6 = cmd6.ExecuteReader();
+
+        if (res6.HasRows)
+        {
+            Label2.Visible = false;
+
+            DataTable dataTable2 = new DataTable();
+            dataTable2.Columns.Add("Name of Training");
+            dataTable2.Columns.Add("Company");
+            SqlDataReader reader2 = res6;
+            while (reader2.Read())
+            {
+                DataRow row1 = dataTable2.NewRow();
+                row1["Name of training"] = reader2["name"];
+                row1["Company"] = reader2["company"];
+                dataTable2.Rows.Add(row1);
+            }
+            GridView3.DataSource = dataTable2;
+            GridView3.DataBind();
+            GridView3.Visible = true;
+        }
+        else
+        {
+            Label2.Visible = true;
+        }
+
+
+        con.Close();
     }
 
     protected void pendingg()

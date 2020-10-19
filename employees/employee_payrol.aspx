@@ -161,116 +161,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<form id="formElem" name="formElem" action="#" method="post" runat="server" class="w3_form w3l_form_fancy">
 					<fieldset class="step agileinfo w3ls_fancy_step">
-						<!--
-						<legend>About</legend>
-						<div class="abt-agile">
-							<div class="abt-agile-left" id="img" runat="server">
-                                
-							</div>
-							<div class="abt-agile-right">
-
-								
-								<ul class="address">
-									<li>
-										<ul class="address-text">
-											<li ></li>
-											<li id="dob" runat="server">: 07-06-1998</li>
-										</ul>
-									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>PHONE </b></li>
-											<li id="pho_num" runat="server">: +91 9999999999</li>
-										</ul>
-									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>ADDRESS </b></li>
-											<li id="addres" runat="server" >: New Delhi,India</li>
-										</ul>
-									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>E-MAIL </b></li>
-											<li id="email" runat="server" >: nikitabaid178@gmail.com</li>
-										</ul>
-									</li>
-									
-								</ul>
-							</div>
-								<div class="clear"></div>
-						</div>-->
+                        <asp:GridView ID="GridView1" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="663px">
+                            <FooterStyle BackColor="#CCCCCC" />
+                            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                            <RowStyle BackColor="White" />
+                            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                            <SortedAscendingHeaderStyle BackColor="#808080" />
+                            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                            <SortedDescendingHeaderStyle BackColor="#383838" />
+                        </asp:GridView>
+                        <asp:Label ID="Label1" runat="server" ForeColor="White" Text="No records"></asp:Label>
 					</fieldset>
-					<fieldset class="step wthree">
-						<legend>Work</legend>
-						<div class="work-w3agile">
-							<div class="work-w3agile-top">
-								<div class="agileits_w3layouts_work_grid1 w3layouts_work_grid1 hover14 column">
-									<div class="w3_agile_work_effect">
-										<ul>
-											<li>
-												<a href="../Nikita/images/c1.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c1.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
-											</li>
-											<li>
-												<a href="../Nikita/images/c2.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c2.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
-											</li>
-											<li>
-												<a href="../Nikita/images/c3.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c3.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
-											</li>
-											<li>
-												<a href="images/c4.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c4.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
-											</li>
-											<li>
-												<a href="images/c5.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c5.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
-											</li>
-											<li>
-												<a href="images/c6.jpg" class="sb" title="Quis Nostrud Exercitation Ullamco Laboris Quis Autem Vel Eum Iure Reprehenderit">
-													<figure>
-														<img src="../Nikita/images/c6.jpg" alt=" " class="img-responsive" />
-													</figure>
-												</a>
-											</li>
-												<div class="clear"></div>
-										</ul> 
-									</div>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-				<!--	<fieldset class="step w3_agileits">
-						<legend>General Info</legend>
-							<div class="agilecontactw3ls-grid">
-								
-								<div class="agile-con-right">
-									<h6>Employee Name :-</h6><h6 id="nm" runat="server"> Nikita Baid</h6>
-									<p>Team Leader:  NA </p>
-									<p>Completed Project:  NA </p>
-									<p>Assigned Projects:  NA</p>
-									
-								</div>
-								<div class="clear"></div>
-							</div>
-					</fieldset>-->
+					
 				</form>
 			</div>
             </div>

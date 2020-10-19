@@ -1,13 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="training_add.aspx.cs" Inherits="Training_training_add" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="add_employee_training.aspx.cs" Inherits="Training_add_employee_training" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-     <meta charset="utf-8">
+<head runat="server">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add training Details</title>
+    <title>View Employees taking Projects</title>
 <style>
     html, body, h2 {
     margin: 0;
@@ -16,7 +16,7 @@
 }
 
 body {
-    background-image:url("../assets/img/intro-carousel/img11.jpg");
+    background-image:url("../assets/img/intro-carousel/1.jpg");
     font-family:'Pacifico', cursive;
 }
 
@@ -41,6 +41,24 @@ body {
     box-sizing: border-box;
     text-align: center;
     cursor: pointer;
+}
+   input[type=text] {
+  width: 210px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: transparent;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
 }
 
 .flag {
@@ -139,7 +157,7 @@ body {
 }
 
 .col-1 {
-    width: 39%;
+    width: 40%;
 }
 
 .col-1 label {
@@ -156,21 +174,19 @@ body {
 }
 
 .col-2 input {
-    border-style: none;
-        border-color: inherit;
-        border-width: medium;
-width: 94%;
-        height: 40px;
-        font-family:'Times New Roman';
-        outline: none;
-        border-radius: 20px;
-        box-sizing: border-box;
-        box-shadow: 
+    width: 100%;
+    height: 40px;
+    font-family:'Times New Roman';
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    box-sizing: border-box;
+    box-shadow: 
         inset 0 0 3px 0 rgba(0,0,0,0.3),
         0.5px 0.5px 0 0 #fff;
-        padding: 1em;
-        margin-left: 8px;
-    }
+    padding: 1em;
+    background: rgba(80,80,80,0.1);
+}
 
 input[type="submit"] {
     display: block;
@@ -329,11 +345,29 @@ input[type="submit"] {
     }
     #gender
     {
-        width: 225px;
+        width: 235px;
         height: 40px;
-        margin-left: 10px;
     }
+    .submit1 {
+    border: none;
+    outline: none;
+    position: relative;
+    height: 40px;
+    color: #fff;
+    font-family:'Times New Roman';
+    text-transform: uppercase;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.6);
+    box-shadow: 0 0 1px 0 #000;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    transition: background 70ms linear;
+}
 
+.submit1:hover {
+    color: orange;
+    background: rgba(0,0,0,1);
+}
     #qualifications
     {
         width: 235px;
@@ -356,126 +390,75 @@ input[type="submit"] {
         width: 227px;
     }
 
-    #address
-    {
-        width: 233px;
-        height: 57px;
-    }
-#references
-{
-        width: 233px;
-        height: 57px;
-    }
-    #Img1
-    {
-        width: 237px;
-        height: 155px;
-    }
 </style>
 </head>
 <body>
-<center><h1>Add Training Details</h1></center>
-    <form id="form1" runat="server" class="form">   
-     
-  <!-- training name -->
-      
-    <div class="group">
+
+    <i class="flag left"></i><label for="show" class="title"><b>Employees Assigned Project</b></label><i class="flag right"></i>
+    <h2 align="center"><a href="training_view.aspx"><b>Home</b></a></h2>
+<!-- Form -->
+<form  class="form" id="form1" runat="server">
+<div class="group">
         <div class="col-1">
-            <label for="trainingname"><b>Training name<span  style="color:red"> *</span></b></label>
+            <label for="search"><b>Search Id<span  style="color:red"> *</span></b></label>
         </div>
-        <div class="col-2">
-            <asp:TextBox ID="trainingname" runat="server" placeholder="Training name" style="background-color:#ccc;"></asp:TextBox>
-            
-        </div>
-    </div>
-  
-  <!-- training description -->
-      
-    <div class="group">
-        <div class="col-1">
-            <label for="description"><b>Description<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="description" runat="server" TextMode="MultiLine" placeholder="training description"
-                style="background-color:#ccc;" Width="222px"></asp:TextBox>
-            
-        </div>
-    </div>
-  <!-- training start date -->
-      
-    <div class="group">
-        <div class="col-1">
-            <label for="sdate"><b>T_Start date<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="sdate" runat="server" style="background-color:#ccc;" 
-                TextMode="Date" ></asp:TextBox>
-            
-        </div>
-    </div>
-  <!-- training ending date -->
-      
-    <div class="group">
-        <div class="col-1">
-            <label for="edate"><b>T_End date<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="edate" runat="server" style="background-color:#ccc;" 
-                TextMode="Date" ></asp:TextBox>
-            
-        </div>
-    </div>
-   <!-- training company -->
-      
-    <div class="group">
-        <div class="col-1">
-            <label for="company"><b>Trainingcompany<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="company" runat="server" placeholder="Training company" style="background-color:#ccc;" 
-                ></asp:TextBox>
-            
-        </div>
-    </div>
-  <!-- training place -->
-      
-    <div class="group">
-        <div class="col-1">
-            <label for="place"><b>Training place<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="place" runat="server" placeholder="Training place" style="background-color:#ccc;" 
-                ></asp:TextBox>
-            
-        </div>
-    </div>
-  <!-- training time-->
-      
-    <div class="group">
-        <div class="col-1">
-            <label for="time"><b>Time<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="time" runat="server"  placeholder="Time" Textmode="Time" style="background-color:#ccc;" 
-                ValidateRequestMode="Enabled" ></asp:TextBox>
-            
-        </div>
-    </div>
-  
-  
-               <%--<center> <input id="Reset1" type="reset" value="reset" class="submit1"   /></center>--%>
-               <asp:Button ID="reset1" runat="server" OnClick="reset1_Click" Text="reset" CssClass="submit1" />
-           
-            </br>
-            <div class="submit">
-                <asp:Button ID="submit" runat="server" OnClick="submit_Click" Text="Submit" CssClass="submit" />
-                
-            </div>
         
-       
+
+    
+        <asp:DropDownList ID="DropDownList1" style="background-color:#ccc;" runat="server" DataSourceID="SqlDataSource3" DataTextField="name" DataValueField="training_id"></asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:TestConnectionString %>" SelectCommand="SELECT [name], [training_id] FROM [training_details]"></asp:SqlDataSource>
         
-   <!-- <input type="submit" class="submit" value="Submit" class="submit1 /><br />
-     <input type="submit" class="submit1" value="Cancel" />-->
+        
+    </div>
+    
+    
+    <div>
+      
+        <asp:Button ID="search" CssClass="submit1" runat="server" Text="Search" OnClick="search_Click" />
+    </div>
+      <br />
+     <!-- Project Id -->
+    <div class="group">
+        <div class="col-1">
+            <label for="projectid"><b>Training Id<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+           <asp:Label ID="projectId" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
+    <div class="group">
+        <div class="col-1">
+            <label for="employeeid"><b>Employees Search</b></label>
+        </div>
+        
+            <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource1" DataTextField="emp_name" DataValueField="emp_id"></asp:DropDownList>
+            
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TestConnectionString %>" SelectCommand="select emp_name,emp_id from employee_table where emp_id not in (select employee_training_details.employee_id from employee_training_details where employee_training_details.training_status ='Pending')"></asp:SqlDataSource>
+            
+        </div>
+        <div>
+            <center><asp:Button ID="employee_search" runat="server" style="height:50px; width:150px;"  Text="Get Employee Details"  OnClick="employee_search_Click"/></center>
+        </div>
+        
+    <div class="group">
+        <div class="col-1">
+            <label for="projectid"><b>Employee Id<span  style="color:red"> *</span></b></label>
+        </div>
+        <div class="col-2">
+           <asp:Label ID="employeeId" runat="server" Text=""></asp:Label>
+        </div>
+    </div>
+   <div class="group">
+       <asp:Button ID="add" runat="server"  style="height:50px; width:154px;" OnClick="add_Click" Text="Add Selected Employee" />
+        </div>
+   
+    
+    
+   
+    
+    
+    <!-- Submit button -->
+   
 </form>
 </body>
 </html>

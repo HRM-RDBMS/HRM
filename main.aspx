@@ -133,8 +133,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <i class="fas fa-angle-down"></i>
                                     </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                     <a class="dropdown-item" href="trainingView.aspx">Training Details</a>
-                                     <a class="dropdown-item" href="comingsoon_02/soon/comingSoon.html">Employee Training Details</a>
+                                     <a class="dropdown-item" href="Training/training_view.aspx">Training Details</a>
+                                     
                                     </div>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -256,7 +256,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3 class="tittle text-center cen mb-lg-5 mb-3">Make a Difference with Your Online Resume!</h3>
                     <p></p>
                     <div class="resume">
-                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter2">
+                        <a href="Nikita/resume.html" >
                             <i class="far fa-user"></i> Create Resume</a>
                     </div>
                 </div>

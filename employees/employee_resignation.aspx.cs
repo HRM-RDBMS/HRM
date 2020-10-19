@@ -51,11 +51,28 @@ public partial class employees_employee_resignation : System.Web.UI.Page
         if (res.Read())
         {
             if(res[3].ToString() == "Approved")
+            {
+                con.Close();
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Your Request is Approved ')", true);
+            }
 
+            else if(res[3].ToString() == "Denied")
+                {
+                con.Close();
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Your Request is Denied ')", true);
+
+            }
             else
+            {
+                con.Close();
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Request already Submitted, Please keep calm ^-^, HR will review your request shortly ')", true);
-            return;
+                return;
+            }
+               
+        }
+        else
+        {
+            con.Close();
         }
         
 
@@ -71,8 +88,8 @@ public partial class employees_employee_resignation : System.Web.UI.Page
         }
         else
         {
-            
-           
+
+            con.Open();
                 String status = "Pending";
                 SqlCommand command = con.CreateCommand();
                 command.CommandType = CommandType.Text;

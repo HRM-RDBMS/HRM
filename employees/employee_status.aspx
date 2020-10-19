@@ -145,9 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<h1>Employee Status</h1>
 		<div id="navigation" style="display:none;" class="w3_agile">
 			<ul>
-				<li class="selected">
-					<a href="#"><i class="fa fa-home" aria-hidden="true"></i><span>Work</span></a>
-				</li>
+				
 				<li>
 					<a href="#"><i class="fa fa-folder" aria-hidden="true"></i><span>Projects</span></a>
 				</li>
@@ -160,47 +158,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div id="steps" style="margin:0 auto;" class="agileits w3_steps">
 
 				<form id="formElem" runat="server">
-					<fieldset class="step agileinfo w3ls_fancy_step">
-						
 					
-						<div class="abt-agile">
-							<div class="abt-agile-left" id="img" runat="server">
-                                
-							</div>
-							<div class="abt-agile-right">
-
-								
-								<ul class="address">
-									<li>
-										<ul class="address-text">
-											<li >Divison </li>
-											<li id="division" runat="server">: 07-06-1998</li>
-										</ul>
-									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>Position </b></li>
-											<li id="position" runat="server">: +91 9999999999</li>
-										</ul>
-									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>WorkGroup </b></li>
-											<li id="wrkgrp" runat="server" >: New Delhi,India</li>
-										</ul>
-									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>Supervisor </b></li>
-											<li id="supervisor" runat="server" >: nikitabaid178@gmail.com</li>
-										</ul>
-									</li>
-									
-								</ul>
-							</div>
-								<div class="clear"></div>
-						</div>
-					</fieldset>
 					<fieldset class="step wthree">
 						<legend>Projects</legend>
 						<div class="abt-agile">
@@ -220,7 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li >Pending: </li>
 											<li id="pending" runat="server">
 												<asp:Label ID="pendinglabel" runat="server" Text="   No records"></asp:Label>
-                                                <asp:GridView ID="pendinggrid" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2">
+                                                <asp:GridView ID="pendinggrid" CssClass="address" runat="server" BackColor="#CCCCCC" Width="351px" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" ForeColor="Black" CellSpacing="2">
                                 <FooterStyle BackColor="#CCCCCC" />
                                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                                 <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
@@ -243,7 +201,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li id="completed" runat="server">
                                                 
 												<asp:Label ID="Label11" runat="server" Text="No records"></asp:Label>
-							<asp:GridView ID="GridView1" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+							<asp:GridView ID="GridView1" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" Width="351px" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
                                 <FooterStyle BackColor="#CCCCCC" />
                                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                                 <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
@@ -267,7 +225,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li id="stopped" runat="server">
                                                
                                                 <asp:Label ID="stp" runat="server" Text="No records"></asp:Label>
-							<asp:GridView ID="stopgrid" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+							<asp:GridView ID="stopgrid" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" Width="351px" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
                                 <FooterStyle BackColor="#CCCCCC" />
                                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
                                 <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
@@ -285,94 +243,76 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>
 							</div>
 								<div class="clear"></div>
-					<!--	</div>-->
-						<!--<div class="work-w3agile">
-							<div class="work-w3agile-top">
-								<div class="agileits_w3layouts_work_grid1 w3layouts_work_grid1 hover14 column">
-									<div class="w3_agile_work_effect">
-										<ul>
-											<li>
-                                                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-											</li>
-											<li>
-                                                <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-											</li>
-											<li>
-                                                
-											</li>
-											<li>
-												
-											</li>
-											<li>
-												<asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
-											</li>
-											<li>
-												<asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
-											</li>
-											<li>
-												
-											</li>
-											<li>
-												<asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
-											</li>
-											<li>
-												<asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
-											</li>
-												
-										</ul> 
-									</div>
-								</div>
-							</div>
-						</div>
-						-->
-                            
+					
 							
 					</fieldset>
+
 					<fieldset class="step w3_agileits">
-						<legend>General Info</legend>
-							<div class="agilecontactw3ls-grid">
-								
-								<div class="agile-con-right">
-									<h6>Employee Name :-</h6><h6 id="nm" runat="server"> Nikita Baid</h6>
-							<div class="abt-agile-right">
+						<legend>Trainings</legend>
+						<div class="abt-agile">
+						<!--	<div class="abt-agile-left" style="background-image:none;" runat="server">-->
+                                <ul class="address">
+									<li>
+										<ul class="address-text">
+											<li >Total </li>
+											<li id="totaltraing" runat="server" >
+                                                
+											</li>
 
-								 
-								<!--<ul class="address">
-									<li>
-										<ul class="address-text">
-											<li >Divison </li>
-											<li id="Li1" runat="server">: 07-06-1998</li>
 										</ul>
 									</li>
 									<li>
 										<ul class="address-text">
-											<li><b>Position </b></li>
-											<li id="Li2" runat="server">: +91 9999999999</li>
+											<li >Pending: </li>
+											<li id="Li2" runat="server">
+												<asp:Label ID="Label1" runat="server" Text="   No records"></asp:Label>
+                                                <asp:GridView ID="GridView2" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" Width="351px" ForeColor="Black" CellSpacing="2" DataSourceID="SqlDataSource1">
+                                <FooterStyle BackColor="#CCCCCC" />
+                                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                                                    <RowStyle BackColor="White" />
+                                <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                <SortedAscendingHeaderStyle BackColor="#808080" />
+                                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                <SortedDescendingHeaderStyle BackColor="#383838" />
+                               
+                            </asp:GridView>
+                                               
+                                                <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+                                               
+                                            </li>
 										</ul>
 									</li>
+
 									<li>
 										<ul class="address-text">
-											<li><b>WorkGroup </b></li>
-											<li id="Li3" runat="server" >: New Delhi,India</li>
+											<li >Completed </li>
+											<li id="Li3" runat="server">
+                                                
+												<asp:Label ID="Label2" runat="server" Text="No records"></asp:Label>
+							<asp:GridView ID="GridView3" CssClass="address" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="351px">
+                                <FooterStyle BackColor="#CCCCCC" />
+                                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                                <RowStyle BackColor="White" />
+                                <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                                <SortedAscendingHeaderStyle BackColor="#808080" />
+                                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                                <SortedDescendingHeaderStyle BackColor="#383838" />
+                               
+                            </asp:GridView>
+
+                                            </li>
 										</ul>
 									</li>
-									<li>
-										<ul class="address-text">
-											<li><b>Supervisor </b></li>
-											<li id="Li4" runat="server" >: nikitabaid178@gmail.com</li>
-										</ul>
-									</li>
+
 
 									
-								</ul>--->
+									</ul>
 							</div>
-									<p>Team Leader:  NA </p>
-									<p>Completed Project:  NA </p>
-									<p>Assigned Projects:  NA</p>
-									
-								</div>
 								<div class="clear"></div>
-							</div>
 					</fieldset>
 				</form>
 			</div>
