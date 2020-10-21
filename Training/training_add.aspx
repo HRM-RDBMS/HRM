@@ -376,17 +376,7 @@ input[type="submit"] {
 <body>
 <center><h1>Add Training Details</h1></center>
     <form id="form1" runat="server" class="form">   
-     <!-- training Id -->
-      
-    <div class="group">
-        <div class="col-1">
-            <label for="trainingid"><b>Training Id<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="trainingid" runat="server" placeholder="training id" style="background-color:#ccc;"></asp:TextBox>
-            
-        </div>
-    </div>
+     
   <!-- training name -->
       
     <div class="group">
@@ -394,38 +384,11 @@ input[type="submit"] {
             <label for="trainingname"><b>Training name<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="trainingname" runat="server" placeholder="training name" style="background-color:#ccc;"></asp:TextBox>
+            <asp:TextBox ID="trainingname" runat="server" placeholder="Training name" style="background-color:#ccc;"></asp:TextBox>
             
         </div>
     </div>
-  <!-- training category code -->
-      
-    <div class="group">
-        <div class="col-1">
-            <label for="tcategorycode"><b>T_Category code<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <asp:TextBox ID="tccode" runat="server" placeholder="training category code" style="background-color:#ccc;" 
-                ></asp:TextBox>
-            
-        </div>
-    </div>
-  <!-- training category name -->
-      
-    <div class="group">
-        <div class="col-1">
-            <label for="categoryname"><b>T_Category name<span  style="color:red"> *</span></b></label>
-        </div>
-        <div class="col-2">
-            <select id="categoryname" name="categoryname" required="required" 
-                style="background-color:#ccc; height: 45px; width: 228px;">
-                <option value="name2"><b>Select Training category name</b></option>
-                <option value="c1">Re-training</option>
-                <option value="c2">first training</option>
-                <option value="c3">xyz</option>
-            </select>&nbsp;&nbsp;
-        </div>
-    </div>
+  
   <!-- training description -->
       
     <div class="group">
@@ -469,7 +432,7 @@ input[type="submit"] {
             <label for="company"><b>Trainingcompany<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="company" runat="server" placeholder="training company" style="background-color:#ccc;" 
+            <asp:TextBox ID="company" runat="server" placeholder="Training company" style="background-color:#ccc;" 
                 ></asp:TextBox>
             
         </div>
@@ -481,7 +444,7 @@ input[type="submit"] {
             <label for="place"><b>Training place<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="place" runat="server" placeholder="training place" style="background-color:#ccc;" 
+            <asp:TextBox ID="place" runat="server" placeholder="Training place" style="background-color:#ccc;" 
                 ></asp:TextBox>
             
         </div>
@@ -490,33 +453,22 @@ input[type="submit"] {
       
     <div class="group">
         <div class="col-1">
-            <label for="time"><b>T_Category code<span  style="color:red"> *</span></b></label>
+            <label for="time"><b>Time<span  style="color:red"> *</span></b></label>
         </div>
         <div class="col-2">
-            <asp:TextBox ID="TextBox3" runat="server" placeholder="training category code" textmode="Time" style="background-color:#ccc;" 
+            <asp:TextBox ID="time" runat="server"  placeholder="Time" Textmode="Time" style="background-color:#ccc;" 
                 ValidateRequestMode="Enabled" ></asp:TextBox>
             
         </div>
     </div>
   
-   <!-- Terms & Conditions -->
-    <div class="group-2">
-        <asp:CheckBox ID="terms" runat="server" />
-       <!-- <input type="checkbox" class="checkbox" id="terms" />-->
-        <label for="terms">I declare to have read and accepted the <a href="#">terms of service</a></label>
-    </div>
-    <!-- Notifications -->
-
-    
-   <!-- Submit button -->
-        <div class ="submit">
-            
+  
                <%--<center> <input id="Reset1" type="reset" value="reset" class="submit1"   /></center>--%>
-               <asp:Button ID="reset1" runat="server" Text="reset" CssClass="submit1" />
-            </div>
+               <asp:Button ID="reset1" runat="server" OnClick="reset1_Click" Text="reset" CssClass="submit1" />
+           
             </br>
             <div class="submit">
-                <asp:Button ID="submit" runat="server" Text="Submit" CssClass="submit" />
+                <asp:Button ID="submit" runat="server" OnClick="submit_Click" Text="Submit" CssClass="submit" />
                 
             </div>
         

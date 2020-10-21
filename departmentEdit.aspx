@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="departmentEdit.aspx.vb" Inherits="departmentEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="departmentEdit.aspx.cs" Inherits="departmentEdit" %>
 
 <!DOCTYPE html>
 
@@ -16,11 +16,11 @@
     <div >
     <form id="form1" runat="server">
         <div class="hom">
-        <a class="link" href="departmentDelete.aspx"><b>Delete Department</b></a>
+        <a class="link" href="departmentDel.aspx"><b>Delete Department</b></a>
         <a class="link" href="departmentEdit.aspx"><b>Edit Department</b></a>
         <a class="link" href="departmentAdd.aspx"><b>Add Department</b></a>
         <a class="link" href="departmentView.aspx"><b>View Department</b></a>
-        <a href="main.html"><b>Home</b></a></div>
+        <a href="main.aspx"><b>Home</b></a></div>
             <h3 align="center"><b>Edit Department Details </b></h3>
             <center>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Department_id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
